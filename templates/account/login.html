@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+  
+  Connexion
+
+{% endblock title %}
+
+{% block content %}
+
+<div class="container py-5">
+
+  <div class="row d-flex">
+    <div class="col-md-5 m-auto">
+      <h3>Connexion </h3>
+      <form method="POST">
+
+        {% csrf_token %}
+    
+        {{form|crispy}}
+    
+        <button class="btn theme-orange btn-block" type="submit">Je me connecte</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Inscription
+{% endblock title %}
+
+{% block content %}
+  <section>
+
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-6">
+              <p>Ici les conditions d'adhésion à la communauté</p>
+          </div>
+          <div class="col-md-6">
+            <h3>Formulaire d'inscription</h3>
+
+            <form method="POST">
+
+              {% csrf_token %}
+
+              {{form|crispy}}
+<!--           
+              {% for input in form %}
+                <div class="form-group">
+                  <label for="id_{{input.name}}">{{input.label}}</label>
+                  <input type="{{input.field.widget.input_type}}" name="{{input.name}}" class="form-control form-invalid {% if input.errors %}
+                    form-invalid
+                  {% endif %}" id="id_{{input.name}}" required>
+                  <div class="invalid-feedback">
+                  </div>
+                </div>
+              {% endfor %} -->
+          
+              <button class="btn theme-orange btn-block" type="submit">Je m'inscris</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+  </section>
+{% endblock content %}

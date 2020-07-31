@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Actualités
+{% endblock title %}
+
+{% block content %}
+  
+{% include "com/includes/banner.html" with banner_text='Actualités' %}
+
+<section class="blog-block">
+    <div class="container">
+        <!-- <div class="sec-title text-center mb-3" data-aos="fade-up" data-aos-duration="1000">
+            <span class="title">Articles</span>
+            <h2>We keep you always updated with</h2>
+            <div class="divider">
+                <span class="fa fa-mortar-board"></span>
+            </div>
+        </div> -->
+        <div class="row">
+           {% for new in news %}
+            {% include "com/includes/single-post.html" with item=new %}
+           {% endfor %}
+
+           
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

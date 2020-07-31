@@ -1,0 +1,1 @@
+web: gunicorn aden.wsgi --log-file -

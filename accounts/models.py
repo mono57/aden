@@ -1,0 +1,83 @@
+from django.db import models
+from django.contrib.auth.models import (
+    AbstractBaseUser
+)
+from django.utils import timezone
+from aden.utils import TimeStampModel
+
+from accounts.managers import UserManager
+# Create your models here.
+class User(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name= 'Adresse email',
+        max_length=255,
+        unique=True,
+    )
+
+    first_name = models.CharField(
+        max_length=50,
+        blank=True,
+        verbose_name='Prenom'
+    )
+    last_name = models.CharField(
+        max_length=50,
+        blank=True,
+        verbose_name='Nom'
+    )
+    date_joined = models.DateTimeField(
+        auto_now=False,
+        auto_now_add=True,
+        verbose_name='Date d\'inscription'
+    )
+    last_login = models.DateTimeField(
+        default=timezone.now,
+        verbose_name='Dernière connexion'
+    )
+    active = models.BooleanField(default=True)
+    staff = models.BooleanField(default=False)
+    is_member = models.BooleanField(default=False, verbose_name='Membre')
+    admin = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = UserManager()
+
+    def get_full_name(self):
+        if self.first_name and self.last_name:
+            return self.first_name + ' ' + self.last_name
+        return self.email
+
+    def get_short_name(self):
+        return self.email
+
+    def __str__(self):
+        if self.is_admin:
+            return 'Admin'
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        return True
+
+    def has_module_perms(self, app_label):
+        return True
+
+    @property
+    def is_staff(self):
+        return self.staff
+
+    @property
+    def is_admin(self):
+        return self.admin
+
+    @property
+    def is_active(self):
+        return self.active
+
+    class Meta:
+        verbose_name = "Utilisateur"
+        verbose_name_plural = "Utilisateurs"
+
+
+class Profile(TimeStampModel):
+    pass

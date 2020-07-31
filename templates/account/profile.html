@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Mon profil
+{% endblock title %}
+
+{% block content %}
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#" class="btn theme-orange">Modifier mon mot de passe</a>
+            </div>
+            <div class="col-md-7">
+                <form method="post">
+                    {% csrf_token %}
+
+                    {{form|crispy}}
+
+
+                    <button class="btn theme-orange">Modifier mon profil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

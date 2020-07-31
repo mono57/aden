@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Albums
+{% endblock title %}
+
+{% block content %}
+  
+    {% include "com/includes/banner.html" with banner_text='Nos Albums' %}
+
+    <section class="course">
+        <div class="container">
+            <div class="sec-title text-center mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <span class="title">Notre galerie photos</span>
+                <h2>Révivez nos meilleurs moments en images 😍😍😍</h2>
+                <div class="divider">
+                    <span class="fa fa-mortar-board"></span>
+                </div>
+            </div>
+            <!-- <ul class="nav nav-pills mb-3 p-0 justify-content-center" id="pills-tab" role="tablist" data-aos="fade-up"
+                data-aos-duration="1000">
+                <li class="nav-item">
+                    <a class="nav-link active" id="showall-tab" data-toggle="pill" href="#showall" role="tab"
+                       aria-controls="showall" aria-selected="true">Show All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="Events-tab" data-toggle="pill" href="#Events" role="tab"
+                       aria-selected="false">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="Sports-tab" data-toggle="pill" href="#Sports" role="tab"
+                       aria-selected="false">Sports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="Classroom-tab" data-toggle="pill" href="#Classroom" role="tab"
+                        aria-selected="false">Classroom</a>
+                </li>
+            </ul> -->
+
+            <div class="row text-center">
+                <div class="d-flex align-items-center justify-content-center tab-content" id="pills-tabContent">
+                    <div class="tab-pane  fade show active" id="showall" role="tabpanel" aria-labelledby="showall-tab">
+
+                      {% for photo in gallery.images.all %}
+                        {% include "com/includes/galery-item.html" with photo=photo %}
+                        {% empty %}
+                        <h4 class="text-danger text-center">Aucune photo n'a été publiée pour l'instant, revenez prochainement. Merci</h4>
+                      {% endfor %}
+                        
+                    </div>
+                 
+                
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
