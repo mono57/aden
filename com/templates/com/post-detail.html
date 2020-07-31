@@ -26,11 +26,11 @@
                 <div class="blog-desc">
                     <p>{{post.content|safe}}</p>
                 </div>
-                <div class="tags py-3">
+                <!-- <div class="tags py-3">
                     <h6 class="text-uppercase font-weight-bold">Tags</h6>
                     <a href="#" class="btn btn-light mb-2 mr-2">Design</a>
                     
-                </div>
+                </div> -->
                 <!-- <div class="share">
                     <h6 class="text-uppercase font-weight-bold mb-3">Share</h6>
                     <ul class="social-icon pl-0">
@@ -108,21 +108,21 @@
                     </form>
                 </div> -->
                 <div class="blog-category">
-                    <h6 class="text-uppercase font-weight-bold mb-3">Blog Category</h6>
+                    <h6 class="text-uppercase font-weight-bold mb-3">Catégories</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">UX/UI Design</a></li>
-                        <li><a href="#">SEO</a></li>
-                        <li><a href="#">Business Analysis</a></li>
-                        <li><a href="#">Business Management</a></li>
+                        {% for category in categories %}
+                        <li><a href="{{category.get_absolute_url}}">{{category.name}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="recent-blog ">
                     <h6 class="text-uppercase font-weight-bold mb-3">Articles récents</h6>
                     {% for recent_post in recent_posts %}
                     <div class="media">
-                        <img src="assets/images/thumb_6.jpg" alt="John Doe" class="mr-3">
+                        {% if recent_post.image %}
+                        <img src="{{recent_post.image.url}}" alt="{{recent_post.title}}" class="mr-3">
+                          
+                        {% endif %}
                         <div class="media-body">
                             <p class="font-weight-bold mb-2">{{recent_post.title}}</p>
                             <p>Dernière modification: {{recent_post.updated_at|date}}</p>
@@ -131,19 +131,7 @@
                     {% endfor %}
                     
                 </div>
-                <div class="tags pt-3">
-                    <h6 class="text-uppercase font-weight-bold">Tags</h6>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Design</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Web Development</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Business</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Application</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Joomla</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">SEO</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Wordpress</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">Shopify</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">User Interface</a>
-                    <a href="#" class="btn btn-light mb-2 mr-2">UI/UX</a>
-                </div>
+               
             </div>
         </div>
     </div>

@@ -7,34 +7,9 @@
 {% endblock title %}
 
 {% block content %}
-<!-- <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="sidenav-links pt-4">
-      <a href="index.html">Home</a>
-      <button class="dropdown-btn">About Us
-          <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-container">
-          <a href="about.html"> <i class="fa fa-caret-right mr-3"></i>Who We Are</a>
-          <a href="achievement.html"><i class="fa fa-caret-right mr-3"></i>Achievement</a>
-      </div>
-      <button class="dropdown-btn">Student Corner
-          <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-container">
-          <a href="student.html"><i class="fa fa-caret-right mr-3"></i>Student</a>
-          <a href="result.html"><i class="fa fa-caret-right mr-3"></i>Result</a>
-          <a href="course.html"><i class="fa fa-caret-right mr-3"></i>Course</a>
-      </div>
-      <a href="faculties.html">Faculties</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="blog.html">Faculties</a>
-      <a href="career.html">Career</a>
-      <a href="contact.html">Contact</a>
-  </div>
-</div> -->
+
 <!-- end side menu -->
-<!-- start slider -->
+<!-- start slider
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -134,16 +109,20 @@
 <section class="about-us" data-aos="fade-up" data-aos-duration="950">
   <div class="container">
       <div class="about-box pb-3">
-          <h1>Logo ICI</h1>
+          <img src="{% static "assets/images/logo.jpg" %}" width="100" alt="" srcset="">
       </div>
       <h3 data-aos="fade-up" data-aos-duration="1050" class="font-weight-bold">Le réseau des anciens étudiants de l'Ecole Natianale Superieur d'Agro-Industrie.</h5>
       <h6 class="pb-3 px-5 mb-0" data-aos="fade-up" data-aos-duration="1050">Réunir et assurer des liens amicaux entre les diplômés de L’ENSAI ou de l’ENSIAAC
         de Ngaoundéré ; Participer activement au développement et au rayonnement de l'ENSAI de Ngaoundéré;</h6>
     
     
-      <div class="button-box mt-2">
-          <a href="javascript:" class="left-btn">Lire plus a propos de nous</a>
-          <a href="javascript:" class="right-btn">Contactez-nous</a>
+      <!-- <div class="button-box mt-2">
+          <a href="#" class="left-btn">Lire plus a propos de nous</a>
+          <a href="#" class="right-btn">Contactez-nous</a>
+      </div> -->
+      <div class="btn-group">
+          <a href="" class="btn theme-orange">Lire plus a propos de nous</a>
+          <a href="" class="btn theme-orange ml-3">Contactez-nous</a>
       </div>
   </div>
 </section>
