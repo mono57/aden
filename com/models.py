@@ -2,6 +2,7 @@ from aden.utils import TimeStampModel
 from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.urls import reverse
 
 
 User = get_user_model()
@@ -52,9 +53,24 @@ class News(TimeStampModel):
         self.slug = slugify(self.title)
         super().save()
 
+    def get_absolute_url(self):
+        return reverse('com:news-detail', kwargs={'slug': self.slug})
+
     class Meta:
         verbose_name = 'Actualité'
         verbose_name_plural = 'Actualités'
+
+
+class PostCategory(TimeStampModel):
+    name = models.CharField(max_length=100, verbose_name='Nom')
+    slug = models.SlugField(blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self):
+        self.slug = slugify(self.name)
+        super().save()
 
 
 class Post(TimeStampModel):
@@ -62,6 +78,8 @@ class Post(TimeStampModel):
         max_length=255, verbose_name='Titre de l\'article')
     slug = models.SlugField(blank=True)
     content = models.TextField(verbose_name='Contenu de l\'article')
+    category = models.ManyToManyField(
+        PostCategory, related_name='posts', verbose_name='Categories d\'article')
     image = models.ImageField(
         verbose_name='Image de couverture', blank=True, upload_to='posts/')
     is_visible = models.BooleanField(
@@ -74,6 +92,9 @@ class Post(TimeStampModel):
     def save(self):
         self.slug = slugify(self.title)
         super().save()
+
+    def get_absolute_url(self):
+        return reverse("com:post-detail", kwargs={"slug": self.slug})
 
     class Meta:
         verbose_name = 'Article de blog'
@@ -119,7 +140,6 @@ class Event(TimeStampModel):
 
     def __str__(self):
         return self.title
-
 
     class Meta:
         verbose_name = 'Agenda'

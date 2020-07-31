@@ -72,3 +72,10 @@ class EventModelAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Event, EventModelAdmin)
+
+class PostCategoryModelAdmin(admin.ModelAdmin):
+    exclude = ('slug',)
+    def has_module_permission(self, request):
+        return False
+
+admin.site.register(PostCategory, PostCategoryModelAdmin)

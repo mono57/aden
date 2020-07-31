@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  {{post.title}}
+{% endblock title %}
+
+{% block content %}
+<section class="blog-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% if post.image %}
+                <div class="blog-img">
+                    <img src="{{post.image.url}}" class="img-fluid" alt="{{post.title}}">
+                </div>
+                {% endif %}
+                <div class="blog-post d-flex pt-3">
+                    <p class="mr-3"><i class="fa fa-calendar mr-1"></i> {{post.updated_at|date}}</p>
+                    <!-- <p class="mr-3"><i class="fa fa-comments mr-1"></i> 10 comments</p> -->
+                </div>
+                <div class="blog-title">
+                    <h4 class="font-weight-bold mb-3">{{post.title}}</h4>
+                </div>
+                <div class="blog-desc">
+                    <p>{{post.content|safe}}</p>
+                </div>
+                <div class="tags py-3">
+                    <h6 class="text-uppercase font-weight-bold">Tags</h6>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Design</a>
+                    
+                </div>
+                <!-- <div class="share">
+                    <h6 class="text-uppercase font-weight-bold mb-3">Share</h6>
+                    <ul class="social-icon pl-0">
+                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="comments">
+                    <h6 class="text-uppercase font-weight-bold mb-3">Comments</h6>
+                    <div class="media">
+                        <img src="assets/images/1.png" alt="John Doe" class="mr-3 rounded-circle">
+                        <div class="media-body">
+                            <div class="user d-flex justify-content-between">
+                                <h6 class="font-weight-bolder">John Doe</h6>
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Posted on February 19, 2016</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <img src="assets/images/2.png" alt="John Doe" class="mr-3 rounded-circle">
+                        <div class="media-body">
+                            <div class="user d-flex justify-content-between">
+                                <h6 class="font-weight-bolder">John Doe</h6>
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Posted on February 19, 2016</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+                            <div class="media p-3">
+                                <img src="assets/images/3.png" alt="John Doe" class="mr-3 rounded-circle">
+                                <div class="media-body">
+                                    <div class="user d-flex justify-content-between">
+                                        <h6 class="font-weight-bolder">John Doe</h6>
+                                        <a href="#">Reply</a>
+                                    </div>
+                                    <p>Posted on February 19, 2016</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <img src="assets/images/1.png" alt="John Doe" class="mr-3 rounded-circle">
+                        <div class="media-body">
+                            <div class="user d-flex justify-content-between">
+                                <h6 class="font-weight-bolder">John Doe</h6>
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Posted on February 19, 2016</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-md-4">
+                <!-- <div class="search-blog mb-4">
+                    <form>
+                        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                                   placeholder="Search">
+                            <div class="input-group-prepend border-0">
+                                <div class="input-group-text theme-orange"><i class="fa fa-search"></i></div>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+                <div class="blog-category">
+                    <h6 class="text-uppercase font-weight-bold mb-3">Blog Category</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UX/UI Design</a></li>
+                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">Business Analysis</a></li>
+                        <li><a href="#">Business Management</a></li>
+                    </ul>
+                </div>
+                <div class="recent-blog ">
+                    <h6 class="text-uppercase font-weight-bold mb-3">Articles récents</h6>
+                    {% for recent_post in recent_posts %}
+                    <div class="media">
+                        <img src="assets/images/thumb_6.jpg" alt="John Doe" class="mr-3">
+                        <div class="media-body">
+                            <p class="font-weight-bold mb-2">{{recent_post.title}}</p>
+                            <p>Dernière modification: {{recent_post.updated_at|date}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="tags pt-3">
+                    <h6 class="text-uppercase font-weight-bold">Tags</h6>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Design</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Web Development</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Business</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Application</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Joomla</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">SEO</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Wordpress</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">Shopify</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">User Interface</a>
+                    <a href="#" class="btn btn-light mb-2 mr-2">UI/UX</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
