@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block content %}
+
+<!-- {% include "com/includes/banner.html" with banner_text='Contact' %} -->
+
+<section class="contact-section">
+    <div class="container">
+        <div class="sec-title text-center mb-3">
+            <span class="title">Contactez - nous</span>
+            {% if messages %}
+            <div class="alert alert-success">
+                {% for message in messages %}
+                  {{message}}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <!-- <h2>Laissez - nous un message et nous vous y répondrons</h2> -->
+            <div class="divider">
+                <span class="fa fa-mortar-board"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="contact-form p-5">
+                    <div class="border-line"></div>
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <button class="btn theme-orange border-0 mt-4" type="submit">Envoyez le message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 ml-minus">
+                <div class="media p-3 align-items-center theme-blue mb-3">
+                    <div class="media-body text-left">
+                        <h6 class="color-orange font-weight-bold mb-1">Adresse</h6>
+                        <p class="mb-0">Douala – CMR</p>
+                    </div>
+                    <img class="img-fluid contact-icon" src="{% static "assets/images/icons/location.png" %}" alt="Location">
+                </div>
+                <div class="media p-3 align-items-center theme-blue mb-3">
+                    <div class="media-body text-left">
+                        <h6 class="color-orange font-weight-bold mb-1">Email</h6>
+                        <p class="mb-0">secretariat.aden@gmail.com</p>
+                    </div>
+                    <img class="img-fluid contact-icon" src="{% static "assets/images/icons/mail.png" %}" alt="Mail">
+                </div>
+                <div class="media p-3 align-items-center theme-blue">
+                    <div class="media-body text-left">
+                        <h6 class="color-orange font-weight-bold mb-1">Numero de téléphone</h6>
+                        <p class="mb-0">(+237) 699 94 49 49 / 675 35 30 88</p>
+                    </div>
+                    <img class="img-fluid contact-icon" src="{% static "assets/images/icons/call.png" %}" alt="Call">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

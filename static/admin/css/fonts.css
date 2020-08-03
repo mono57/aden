@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'HKGroteskPro';
+    src: url('../HKGroteskPro/HKGroteskPro-Medium.woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HKGroteskPro';
+    src: url('../HKGroteskPro/HKGroteskPro-Regular.woff');
+    font-weight: 700;
+    font-style: normal;
+}

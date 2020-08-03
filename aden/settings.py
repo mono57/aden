@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+# from tinymce.settings import DEFAULT_CONFIG
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,8 +27,15 @@ SECRET_KEY = '^em55ag695v+su#!*u46*yl6o2ws(5o-@scr-+mbl)5-bkqnz@'
 
 if os.environ.get('ENV') == 'PROD':
     DEBUG = False
+
 else:
     DEBUG = True
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_HOST_USER = "secretariat.aden@gmail.com"
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = "secretariat.aden@gmail.com"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -49,11 +57,13 @@ INSTALLED_APPS = [
     'accounts.apps.AccountConfig',
     'com.apps.ComConfig',
     'project.apps.ProjectConfig',
+    'us.apps.UsConfig',
 
     'allauth',
     'allauth.account',
     'crispy_forms',
-    
+    'tinymce',
+
 ]
 
 # django-allauth configuration
@@ -161,6 +171,29 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "height": 500,
+    "menubar": True,
+    "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,"
+    "searchreplace,visualblocks,codesample,fullscreen,insertdatetime,media,table,paste,"
+    "code,help,wordcount",
+    "toolbar": "undo redo codesample | formatselect | "
+    "bold italic backcolor | alignleft aligncenter "
+    "alignright alignjustify | bullist numlist outdent indent | "
+    "removeformat | help",
+    "codesample_languages": [
+        {'text': 'JavaScript', 'value': 'javascript'},
+        {'text': 'CSS', 'value': 'css'},
+        {'text': 'PHP', 'value': 'php'},
+        {'text': 'Ruby', 'value': 'ruby'},
+        {'text': 'Python', 'value': 'python'},
+        {'text': 'Java', 'value': 'java'},
+        {'text': 'C', 'value': 'c'},
+        {'text': 'C#', 'value': 'csharp'},
+        {'text': 'C++', 'value': 'cpp'}
+    ]
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

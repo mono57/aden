@@ -40,7 +40,7 @@ class PostModelAdmin(admin.ModelAdmin):
     list_filter = ('created_at', 'is_visible')
     search_fields = ('title', 'creator', 'content')  
     exclude = ('creator', 'slug')  
-    # form = PostModelForm
+    form = PostModelForm
 
     def save_model(self, request, obj, form, change):
         obj.creator = request.user

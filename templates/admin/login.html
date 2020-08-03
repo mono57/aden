@@ -1,0 +1,74 @@
+{% extends 'admin/login.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block extrastyle %}
+
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+{% endblock extrastyle %}
+
+{% block content %}
+<section>
+    <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center no-gutters">
+            <div class="col-12 col-md-5 col-lg-4 py-6">
+
+                <!-- Heading -->
+                <h1 class="mb-4 font-weight-bold text-center">
+                    Connexion
+                </h1>
+
+                <!-- Text -->
+               
+                {% if form.errors and not form.non_field_errors %}
+                <p class="errornote">
+                    {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+                </p>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <p class="errornote">
+                    {% blocktrans trimmed %}
+                    You are authenticated as {{ username }}, but are not authorized to
+                    access this page. Would you like to login to a different account?
+                    {% endblocktrans %}
+                </p>
+                {% endif %}
+
+                <!-- Form -->
+                <form action="{{ app_path }}" method="POST" class="mb-6">
+
+                    {% csrf_token %}
+                    <!-- Email -->
+                    {% if form.errors %}
+                    <ul class="errorlist text-center">
+                            <ul class="errorlist nonfield">
+                                <li>Nom d'utilisateur ou mot de passe incorrect</li>
+                            </ul>
+    
+                        </ul>
+                    {% endif %}
+                    {% for input in form %}
+                    <div class="form-group">
+                        <label for="email">
+                            {{input.label_tag}}
+                        </label>
+                        <input type="{{input.field.widget.input_type}}" class="form-control {% if form.errors %}
+                              is-invalid
+                            {% endif %}" id="email" name="{{input.name}}" required>
+
+                    </div>
+                    {% endfor %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <!-- Submit -->
+                    <button class="btn btn-block theme-orange" type="submit">
+                        {% trans 'Sign in' %}
+                    </button>
+
+                </form>
+
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
+
+{% endblock content %}

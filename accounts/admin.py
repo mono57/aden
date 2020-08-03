@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
@@ -7,6 +7,9 @@ from accounts.forms import UserAdminCreationForm, UserAdminChangeForm
 
 User = get_user_model()
 
+
+admin.site.site_title = "Administration ADEN"
+admin.site.site_header = "ADEN | Panel d'administration"
 
 class UserAdmin(BaseUserAdmin):
     form = UserAdminChangeForm
@@ -21,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
             'last_name',
             'last_login',
         )}),
-        ('Permissions', {'fields': ('active', 'staff', 'admin',)}),
+        ('Permissions', {'fields': ('active', 'staff', 'admin','is_member')}),
     )
     add_fieldsets = (
         (None, {
@@ -32,7 +35,26 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ('email',)
     ordering = ('email',)
     filter_horizontal = ()
+    actions = ('confirm_member', 'suspend_member')
 
+    def make_actions(self, queryset, action):
+        for q in queryset:
+            q.active, q.is_member = action, action
+            q.save()
+
+    def confirm_member(self, request, queryset):
+        self.make_actions(queryset, True)
+
+        self.message_user(request, 'Membre(s) confirmé(s)', messages.SUCCESS)
+
+    confirm_member.short_description = 'Confirmer l\'adhésion' 
+
+    def suspend_member(self, request, queryset):
+        self.make_actions(queryset, False) 
+
+        self.message_user(request, 'Suspension de(s) membre(s) réussie !') 
+
+    suspend_member.short_description = 'Suspendre'
     
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)

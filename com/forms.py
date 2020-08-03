@@ -1,4 +1,5 @@
 from  django import forms
+from tinymce.widgets import TinyMCE
 
 from com.models import (
     News,
@@ -32,7 +33,9 @@ class NewsModelForm(forms.ModelForm):
     class Meta:
         model = News
         exclude = ('creator', 'slug')
-    
+        widgets = {
+            'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
+        }
     # def clean_title(self):
     #     title = self.cleaned_data.get('title')
     #     qs = News.objects.filter(title = title)
@@ -47,7 +50,9 @@ class PostModelForm(forms.ModelForm):
     class Meta:
         model = Post
         exclude = ('creator', 'slug')
-
+        widgets = {
+            'content': TinyMCE(attrs={'rows': 30, 'cols': 80})
+        }
     # def clean_title(self):
     #     title = self.cleaned_data.get('title')
     #     qs = Post.objects.filter(title = title)

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Non autorisé
+{% endblock title %}
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="row d-flex">
+        <div class="col-7 mx-auto">
+            <div class="alert alert-warning">
+                Vous n'êtes pas autorisé à accéder à cette page. Cette section n'est réservée qu'aux membres de l'ADEN
+                <br>
+                <br>
+                <a href="{% url 'conditions' %}" class="btn theme-orange">Voir les conditions d'adhésion !</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
