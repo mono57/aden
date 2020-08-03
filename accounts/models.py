@@ -2,14 +2,17 @@ from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser
 )
+from django.db.models.signals import post_save
 from django.utils import timezone
 from aden.utils import TimeStampModel
 
 from accounts.managers import UserManager
 # Create your models here.
+
+
 class User(AbstractBaseUser):
     email = models.EmailField(
-        verbose_name= 'Adresse email',
+        verbose_name='Adresse email',
         max_length=255,
         unique=True,
     )
@@ -80,4 +83,25 @@ class User(AbstractBaseUser):
 
 
 class Profile(TimeStampModel):
-    pass
+    photo = models.ImageField(
+        upload_to='photo/profiles/', blank=True, verbose_name="Photo de profile")
+    birthday = models.DateField(blank=True, null=True, verbose_name="Date de naissance")
+    birth_location = models.CharField(
+        max_length=100, blank=True, verbose_name='Lieu de naissance')
+    promo = models.CharField(max_length=50, blank=True,
+                             verbose_name='Promotion')
+
+    user = models.OneToOneField(
+        User, related_name='profile', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.user.email)
+
+
+def post_save_user_create_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(
+            user = instance
+        )
+
+post_save.connect(post_save_user_create_profile, sender=User)
