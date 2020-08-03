@@ -42,7 +42,13 @@ class UserAdminChangeForm(forms.ModelForm):
     def clean_password(self):
         return self.initial['password']
 
+class CustomDateInput(forms.DateInput):
+    input_type = 'date'
+
 class ProfileModelForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ('user', )
+        widgets = {
+            'birthday': CustomDateInput()
+        }

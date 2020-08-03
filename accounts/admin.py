@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 
 from accounts.forms import UserAdminCreationForm, UserAdminChangeForm
+from accounts.models import Profile
 
 User = get_user_model()
 
@@ -58,3 +59,9 @@ class UserAdmin(BaseUserAdmin):
     
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)
+
+class ProfileModelAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Profile, ProfileModelAdmin)

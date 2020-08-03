@@ -82,6 +82,7 @@ class User(AbstractBaseUser):
         verbose_name_plural = "Utilisateurs"
 
 
+
 class Profile(TimeStampModel):
     photo = models.ImageField(
         upload_to='photo/profiles/', blank=True, verbose_name="Photo de profile")
