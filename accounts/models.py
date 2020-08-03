@@ -100,9 +100,12 @@ class Profile(TimeStampModel):
 
 
 def post_save_user_create_profile(sender, instance, created, **kwargs):
-    if created and not instance.profile:
-        Profile.objects.create(
-            user = instance
-        )
+    if created:
+        try:
+            instance = instance.profile
+        except:
+            Profile.objects.create(
+                user = instance
+            )
 
 post_save.connect(post_save_user_create_profile, sender=User)
