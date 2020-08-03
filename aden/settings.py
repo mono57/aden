@@ -25,9 +25,15 @@ SECRET_KEY = '^em55ag695v+su#!*u46*yl6o2ws(5o-@scr-+mbl)5-bkqnz@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if os.environ.get('ENV') == 'PROD':
+if os.getenv('ENV') == 'PROD':
     DEBUG = False
-
+    SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+    EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+    EMAIL_HOST = 'smtp.sendgrid.net'
+    EMAIL_HOST_USER = 'noreply@aden.com' # this is exactly the value 'apikey'
+    EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
 else:
     DEBUG = True
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
