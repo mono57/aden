@@ -5,6 +5,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from accounts.forms import ProfileModelForm
 
+
 class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
     form_class = ProfileModelForm
     template_name = 'account/profile.html'
@@ -13,17 +14,23 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
 
     def get_initial(self):
         initial = super().get_initial()
-        kwargs = self.request.user.profile.__dict__
-        return {**initial, **kwargs}
+        profile = self.request.user.profile
+        return initial.update({'birthday': profile.birthday,
+                               'promo': profile.promo,
+                               'birth_location': profile.birth_location,
+                               'photo': profile.photo
+                               })
 
     def form_valid(self, form):
         data = form.cleaned_data
         profile = self.request.user.profile
+
         profile.photo = data.get('photo')
         profile.birthbay = data.get('birthday')
-        profile.birthbay_location = data.get('birthbay_location')
-        profile.promotion = data.get('promotion')
+        profile.birth_location = data.get('birth_location')
+        profile.promo = data.get('promo')
         profile.save()
+        
         return super().form_valid(form)
 
     def form_invalid(self, form):
