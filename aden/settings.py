@@ -49,7 +49,7 @@ AUTH_USER_MODEL = 'accounts.User'
 # Application definition
 
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = [
     'django.contrib.admin',

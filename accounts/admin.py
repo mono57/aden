@@ -16,8 +16,8 @@ class UserAdmin(BaseUserAdmin):
     form = UserAdminChangeForm
     add_form = UserAdminCreationForm
 
-    list_display = ('email', 'active','admin', 'is_member')
-    list_filter = ('admin','active', 'staff', 'is_member')
+    list_display = ('email', 'is_active','admin', 'is_member')
+    list_filter = ('admin', 'is_staff', 'is_member')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': (
@@ -25,7 +25,7 @@ class UserAdmin(BaseUserAdmin):
             'last_name',
             'last_login',
         )}),
-        ('Permissions', {'fields': ('active', 'staff', 'admin','is_member')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'admin','is_member')}),
     )
     add_fieldsets = (
         (None, {
@@ -40,7 +40,7 @@ class UserAdmin(BaseUserAdmin):
 
     def make_actions(self, queryset, action):
         for q in queryset:
-            q.active, q.is_member = action, action
+            q.is_member = action
             q.save()
 
     def confirm_member(self, request, queryset):

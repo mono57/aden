@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (
-    AbstractBaseUser
+    AbstractBaseUser, AbstractUser
 )
 from django.db.models.signals import post_save
 from django.utils import timezone
@@ -36,8 +36,8 @@ class User(AbstractBaseUser):
         default=timezone.now,
         verbose_name='Dernière connexion'
     )
-    active = models.BooleanField(default=True)
-    staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     is_member = models.BooleanField(default=False, verbose_name='Membre')
     admin = models.BooleanField(default=False)
 
@@ -66,16 +66,9 @@ class User(AbstractBaseUser):
         return True
 
     @property
-    def is_staff(self):
-        return self.staff
-
-    @property
     def is_admin(self):
         return self.admin
 
-    @property
-    def is_active(self):
-        return self.active
 
     class Meta:
         verbose_name = "Utilisateur"

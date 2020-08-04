@@ -52,3 +52,8 @@ class ProfileModelForm(forms.ModelForm):
         widgets = {
             'birthday': CustomDateInput()
         }
+
+class UserModelForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('last_name', 'first_name')
