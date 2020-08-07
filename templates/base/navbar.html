@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 {% url 'home' as home_url %}
 {% url 'com:galery-list' as galery_url %}
@@ -9,6 +10,8 @@
 {% url 'aden' as aden_url %}
 {% url 'ensai' as ensai_url %}
 {% url 'network' as network_url %}
+
+{% get_current_language as LANGUAGE_CODE %}
 
 <header class="top-header py-2">
     <div class="container">
@@ -49,7 +52,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link active" href="{{home_url}}">Accueil</a>
+                        <a class="nav-link active" href="{{home_url}}">{% trans "Accueil" %}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{ensai_url}}" data-toggle="dropdown">L’ENSAI</a>
@@ -62,12 +65,19 @@
                         <a class="nav-link dropdown-toggle" href="{{aden_url}} data-toggle="dropdown">L’ADEN</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{aden_url}}#who-are-us">Qui sommes-nous ?</a>
-                            <a class="dropdown-item" href="{{aden_url}}#status">Les Statuts</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">Le Règlement intérieur</a>
+                            <a class="dropdown-item" href="{% if status %}
+                              {{status.file.url}}
+                              {% else %} #
+                            {% endif %}">Les Statuts</a>
+                            <a class="dropdown-item" href="{% if internal_regulation %}
+                              {{internal_regulation.file.url}} {% else %} #
+                            {% endif %}">Le Règlement intérieur</a>
                             <a class="dropdown-item" href="{{aden_url}}#">Le Comité Stratégique</a>
                             <a class="dropdown-item" href="{{aden_url}}#">L'Assemblée générale</a>
                             <a class="dropdown-item" href="{{aden_url}}#">Les Coordonnées</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">Les missions et plans d’actions annuels</a>
+                            <a class="dropdown-item" href="{% if action_plan %}
+                              {{action_plan.file.url}} {% else %} #
+                            {% endif %}">Les missions et plans d’actions annuels</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -111,7 +121,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Projets institutionnels</a>
                             <a class="dropdown-item" href="#">Projets industriels</a>
-                            <a class="dropdown-item" href="#">Proposer une idée de projet</a>
+                            <a class="dropdown-item" href="{% url 'project:project-create' %}">Proposer une idée de projet</a>
 
                         </div>
                     </li>
@@ -123,11 +133,25 @@
                             <a class="dropdown-item" href="{{contact_url}}">Contact</a>
                         </div>
                     </li>
+                    {% static "assets/images/i18n/united-kingdom.png" as english %}
+                    {% static "assets/images/i18n/france.png" as french %}
+                    {% with LANGUAGE_CODE as lc %}
                     <li class="nav-item ">
-                        <a class="nav-link active" href="{{home_url}}">
-                            <img src="{% static "assets/images/i18n/united-kingdom.png" %}" alt="">
+                        <form action="{% url 'set_language' %}" method="POST" id="form-change-lang">
+                            {% csrf_token %}
+                        <a class="nav-link active change-lang" href="{{home_url}}">
+                            {% if lc == 'fr' %}
+                            <img src="{{english}}" alt="English">
+                            <input type="hidden" name="language" value="en">
+                            {% else %}
+                            <img src="{{french}}" alt="Français">
+                            <input type="hidden" name="language" value="fr">
+                            {% endif %}
+                            
                         </a>
+                    </form>
                     </li>
+                    {% endwith %}
                 </ul>
             </div>
         </nav>

@@ -35,6 +35,18 @@ class GaleryImage(TimeStampModel):
         Galery, on_delete=models.CASCADE, verbose_name='Album', related_name='images')
 
 
+class PostCategory(TimeStampModel):
+    name = models.CharField(max_length=100, verbose_name='Nom')
+    slug = models.SlugField(blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self):
+        self.slug = slugify(self.name)
+        super().save()
+
+
 class News(TimeStampModel):
     title = models.CharField(
         max_length=255, verbose_name='Titre de l\'actualité')
@@ -43,6 +55,8 @@ class News(TimeStampModel):
         verbose_name='Image de couverture', blank=True, upload_to='news/')
     content = models.TextField(verbose_name='Contenu de l\'article')
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ManyToManyField(
+        PostCategory, blank=True, related_name='news')
     is_visible = models.BooleanField(
         default=True, verbose_name='Visible sur le site ?')
 
@@ -59,18 +73,6 @@ class News(TimeStampModel):
     class Meta:
         verbose_name = 'Actualité'
         verbose_name_plural = 'Actualités'
-
-
-class PostCategory(TimeStampModel):
-    name = models.CharField(max_length=100, verbose_name='Nom')
-    slug = models.SlugField(blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def save(self):
-        self.slug = slugify(self.name)
-        super().save()
 
 
 class Post(TimeStampModel):

@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}
-          
+
         {% endblock title %} - ADEN
 
     </title>
     {% include "base/css.html" %}
 
     {% block css %}
-      
+
     {% endblock css %}
 </head>
+
 <body>
     <div class="page-wrapper" id="page-wrapper">
 
         {% include "base/navbar.html" %}
 
-    {% block content %}
-      
-    {% endblock content %}
+        {% block content %}
+
+        {% endblock content %}
 
 
-    {% include "base/footer.html" %}
+        {% include "base/footer.html" %}
     </div>
-    
+
     {% include "base/js.html" %}
+
+    <script>
+        $('.change-lang').click(function (e) {
+            e.preventDefault()
+            $('#form-change-lang').submit();
+
+        });
+    </script>
+    {% block javascript %}
+
+    {% endblock javascript %}
+
 </body>
+
 </html>

@@ -6,7 +6,7 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from com.models import Post, News, Event, Document, Galery
+from com.models import Post, News, Event, Document, Galery, PostCategory
 from aden.decorators import aden_member_required
 
 
@@ -44,10 +44,10 @@ class NewsListView(ListView):
     model = News
     context_object_name = 'news'
 
-    # @aden_member_required
-    # @login_required
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = PostCategory.objects.all()
+        return context
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
