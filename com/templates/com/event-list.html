@@ -3,37 +3,27 @@
 {% load static %}
 
 {% block title %}
-  Liste des événements
+Liste des événements
 {% endblock title %}
 
 {% block content %}
-  
+
 {% include "com/includes/banner.html" with banner_text="Nos événements" %}
 
 <section class="event-listing">
     <div class="container">
-        <div class="row">
-            <!-- <div class="col-lg-5">
-                <div class="about-img mb-5">
-                    <div class="img_1 aos-init aos-animate d-block m-auto" data-aos="zoom-in"
-                         data-aos-duration="550">
-                        <div class="border-line"></div>
-                        <img src="{% static "assets/images/event.jpg" %}" class="img-fluid" alt="About">
-                    </div>
-                </div>
-            </div> -->
-            <div class="col-lg-7">
-                <div class="sec-title" data-aos="fade-up" data-aos-duration="550">
-                    <h2>Tous les événements</h2>
-                    <div class="divider">
-                        <span class="fa fa-mortar-board"></span>
-                    </div>
-                   {% for event in events %}
-                   {% include "com/includes/single-event.html" with event=event %}
-                   {% empty %}
-                   <h4 class="text-danger">Aucun événement trouvé!</h4>
-                   {% endfor %}
-                </div>
+        <div class="sec-title">
+            <h2>Tous les événements</h2>
+            <div class="divider">
+                <span class="fa fa-mortar-board"></span>
+            </div>
+            <div class="row">
+
+                {% for event in events %}
+                {% include "com/includes/single-event.html" with event=event %}
+                {% empty %}
+                <h4 class="text-danger">Aucun événement trouvé!</h4>
+                {% endfor %}
             </div>
         </div>
     </div>

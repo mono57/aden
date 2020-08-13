@@ -8,5 +8,5 @@ def aden(request):
     kwargs['action_plan'] = ActionPlan.objects.filter(language=lc).last()
     kwargs['internal_regulation'] = InternalRegulation.objects.filter(
         language=lc).last()
-    kwargs['social_network'] = SocialNetwork.objects.last()
+    kwargs['social_networks'] = SocialNetwork.objects.all()
     return kwargs

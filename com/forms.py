@@ -53,14 +53,14 @@ class PostModelForm(forms.ModelForm):
         widgets = {
             'content': TinyMCE(attrs={'rows': 30, 'cols': 80})
         }
-    # def clean_title(self):
-    #     title = self.cleaned_data.get('title')
-    #     qs = Post.objects.filter(title = title)
+    def clean_title(self):
+        title = self.cleaned_data.get('title')
+        qs = Post.objects.filter(title = title)
 
-    #     if qs.exists():
-    #         raise forms.ValidationError('Un article de même nom existe')
+        if qs.exists():
+            raise forms.ValidationError('Un article de même nom existe')
 
-    #     return title
+        return title
 
 
 class EventModelForm(forms.ModelForm):

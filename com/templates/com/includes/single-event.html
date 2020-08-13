@@ -1,24 +1,26 @@
-<div class="event-block d-flex my-3" data-aos="fade-up" data-aos-duration="550">
-    <h2 class="font-weight-bold color-orange mr-3">{{counter}}</h2>
-    <div class="event-info">
-        <h5 class="color-blue">
-            <a href="javascript:">
-                {{event.title}}
-            </a>
-        </h5>
-        <ul class="pl-0">
-            <li class="pr-3">
-                <i class="ti-calendar pr-2"></i>
-                <span>{{event.start_date}}</span>
-            </li>
-            <li class="pr-3">
-                <i class="ti-alarm-clock pr-2"></i>
-                <span>{{event.start_time}} - {{event.end_time}}</span>
-            </li>
-            <li class="pr-3">
-                <i class="ti-location-arrow pr-2"></i>
-                <span>{{event.location}} / {{event.location_city}}</span>
-            </li>
-        </ul>
+<div class="col-6">
+    <div class="event-block d-flex my-3">
+        <h2 class="font-weight-bold color-orange mr-3">{{counter}}</h2>
+        <div class="event-info">
+            <h5 class="color-blue">
+                <a href="{{event.get_absolute_url}}">
+                    {{event.title}}
+                </a>
+            </h5>
+            <ul class="pl-0">
+                <li class="pr-3">
+                    <i class="ti-calendar pr-2"></i>
+                    <span>{{event.start_date}}</span> - <span>{{event.end_date}}</span>
+                </li>
+                <li class="pr-3">
+                    <i class="ti-alarm-clock pr-2"></i>
+                    <span>{{event.start_time}} - {{event.end_time}}</span>
+                </li>
+                <li class="pr-3">
+                    <i class="ti-location-arrow pr-2"></i>
+                    <span>{{event.location}} / {{event.location_city}}</span>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

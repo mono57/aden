@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from us.models import *
-
+from us.forms import AboutModelForm
 class StrategicComityModelAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'title',)
 
@@ -25,7 +25,14 @@ class InternalRegulationModelAdmin(admin.ModelAdmin):
 admin.site.register(InternalRegulation, InternalRegulationModelAdmin)
 
 
-# class SocialNetworkModelAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'link')
+class SocialNetworkModelAdmin(admin.ModelAdmin):
+    list_display = ('name', 'type', 'accessibility')
 
-# admin.site.register(SocialNetwork, SocialNetworkModelAdmin)
+admin.site.register(SocialNetwork, SocialNetworkModelAdmin)
+
+
+class AboutModelAdmin(admin.ModelAdmin):
+    list_display = ('language',)
+    form = AboutModelForm
+
+admin.site.register(About, AboutModelAdmin)

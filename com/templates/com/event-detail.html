@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+{{event.title}}
+{% endblock title %}
+
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8">
+            {% if event.image %}
+            <img src="{{event.image.url}}" alt="{{event.title}}" class="img-fluid mb-3" width="150">
+            {% endif %}
+            <p>Date de debut: <span class="text-primary">{{event.start_date}}</span></p>
+            <p>Date de fin: <span class="text-primary">{{event.end_date}}</span></p>
+            <p>Heure de debut: <span class="text-primary">{{event.start_time}}</span> - Heure de
+                fin: <span class="text-primary">{{event.start_time}}</span></p>
+            <p>{{event.description|safe}}</p>
+        </div>
+        <div class="col-md-4">
+            {% for e in events %}
+            {% include "com/includes/single-event.html" with event=e %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

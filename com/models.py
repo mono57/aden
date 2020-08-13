@@ -81,7 +81,7 @@ class Post(TimeStampModel):
     slug = models.SlugField(blank=True)
     content = models.TextField(verbose_name='Contenu de l\'article')
     category = models.ManyToManyField(
-        PostCategory, related_name='posts', verbose_name='Categories d\'article')
+        PostCategory, related_name='posts', blank=True, verbose_name='Categories d\'article')
     image = models.ImageField(
         verbose_name='Image de couverture', blank=True, upload_to='posts/')
     is_visible = models.BooleanField(
@@ -133,7 +133,7 @@ class Event(TimeStampModel):
     expired = models.BooleanField(default=False, verbose_name='Expiré')
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='events')
-    image_description = models.ImageField(
+    image = models.ImageField(
         upload_to='events/%Y/%m/%d', blank=True, null=True, verbose_name='Image de description')
     published = models.BooleanField(default=True, verbose_name='Publier')
     # organizer = models.ManyToManyField(User)
@@ -142,6 +142,9 @@ class Event(TimeStampModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('com:event-detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Agenda'

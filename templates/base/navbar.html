@@ -6,10 +6,13 @@
 {% url 'com:news-list' as news_url %}
 {% url 'com:event-list' as events_url %}
 {% url 'com:post-list' as posts_url %}
+{% url 'com:comity' as comity_url %}
 {% url 'contact' as contact_url %}
 {% url 'aden' as aden_url %}
 {% url 'ensai' as ensai_url %}
 {% url 'network' as network_url %}
+{% url 'faq' as faq_url %}
+{% url 'about' as about_url %}
 
 {% get_current_language as LANGUAGE_CODE %}
 
@@ -30,9 +33,20 @@
             </div>
 
             <ul class="social-icon col-xl-5 col-lg-3 col-md-6 mb-0">
-                <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-                <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="javascript:"><i class="fa fa-linkedin"></i></a></li>
+
+                {% for social in social_networks %}
+
+                {% if social.accessibility == 'public' %}
+                <li><a href="{{social.link}}"><i class="fa fa-{{social.type}}"></i></a></li>
+                {% endif %}
+
+                {% if social.accessibility == 'private' and request.user.is_member %}
+                <li><a href="{{social.link}}"><i class="fa fa-{{social.type}}"></i></a></li>
+                {% endif %}
+                {% endfor %}
+
+                <!-- <li><a href="https://t.me/joinchat/Gi79p09Vj1E4wpoAq3oBng"><i class="fa fa-telegram"></i></a></li>
+                <li><a href="javascript:"><i class="fa fa-linkedin"></i></a></li> -->
             </ul>
         </div>
     </div>
@@ -57,14 +71,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{ensai_url}}" data-toggle="dropdown">L’ENSAI</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ensai_url}}#">Présentation institutionnelle</a>
-                            <a class="dropdown-item" href="{{ensai_url}}#">Ses filières et formations</a>
+                            <a class="dropdown-item" href="{{ensai_url}}#presentation">Présentation institutionnelle</a>
+                            <a class="dropdown-item" href="{{ensai_url}}#filiere">Ses filières et formations</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{aden_url}} data-toggle="dropdown">L’ADEN</a>
+                        <a class="nav-link dropdown-toggle" href="{{aden_url}} data-toggle=" dropdown">L’ADEN</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{aden_url}}#who-are-us">Qui sommes-nous ?</a>
+                            <a class="dropdown-item" href="{{about_url}}">Qui sommes-nous ?</a>
                             <a class="dropdown-item" href="{% if status %}
                               {{status.file.url}}
                               {% else %} #
@@ -72,7 +86,7 @@
                             <a class="dropdown-item" href="{% if internal_regulation %}
                               {{internal_regulation.file.url}} {% else %} #
                             {% endif %}">Le Règlement intérieur</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">Le Comité Stratégique</a>
+                            <a class="dropdown-item" href="{{comity_url}}">Le Comité Stratégique</a>
                             <a class="dropdown-item" href="{{aden_url}}#">L'Assemblée générale</a>
                             <a class="dropdown-item" href="{{aden_url}}#">Les Coordonnées</a>
                             <a class="dropdown-item" href="{% if action_plan %}
@@ -121,14 +135,15 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Projets institutionnels</a>
                             <a class="dropdown-item" href="#">Projets industriels</a>
-                            <a class="dropdown-item" href="{% url 'project:project-create' %}">Proposer une idée de projet</a>
+                            <a class="dropdown-item" href="{% url 'project:project-create' %}">Proposer une idée de
+                                projet</a>
 
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Aide</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">FAQ</a>
+                            <a class="dropdown-item" href="{{faq_url}}">FAQ</a>
                             <a class="dropdown-item" href="#">Mentions légales</a>
                             <a class="dropdown-item" href="{{contact_url}}">Contact</a>
                         </div>
@@ -139,17 +154,17 @@
                     <li class="nav-item ">
                         <form action="{% url 'set_language' %}" method="POST" id="form-change-lang">
                             {% csrf_token %}
-                        <a class="nav-link active change-lang" href="{{home_url}}">
-                            {% if lc == 'fr' %}
-                            <img src="{{english}}" alt="English">
-                            <input type="hidden" name="language" value="en">
-                            {% else %}
-                            <img src="{{french}}" alt="Français">
-                            <input type="hidden" name="language" value="fr">
-                            {% endif %}
-                            
-                        </a>
-                    </form>
+                            <a class="nav-link active change-lang" href="{{home_url}}">
+                                {% if lc == 'fr' %}
+                                <img src="{{english}}" alt="English">
+                                <input type="hidden" name="language" value="en">
+                                {% else %}
+                                <img src="{{french}}" alt="Français">
+                                <input type="hidden" name="language" value="fr">
+                                {% endif %}
+
+                            </a>
+                        </form>
                     </li>
                     {% endwith %}
                 </ul>
@@ -234,9 +249,29 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="#">FAQ</a>
+            <a class="dropdown-item" href="{{faq_url}}">FAQ</a>
             <a class="dropdown-item" href="#">Mentions légales</a>
             <a class="dropdown-item" href="{{contact_url}}">Contact</a>
         </div>
+
+        {% static "assets/images/i18n/united-kingdom.png" as english %}
+        {% static "assets/images/i18n/france.png" as french %}
+        {% with LANGUAGE_CODE as lc %}
+        <li class="nav-item ">
+            <form action="{% url 'set_language' %}" method="POST" id="form-change-lang">
+                {% csrf_token %}
+                <a class="nav-link active change-lang" href="{{home_url}}">
+                    {% if lc == 'fr' %}
+                    <img src="{{english}}" alt="English">
+                    <input type="hidden" name="language" value="en">
+                    {% else %}
+                    <img src="{{french}}" alt="Français">
+                    <input type="hidden" name="language" value="fr">
+                    {% endif %}
+
+                </a>
+            </form>
+        </li>
+        {% endwith %}
     </div>
 </div>

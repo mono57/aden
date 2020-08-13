@@ -2,12 +2,14 @@ from django.shortcuts import render
 from django.views.generic import (
     ListView,
     DetailView,
+    TemplateView
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from com.models import Post, News, Event, Document, Galery, PostCategory
 from aden.decorators import aden_member_required
+from us.models import StrategicComity
 
 
 @method_decorator(login_required, name='dispatch')
@@ -17,12 +19,14 @@ class PostListView(ListView):
     model = Post
     context_object_name = 'posts'
 
+
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
 class GaleryListView(ListView):
     model = Galery
     template_name = 'com/galery-list.html'
     context_object_name = 'galeries'
+
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
@@ -37,6 +41,7 @@ class PostDetailView(DetailView):
             slug=self.kwargs.get('slug'))[:3]
         return ctx
 
+
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
 class NewsListView(ListView):
@@ -48,6 +53,7 @@ class NewsListView(ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = PostCategory.objects.all()
         return context
+
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
@@ -62,9 +68,35 @@ class NewsDetailView(DetailView):
             slug=self.kwargs.get('slug'))[:3]
         return ctx
 
+
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
 class EventListView(ListView):
     template_name = 'com/event-list.html'
     model = Event
     context_object_name = 'events'
+
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class EventDetailView(DetailView):
+    template_name = 'com/event-detail.html'
+    context_object_name = 'event'
+    model = Event
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['events'] = Event.objects.exclude(pk=self.get_object().pk)
+        return context
+
+
+class StrategicComityTempateView(TemplateView):
+    template_name = 'us/comity.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['first_grade'] = StrategicComity.objects.filter(
+            grade=1).first()
+        context['second_grades'] = StrategicComity.objects.filter(grade=2)
+        context['third_grades'] = StrategicComity.objects.filter(grade=3)
+        return context

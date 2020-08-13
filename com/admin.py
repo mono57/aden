@@ -11,11 +11,11 @@ class GaleryModelAdmin(admin.ModelAdmin):
         obj.creator = request.user
         super().save_model(request, obj, form, change)
         for file in request.FILES.getlist('files'):
-            # GaleryImage.objects.create(
-            #     galery = obj,
-            #     image = file
-            # )
-            print(file)
+            GaleryImage.objects.create(
+                galery = obj,
+                image = file
+            )
+            # print(file)
 
     
 admin.site.register(Galery, GaleryModelAdmin)

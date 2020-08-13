@@ -55,7 +55,7 @@
                           <img src="{% static "assets/images/icons/member.png" %}" class="img-fluid" alt=teacher>
                       </div>
                       <h5 class="count-text mt-2">Membres actifs</h5>
-                      <h2 class="timer count-title count-number" data-to="300" data-speed="1500"></h2>
+                      <h2 class="timer count-title count-number" data-to="{{members_count}}" data-speed="1500"></h2>
                   </div>
               </div>
               <div class="col-lg-3 col-md-6 col-sm-6">
@@ -65,7 +65,7 @@
                           <img src="{% static "assets/images/icons/work.png" %}" class="img-fluid" alt="classroom">
                       </div>
                       <h5 class="count-text mt-2">Offres d'emploi</h5>
-                      <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+                      <h2 class="timer count-title count-number" data-to="{{jobs_count|default:'0'}}" data-speed="1500"></h2>
                   </div>
               </div>
               <div class="col-lg-3 col-md-6 col-sm-6">
@@ -75,7 +75,7 @@
                           <img src="{% static "assets/images/icons/article.png" %}" class="img-fluid" alt="career">
                       </div>
                       <h5 class="count-text mt-2">Articles Publiés</h5>
-                      <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+                      <h2 class="timer count-title count-number" data-to="{{posts_count}}" data-speed="1500"></h2>
                   </div>
               </div>
               <div class="col-lg-3 col-md-6 col-sm-6">
@@ -85,7 +85,7 @@
                           <img src="{% static "assets/images/icons/gallery.png" %}" class="img-fluid" alt="activity">
                       </div>
                       <h5 class="count-text mt-2">Album Photos</h5>
-                      <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+                      <h2 class="timer count-title count-number" data-to="{{photos_count}}" data-speed="1500"></h2>
                   </div>
               </div>
           </div>
@@ -99,7 +99,7 @@
       <div class="about-box pb-3">
           <img src="{% static "assets/images/logo.jpg" %}" width="100" alt="" srcset="">
       </div>
-      <h3 data-aos="fade-up" data-aos-duration="1050" class="font-weight-bold">Le réseau des anciens étudiants de l'Ecole Natianale Superieur d'Agro-Industrie.</h5>
+      <h3 data-aos="fade-up" data-aos-duration="1050" class="font-weight-bold">École Nationale Superieure des Sciences Agro-Industrielles</h5>
       <h6 class="pb-3 px-5 mb-0" data-aos="fade-up" data-aos-duration="1050">Réunir et assurer des liens amicaux entre les diplômés de L’ENSAI ou de l’ENSIAAC
         de Ngaoundéré ; Participer activement au développement et au rayonnement de l'ENSAI de Ngaoundéré;</h6>
     
@@ -108,9 +108,9 @@
           <a href="#" class="left-btn">Lire plus a propos de nous</a>
           <a href="#" class="right-btn">Contactez-nous</a>
       </div> -->
-      <div class="btn-group">
-          <a href="" class="btn theme-orange">Lire plus a propos de nous</a>
-          <a href="" class="btn theme-orange ml-3">Contactez-nous</a>
+      <div class="">
+          <a href="{% url 'about' %}" class="btn theme-orange">Lire plus a propos de nous</a>
+          <a href="{% url 'contact' %}" class="btn theme-orange ml-3">Contactez-nous</a>
       </div>
   </div>
 </section>
@@ -182,7 +182,6 @@
           <div class="col-lg-7">
               <div class="sec-title" data-aos="fade-up" data-aos-duration="550">
                   <span class="title">Nos evénements</span>
-                  <h2>Nos évements avenir et passés</h2>
                   
                   {% for event in events %}
                  {% include "com/includes/single-event.html" with event=event %}
@@ -206,8 +205,8 @@
           </div>
           <div class="col-lg-6 col-md-6 p-5" data-aos="fade-up" data-aos-duration="550">
               <div class="sec-title bg-fill">
-                  <span class="title">FAQUALITY ASK QUESTION</span>
-                  <h2 class="text-white">Les questions les plus pertinentes</h2>
+                  <span class="title">LES QUESTIONS FREQUEMMENT POSÉES</span>
+                  <!-- <h2 class="text-white">Les questions les plus pertinentes</h2> -->
                   
               </div>
 
@@ -286,16 +285,16 @@
     <div class="container">
         <div class="sec-title text-center mb-3" data-aos="fade-up" data-aos-duration="1000">
             <span class="title">Notre galerie d'images</span>
-            <h2>Révivez nos meileurs moments en images 😍😍</h2>
-            
+            <h4>Révivez nos meileurs moments en images 😍😍</h4>
+            <a href="{% url 'com:galery-list' %}" class="text-primary">Voir plus</a>
         </div>
   
         <div class="row">
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane  fade show active" id="showall" role="tabpanel" aria-labelledby="showall-tab">
 
-                  {% for photo in gallery.images.all %}
-                    {% include "com/includes/galery-item.html" with photo=photo %}
+                  {% for photo in photos %}
+                    {% include "com/includes/galery-item.html" with item=photo %}
                   {% endfor %}
                     
                 </div>
@@ -369,12 +368,12 @@
   <div class="container">
       <div class="sec-title text-center mb-3">
           <span class="title">Nos articles</span>
-          <h2>Nous vous tenons toujours à jour avec nos nouveaux articles de blog</h2>
+          <h4>Nous vous tenons toujours à jour avec nos nouveaux articles de blog</h4>
        
       </div>
       <div class="row">
           {% for post in posts %}
-            {% include "com/single-post.html" with item=post %}
+            {% include "com/includes/single-post.html" with item=post %}
           {% endfor %}
       </div>
   </div>
@@ -384,12 +383,12 @@
     <div class="container">
         <div class="sec-title text-center mb-3">
             <span class="title">Nos actualités</span>
-            <h2>Suivez nous et restez au courant de tout ce qu'il se passe!</h2>
+            <h4>Suivez nous et restez au courant de tout ce qu'il se passe!</h4>
          
         </div>
         <div class="row">
             {% for new in news %}
-              {% include "com/single-post.html" with item=post %}
+              {% include "com/includes/single-post.html" with item=new %}
             {% endfor %}
         </div>
     </div>

@@ -29,7 +29,10 @@
                         <div class="row">
                            {% for new in news %}
                            <div class="col-md-4 col-sm-2 col-2 mb-2 pr-0">
+                            {% if new.image %}
                             <img src="{{new.image.url}}" class="img-fluid" alt="{{new.title}}">
+                              
+                            {% endif %}
                         </div>
                            {% endfor %}
                            

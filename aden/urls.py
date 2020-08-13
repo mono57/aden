@@ -12,7 +12,7 @@ from aden.views import *
 i18n_url = i18n_patterns(
     path(
         '',
-        TemplateView.as_view(template_name='index.html'),
+        HomeTemplateView.as_view(),
         name='home'),
     path(
         'contact/',
@@ -23,9 +23,18 @@ i18n_url = i18n_patterns(
         TemplateView.as_view(template_name='aden.html'),
         name='aden'),
     path(
+        'about/',
+        AboutTemplateView.as_view(),
+        name='about'
+    ),
+    path(
         'ensai/',
         TemplateView.as_view(template_name='ensai.html'),
         name='ensai'),
+    path(
+        'faq/',
+        TemplateView.as_view(template_name='faq.html'),
+        name='faq'),
     path(
         'network/',
         NetworkTemplateView.as_view(template_name='network.html'),

@@ -15,6 +15,15 @@ class StrategicComity(TimeStampModel):
     location = models.CharField(max_length=150, verbose_name="Domicile")
     promotion = models.CharField(max_length=80, verbose_name='Promotion')
     photo = models.ImageField(upload_to='photos/', verbose_name='Photo')
+    grade = models.CharField(
+        max_length=2,
+        verbose_name='Priorité',
+        choices=(
+            ('1', 'Niveau 1'),
+            ('2', 'Niveau 2'),
+            ('3', 'Niveau 3'),
+        )
+    )
 
     def __str__(self):
         return self.full_name
@@ -71,13 +80,42 @@ class InternalRegulation(TimeStampModel):
         verbose_name = 'Règlement interieur'
         verbose_name_plural = 'Règlements interieurs'
 
+SOCIAL_CHOICES = (
+    ('facebook', 'Facebook'),
+    ('twitter', 'Twitter'),
+    ('telegram', 'Telegram'),
+    ('linkedin', 'LinkedIn'),
+)
 
 class SocialNetwork(TimeStampModel):
     name = models.CharField(
         max_length=20, 
         verbose_name='Nom du réseau social')
+    type = models.CharField(
+        max_length=10,
+        choices = SOCIAL_CHOICES,
+        verbose_name='Type du réseau'
+    )
+    accessibility = models.CharField(
+        max_length=10,
+        choices = (('private', 'Membre seulement'), ('public', 'Public')),
+        verbose_name='Visibilité',
+        default='public'
+    )
     link = models.URLField(verbose_name='Lien direct du réseau social')
 
     class Meta:
         verbose_name = 'Réseau Social'
         verbose_name_plural = 'Résaux sociaux'
+
+class About(TimeStampModel):
+    content = models.TextField(verbose_name='Contenu de a propos')
+    language = models.CharField(
+        max_length=10,
+        choices=LANGUAGE_CHOICES,
+        verbose_name='Version de langue du fichier'
+    )
+
+    class Meta:
+        verbose_name = 'A propos'
+        verbose_name_plural = 'A propos'

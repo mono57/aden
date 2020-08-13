@@ -6,14 +6,17 @@ from aden.utils import TimeStampModel
 class Project(TimeStampModel):
     owner = models.CharField(
         max_length=100,
-        verbose_name='Nom(s) et Prénoms du porteur de projet'
+        verbose_name='Nom(s) et Prénom(s) du porteur de projet'
     )
     filiere = models.CharField(
+        blank=True,
         max_length=255,
         verbose_name='Filière'
     )
     school_out_date = models.DateField(
-        verbose_name='Date de sortie de l\'ENSAI')
+        blank=True,
+        verbose_name='Date de sortie de l\'ENSAI'
+    )
     name = models.CharField(
         max_length=255,
         verbose_name='Désignation du projet'
