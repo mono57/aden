@@ -36,6 +36,16 @@ i18n_url = i18n_patterns(
         TemplateView.as_view(template_name='faq.html'),
         name='faq'),
     path(
+        'interface/',
+        TemplateView.as_view(template_name='interface.html'),
+        name='interface'
+    ),
+    path(
+        'downloads/',
+        TemplateView.as_view(template_name='download.html'),
+        name='download'
+    ),
+    path(
         'network/',
         NetworkTemplateView.as_view(template_name='network.html'),
         name='network'),
