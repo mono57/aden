@@ -1,0 +1,2164 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": { "app_label": "admin", "model": "logentry" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": { "app_label": "auth", "model": "permission" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": { "app_label": "auth", "model": "group" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": { "app_label": "contenttypes", "model": "contenttype" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": { "app_label": "sessions", "model": "session" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": { "app_label": "sites", "model": "site" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": { "app_label": "accounts", "model": "user" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "accounts", "model": "profile" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": { "app_label": "com", "model": "galery" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": { "app_label": "com", "model": "postcategory" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": { "app_label": "com", "model": "post" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": { "app_label": "com", "model": "news" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": { "app_label": "com", "model": "galeryimage" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": { "app_label": "com", "model": "event" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": { "app_label": "com", "model": "document" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": { "app_label": "us", "model": "strategiccomity" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": { "app_label": "account", "model": "emailaddress" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": { "app_label": "account", "model": "emailconfirmation" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": { "app_label": "us", "model": "actionplan" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": { "app_label": "us", "model": "internalregulation" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": { "app_label": "us", "model": "socialnetwork" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": { "app_label": "us", "model": "status" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": { "app_label": "project", "model": "project" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": { "app_label": "us", "model": "about" }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "3eosxhsmyeuw4gz5ke8s5kcqtdfaaf38",
+    "fields": {
+      "session_data": "M2ExY2JhYjRjMWVmOGQ3MGJhNDY3YTA5NzE0ZjEwNDEwMDRhNTMyOTp7Il9sYW5ndWFnZSI6ImZyIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6IjI0MWMwNTlmMzlhZjk3NjY2ODhhOWQ1NWNlOWNmZWJlNzY4NzI2YzEifQ==",
+      "expire_date": "2020-08-20T22:31:26.884Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "igr1d3jnk7qwswl35dav2c3amkf495sz",
+    "fields": {
+      "session_data": "MTRiMGQ5NjEwMTIwMjRiYzBjYmRkNWY3Yzc0MmI3NGI1YWYwZGVlNTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyNDFjMDU5ZjM5YWY5NzY2Njg4YTlkNTVjZTljZmViZTc2ODcyNmMxIiwiX3Nlc3Npb25fZXhwaXJ5IjowLCJfbGFuZ3VhZ2UiOiJmciJ9",
+      "expire_date": "2020-08-27T20:34:46.326Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "mfzmririovk9i8cjylv63qm7i65u721o",
+    "fields": {
+      "session_data": "MTAxMjhhNTQwOWI5NzVmM2Q5ZDRhYmJjZjg4ZjE0YjY3MzUxZDdiNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyNDFjMDU5ZjM5YWY5NzY2Njg4YTlkNTVjZTljZmViZTc2ODcyNmMxIn0=",
+      "expire_date": "2020-08-17T23:31:24.214Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "s9rmywiylfh1ydklnuo5wmi0nkxs45r4",
+    "fields": {
+      "session_data": "ZTAwYTdmYjY0MzRiZmFlMjgzODc0ODkwMzVlYjVmZDdkMzY1YzBlZjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyNDFjMDU5ZjM5YWY5NzY2Njg4YTlkNTVjZTljZmViZTc2ODcyNmMxIiwiX3Nlc3Npb25fZXhwaXJ5IjowfQ==",
+      "expire_date": "2020-08-25T19:24:17.579Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ucaxixskm1gmbrug2jqp0ht47m7b40qc",
+    "fields": {
+      "session_data": "MmFkY2M4MjI2MzNlNzFjZWU3ODU0MTFhNWI5OTM2MWEwODIxMTg1Yzp7Il9sYW5ndWFnZSI6ImZyIn0=",
+      "expire_date": "2020-08-19T21:00:48.707Z"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": { "domain": "example.com", "name": "example.com" }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$SP2qmyOrU3IR$C5eNvQs8M/8ztjSlTQcRSGBnOjNxNFsHQVT069CFIAI=",
+      "email": "admin@aden.com",
+      "first_name": "Aymar",
+      "last_name": "mono57",
+      "date_joined": "2020-08-03T22:42:46.499Z",
+      "last_login": "2020-08-13T10:56:51.808Z",
+      "is_active": true,
+      "is_staff": true,
+      "is_member": true,
+      "admin": true
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$sYzAX9SgMm3V$+RMrnKW9fDig1nTIw/tKrY0n4wuGDhqLH31Mey/0NtU=",
+      "email": "a@gmail.com",
+      "first_name": "",
+      "last_name": "",
+      "date_joined": "2020-08-03T22:47:12.750Z",
+      "last_login": "2020-08-03T23:09:28.133Z",
+      "is_active": true,
+      "is_staff": false,
+      "is_member": false,
+      "admin": false
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$9t9foyeWUlmY$OoWcNqHP90QUWxz/J73kUXM4538vN3cbzX8NRoEKwaU=",
+      "email": "am@gmail.com",
+      "first_name": "",
+      "last_name": "",
+      "date_joined": "2020-08-03T23:18:53.895Z",
+      "last_login": "2020-08-03T23:18:53.378Z",
+      "is_active": true,
+      "is_staff": false,
+      "is_member": true,
+      "admin": true
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$lPmvVI1XCP2S$++Jn8qWZGdiE9kuP/yQMZ2JNkaSfZtRQVOW6Xz7MAw8=",
+      "email": "l@gmail.com",
+      "first_name": "",
+      "last_name": "",
+      "date_joined": "2020-08-03T23:21:07.084Z",
+      "last_login": "2020-08-03T23:21:06.567Z",
+      "is_active": true,
+      "is_staff": true,
+      "is_member": true,
+      "admin": true
+    }
+  },
+  {
+    "model": "accounts.profile",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-03",
+      "updated_at": "2020-08-04",
+      "photo": "photo/profiles/amono_qTctUi9.png",
+      "birthday": null,
+      "birth_location": "Dissing",
+      "promo": "GIN22",
+      "user": 1
+    }
+  },
+  {
+    "model": "accounts.profile",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-03",
+      "updated_at": "2020-08-04",
+      "photo": "",
+      "birthday": null,
+      "birth_location": "Dissing",
+      "promo": "",
+      "user": 2
+    }
+  },
+  {
+    "model": "accounts.profile",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-04",
+      "updated_at": "2020-08-04",
+      "photo": "",
+      "birthday": null,
+      "birth_location": "",
+      "promo": "",
+      "user": 3
+    }
+  },
+  {
+    "model": "accounts.profile",
+    "pk": 4,
+    "fields": {
+      "created_at": "2020-08-04",
+      "updated_at": "2020-08-04",
+      "photo": "",
+      "birthday": null,
+      "birth_location": "",
+      "promo": "",
+      "user": 4
+    }
+  },
+  {
+    "model": "com.galery",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "name": "le dernier chasseur de sorcier",
+      "slug": "le-dernier-chasseur-de-sorcier",
+      "description": "",
+      "is_visible": true,
+      "creator": 1
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5857289700807652592.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5864120369550570533.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5864120369550570534.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 4,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5864120369550570536.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 5,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5864120369550570537.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 6,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5864120369550570533_Z8QDLf3.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.galeryimage",
+    "pk": 7,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "image": "gallery/photo5864120369550570534_NSUnVNj.jpg",
+      "galery": 2
+    }
+  },
+  {
+    "model": "com.postcategory",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "name": "Communiqu\u00e9",
+      "slug": "communique"
+    }
+  },
+  {
+    "model": "com.news",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-04",
+      "updated_at": "2020-08-04",
+      "title": "Actualit\u00e9 1",
+      "slug": "actualite-1",
+      "image": "news/aaron-burden-AXqMy8MSSdk-unsplash_Z9AbhJ2.jpg",
+      "content": "<p>The terms are frequently abbreviated to the&nbsp;<a title=\"Numeronym\" href=\"https://en.wikipedia.org/wiki/Numeronym\">numeronyms</a>&nbsp;<em><strong>i18n</strong></em>&nbsp;(where&nbsp;<em>18</em>&nbsp;stands for the number of letters between the first&nbsp;<em>i</em>&nbsp;and the last&nbsp;<em>n</em>&nbsp;in the word&nbsp;<em>internationalization</em>, a usage coined at&nbsp;<a title=\"Digital Equipment Corporation\" href=\"https://en.wikipedia.org/wiki/Digital_Equipment_Corporation\">Digital Equipment Corporation</a>&nbsp;in the 1970s or 1980s)<sup id=\"cite_ref-3\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-3\">[3]</a></sup><sup id=\"cite_ref-4\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-4\">[4]</a></sup>&nbsp;and&nbsp;<strong>L10n</strong>&nbsp;for&nbsp;<em>localization</em>, due to the length of the words.<sup id=\"cite_ref-5\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-5\">[5]</a></sup><sup id=\"cite_ref-GNU_Org.,_2019_6-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-GNU_Org.,_2019-6\">[6]</a></sup>&nbsp;Some writers have the latter acronym capitalized to help distinguish the two.<sup id=\"cite_ref-L10n_7-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-L10n-7\">[7]</a></sup></p>\r\n<p>Some companies, like&nbsp;<a title=\"IBM\" href=\"https://en.wikipedia.org/wiki/IBM\">IBM</a>&nbsp;and&nbsp;<a title=\"Oracle Corporation\" href=\"https://en.wikipedia.org/wiki/Oracle_Corporation\">Oracle</a>, use the term&nbsp;<em><a title=\"Globalization\" href=\"https://en.wikipedia.org/wiki/Globalization\">globalization</a></em>,&nbsp;<em>g11n</em>, for the combination of internationalization and localization.<sup id=\"cite_ref-8\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-8\">[8]</a></sup>&nbsp;Also known as \"<a title=\"Glocalization\" href=\"https://en.wikipedia.org/wiki/Glocalization\">glocalization</a>\" (a&nbsp;<a title=\"Portmanteau\" href=\"https://en.wikipedia.org/wiki/Portmanteau\">portmanteau</a>&nbsp;of&nbsp;<em>globalization</em>&nbsp;and&nbsp;<em>localization</em>).</p>\r\n<p><a title=\"Microsoft\" href=\"https://en.wikipedia.org/wiki/Microsoft\">Microsoft</a>&nbsp;defines internationalization as a combination of world-readiness and localization. World-readiness is a developer task, which enables a product to be used with multiple scripts and cultures (globalization) and separating user interface resources in a localizable format (localizability, abbreviated to&nbsp;<em>L12y</em>).<sup id=\"cite_ref-9\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-9\">[9]</a></sup><sup id=\"cite_ref-10\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-10\">[10]</a></sup></p>\r\n<p><a title=\"Hewlett-Packard\" href=\"https://en.wikipedia.org/wiki/Hewlett-Packard\">Hewlett-Packard</a>&nbsp;and&nbsp;<a title=\"HP-UX\" href=\"https://en.wikipedia.org/wiki/HP-UX\">HP-UX</a>&nbsp;created a system called \"National Language Support\" or \"Native Language Support\" (NLS) to produce localizable software.<sup id=\"cite_ref-SFW_1-1\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup></p>\r\n<h2><span id=\"Scope\" class=\"mw-headline\">Scope</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a title=\"Edit section: Scope\" href=\"https://en.wikipedia.org/w/index.php?title=Internationalization_and_localization&amp;action=edit&amp;section=2\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2>\r\n<div class=\"thumb tright\">\r\n<div class=\"thumbinner\"><a class=\"image\" href=\"https://en.wikipedia.org/wiki/File:Globalisationchart.jpg\"><img class=\"thumbimage\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Globalisationchart.jpg/400px-Globalisationchart.jpg\" srcset=\"//upload.wikimedia.org/wikipedia/commons/e/e3/Globalisationchart.jpg 1.5x\" alt=\"\" width=\"430\" height=\"349\" data-file-width=\"509\" data-file-height=\"413\" /></a>\r\n<div class=\"thumbcaption\">\r\n<div class=\"magnify\">&nbsp;</div>\r\nThe internationalization and localization process<br />(based on a chart from the&nbsp;<a title=\"Localization Industry Standards Association\" href=\"https://en.wikipedia.org/wiki/Localization_Industry_Standards_Association\">LISA</a>&nbsp;website)</div>\r\n</div>\r\n</div>\r\n<p>According to&nbsp;<em>Software without frontiers</em>, the design aspects to consider when internationalizing a product are \"data encoding, data and documentation, software construction, hardware device support, user interaction\"; while the key design areas to consider when making a fully internationalized product from scratch are \"user interaction, algorithm design and data formats, software services, documentation\".<sup id=\"cite_ref-SFW_1-2\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup></p>\r\n<p>Translation is typically the most time-consuming component of&nbsp;<a class=\"mw-redirect\" title=\"Language localization\" href=\"https://en.wikipedia.org/wiki/Language_localization\">language localization</a>.<sup id=\"cite_ref-SFW_1-3\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup>&nbsp;This may involve:</p>\r\n<ul>\r\n<li>For film, video, and audio, translation of spoken words or music lyrics, often using either&nbsp;<a class=\"mw-redirect\" title=\"Dub localization\" href=\"https://en.wikipedia.org/wiki/Dub_localization\">dubbing</a>&nbsp;or&nbsp;<a class=\"mw-redirect\" title=\"Subtitle (captioning)\" href=\"https://en.wikipedia.org/wiki/Subtitle_(captioning)\">subtitles</a></li>\r\n<li>Text translation for printed materials, digital media (possibly including error messages and documentation)</li>\r\n<li>Potentially altering images and logos containing text to contain translations or generic icons<sup id=\"cite_ref-SFW_1-4\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup></li>\r\n<li>Different translation length and differences in character sizes (e.g. between&nbsp;<a title=\"Latin alphabet\" href=\"https://en.wikipedia.org/wiki/Latin_alphabet\">Latin alphabet</a>&nbsp;letters and&nbsp;<a title=\"Chinese characters\" href=\"https://en.wikipedia.org/wiki/Chinese_characters\">Chinese characters</a>) can cause layouts that work well in one language to work poorly in others<sup id=\"cite_ref-SFW_1-5\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup></li>\r\n<li>Consideration of differences in&nbsp;<a title=\"Dialect\" href=\"https://en.wikipedia.org/wiki/Dialect\">dialect</a>,&nbsp;<a title=\"Register (sociolinguistics)\" href=\"https://en.wikipedia.org/wiki/Register_(sociolinguistics)\">register</a>&nbsp;or&nbsp;<a title=\"Variety (linguistics)\" href=\"https://en.wikipedia.org/wiki/Variety_(linguistics)\">variety</a><sup id=\"cite_ref-SFW_1-6\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup></li>\r\n<li>Writing conventions like:\r\n<ul>\r\n<li>Formatting of numbers (especially&nbsp;<a title=\"Decimal separator\" href=\"https://en.wikipedia.org/wiki/Decimal_separator\">decimal separator</a>&nbsp;and&nbsp;<a class=\"mw-redirect\" title=\"Digit grouping\" href=\"https://en.wikipedia.org/wiki/Digit_grouping\">digit grouping</a>)</li>\r\n<li><a title=\"Date and time representation by country\" href=\"https://en.wikipedia.org/wiki/Date_and_time_representation_by_country\">Date and time format</a>, possibly including use of different calendars</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<h3><span id=\"Standard_locale_data\" class=\"mw-headline\">Standard locale data</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a title=\"Edit section: Standard locale data\" href=\"https://en.wikipedia.org/w/index.php?title=Internationalization_and_localization&amp;action=edit&amp;section=3\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3>\r\n<p><a class=\"mw-redirect\" title=\"Computer software\" href=\"https://en.wikipedia.org/wiki/Computer_software\">Computer software</a>&nbsp;can encounter differences above and beyond straightforward translation of words and phrases, because computer programs can generate content dynamically. These differences may need to be taken into account by the internationalization process in preparation for translation. Many of these differences are so regular that a conversion between languages can be easily automated. The&nbsp;<a title=\"Common Locale Data Repository\" href=\"https://en.wikipedia.org/wiki/Common_Locale_Data_Repository\">Common Locale Data Repository</a>&nbsp;by&nbsp;<a title=\"Unicode\" href=\"https://en.wikipedia.org/wiki/Unicode\">Unicode</a>&nbsp;provides a collection of such differences. Its data is used by major&nbsp;<a title=\"Operating system\" href=\"https://en.wikipedia.org/wiki/Operating_system\">operating systems</a>, including&nbsp;<a title=\"Microsoft Windows\" href=\"https://en.wikipedia.org/wiki/Microsoft_Windows\">Microsoft Windows</a>,&nbsp;<a title=\"MacOS\" href=\"https://en.wikipedia.org/wiki/MacOS\">macOS</a>&nbsp;and&nbsp;<a title=\"Debian\" href=\"https://en.wikipedia.org/wiki/Debian\">Debian</a>, and by major Internet companies or projects such as&nbsp;<a title=\"Google\" href=\"https://en.wikipedia.org/wiki/Google\">Google</a>&nbsp;and the&nbsp;<a title=\"Wikimedia Foundation\" href=\"https://en.wikipedia.org/wiki/Wikimedia_Foundation\">Wikimedia Foundation</a>. Examples of such differences include:</p>\r\n<ul>\r\n<li>Different \"scripts\" in different&nbsp;<a class=\"mw-redirect\" title=\"Writing systems\" href=\"https://en.wikipedia.org/wiki/Writing_systems\">writing systems</a>&nbsp;use different&nbsp;<a title=\"Character (symbol)\" href=\"https://en.wikipedia.org/wiki/Character_(symbol)\">characters</a>&nbsp;&ndash; a different set of letters, syllograms, logograms, or symbols. Modern systems use the&nbsp;<a title=\"Unicode\" href=\"https://en.wikipedia.org/wiki/Unicode\">Unicode</a>&nbsp;standard to represent many different languages with a single&nbsp;<a title=\"Character encoding\" href=\"https://en.wikipedia.org/wiki/Character_encoding\">character encoding</a>.</li>\r\n<li><a class=\"mw-redirect\" title=\"Writing direction\" href=\"https://en.wikipedia.org/wiki/Writing_direction\">Writing direction</a>&nbsp;is left to right in most European languages, right-to-left in Hebrew and Arabic, or both in&nbsp;<a title=\"Boustrophedon\" href=\"https://en.wikipedia.org/wiki/Boustrophedon\">boustrophedon</a>&nbsp;scripts, and optionally vertical in some Asian languages.<sup id=\"cite_ref-SFW_1-7\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-SFW-1\">[1]</a></sup></li>\r\n<li><a title=\"Complex text layout\" href=\"https://en.wikipedia.org/wiki/Complex_text_layout\">Complex text layout</a>, for languages where characters change shape depending on context</li>\r\n<li>Capitalization exists in some scripts and not in others</li>\r\n<li>Different languages and writing systems have different&nbsp;<a title=\"Collation\" href=\"https://en.wikipedia.org/wiki/Collation\">text sorting</a>&nbsp;rules</li>\r\n<li>Different languages have different&nbsp;<a title=\"Numeral (linguistics)\" href=\"https://en.wikipedia.org/wiki/Numeral_(linguistics)\">numeral systems</a>, which might need to be supported if&nbsp;<a class=\"mw-redirect\" title=\"Western Arabic numerals\" href=\"https://en.wikipedia.org/wiki/Western_Arabic_numerals\">Western Arabic numerals</a>&nbsp;are not used</li>\r\n<li>Different languages have different pluralization rules, which can complicate programs that dynamically display numerical content.<sup id=\"cite_ref-11\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-11\">[11]</a></sup>&nbsp;Other grammar rules might also vary, e.g.&nbsp;<a class=\"mw-redirect\" title=\"Genitive\" href=\"https://en.wikipedia.org/wiki/Genitive\">genitive</a>.</li>\r\n<li>Different languages use different punctuation (e.g. quoting text using double-quotes (\" \") as in English, or&nbsp;<a title=\"Guillemet\" href=\"https://en.wikipedia.org/wiki/Guillemet\">guillemets</a>&nbsp;(&laquo;&nbsp;&raquo;) as in French)</li>\r\n<li><a title=\"Keyboard shortcut\" href=\"https://en.wikipedia.org/wiki/Keyboard_shortcut\">Keyboard shortcuts</a>&nbsp;can only make use of buttons actually on the&nbsp;<a title=\"Keyboard layout\" href=\"https://en.wikipedia.org/wiki/Keyboard_layout\">keyboard layout</a>&nbsp;which is being localized for. If a shortcut corresponds to a word in a particular language (e.g. Ctrl-s stands for \"save\" in English), it may need to be changed.<sup id=\"cite_ref-12\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-12\">[12]</a></sup></li>\r\n</ul>\r\n<h3><span id=\"National_conventions\" class=\"mw-headline\">National conventions</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a title=\"Edit section: National conventions\" href=\"https://en.wikipedia.org/w/index.php?title=Internationalization_and_localization&amp;action=edit&amp;section=4\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3>\r\n<p>Different countries have different economic conventions, including variations in:</p>\r\n<ul>\r\n<li><a title=\"Paper size\" href=\"https://en.wikipedia.org/wiki/Paper_size\">Paper sizes</a></li>\r\n<li><a title=\"Broadcast television systems\" href=\"https://en.wikipedia.org/wiki/Broadcast_television_systems\">Broadcast television systems</a>&nbsp;and popular&nbsp;<a class=\"mw-redirect\" title=\"Storage media\" href=\"https://en.wikipedia.org/wiki/Storage_media\">storage media</a></li>\r\n<li><a title=\"National conventions for writing telephone numbers\" href=\"https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers\">Telephone number formats</a></li>\r\n<li><a class=\"mw-redirect\" title=\"Address (geography)\" href=\"https://en.wikipedia.org/wiki/Address_(geography)#Mailing_address_format_by_country\">Postal address formats</a>,&nbsp;<a title=\"Postal code\" href=\"https://en.wikipedia.org/wiki/Postal_code\">postal codes</a>, and choice of delivery services</li>\r\n<li><a title=\"Currency\" href=\"https://en.wikipedia.org/wiki/Currency\">Currency</a>&nbsp;(<a title=\"Currency symbol\" href=\"https://en.wikipedia.org/wiki/Currency_symbol\">symbols</a>, positions of currency markers, and reasonable amounts due to different&nbsp;<a title=\"Inflation\" href=\"https://en.wikipedia.org/wiki/Inflation\">inflation</a>&nbsp;histories) &ndash;&nbsp;<a title=\"ISO 4217\" href=\"https://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a>&nbsp;codes are often used for internationalization</li>\r\n<li><a title=\"System of measurement\" href=\"https://en.wikipedia.org/wiki/System_of_measurement\">System of measurement</a></li>\r\n<li><a class=\"mw-redirect\" title=\"Battery sizes\" href=\"https://en.wikipedia.org/wiki/Battery_sizes\">Battery sizes</a></li>\r\n<li><a title=\"Mains electricity by country\" href=\"https://en.wikipedia.org/wiki/Mains_electricity_by_country\">Voltage and current standards</a></li>\r\n</ul>\r\n<p>In particular, the United States and Europe differ in most of these cases. Other areas often follow one of these.</p>\r\n<p>Specific third-party services, such as online maps, weather reports, or&nbsp;<a title=\"Payment service provider\" href=\"https://en.wikipedia.org/wiki/Payment_service_provider\">payment service providers</a>, might not be available worldwide from the same carriers, or at all.</p>\r\n<p><a title=\"Time zone\" href=\"https://en.wikipedia.org/wiki/Time_zone\">Time zones</a>&nbsp;vary across the world, and this must be taken into account if a product originally only interacted with people in a single time zone. For internationalization,&nbsp;<a title=\"Coordinated Universal Time\" href=\"https://en.wikipedia.org/wiki/Coordinated_Universal_Time\">UTC</a>&nbsp;is often used internally and then converted into a local time zone for display purposes.</p>\r\n<p>Different countries have different legal requirements, meaning for example:</p>\r\n<ul>\r\n<li><a class=\"mw-redirect\" title=\"Compliance (regulation)\" href=\"https://en.wikipedia.org/wiki/Compliance_(regulation)\">Regulatory compliance</a>&nbsp;may require customization for a particular jurisdiction, or a change to the product as a whole, such as:\r\n<ul>\r\n<li><a title=\"Privacy law\" href=\"https://en.wikipedia.org/wiki/Privacy_law\">Privacy law</a>&nbsp;compliance</li>\r\n<li>Additional&nbsp;<a title=\"Disclaimer\" href=\"https://en.wikipedia.org/wiki/Disclaimer\">disclaimers</a>&nbsp;on a web site or packaging</li>\r\n<li>Different consumer labelling requirements</li>\r\n<li>Compliance with&nbsp;<a class=\"mw-redirect\" title=\"Export restrictions\" href=\"https://en.wikipedia.org/wiki/Export_restrictions\">export restrictions</a>&nbsp;and regulations on&nbsp;<a title=\"Encryption\" href=\"https://en.wikipedia.org/wiki/Encryption\">encryption</a></li>\r\n<li>Compliance with an&nbsp;<a title=\"Internet censorship\" href=\"https://en.wikipedia.org/wiki/Internet_censorship\">Internet censorship</a>&nbsp;regime or&nbsp;<a title=\"Subpoena\" href=\"https://en.wikipedia.org/wiki/Subpoena\">subpoena</a>&nbsp;procedures</li>\r\n<li>Requirements for&nbsp;<a title=\"Accessibility\" href=\"https://en.wikipedia.org/wiki/Accessibility\">accessibility</a></li>\r\n<li>Collecting different taxes, such as&nbsp;<a title=\"Sales tax\" href=\"https://en.wikipedia.org/wiki/Sales_tax\">sales tax</a>,&nbsp;<a class=\"mw-redirect\" title=\"Value added tax\" href=\"https://en.wikipedia.org/wiki/Value_added_tax\">value added tax</a>, or&nbsp;<a class=\"mw-redirect\" title=\"Customs duties\" href=\"https://en.wikipedia.org/wiki/Customs_duties\">customs duties</a></li>\r\n<li>Sensitivity to different political issues, like&nbsp;<a title=\"Category:Geographical naming disputes\" href=\"https://en.wikipedia.org/wiki/Category:Geographical_naming_disputes\">geographical naming disputes</a>&nbsp;and&nbsp;<a class=\"mw-redirect\" title=\"Border dispute\" href=\"https://en.wikipedia.org/wiki/Border_dispute\">disputed borders</a>&nbsp;shown on maps (e.g., India has proposed a controversial bill that would make failing to show&nbsp;<a title=\"Kashmir\" href=\"https://en.wikipedia.org/wiki/Kashmir\">Kashmir</a>&nbsp;and other areas as intended by the government a crime<sup id=\"cite_ref-HaiderPakistan16_13-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-HaiderPakistan16-13\">[13]</a></sup><sup id=\"cite_ref-HamdaniChanging16_14-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-HamdaniChanging16-14\">[14]</a></sup><sup id=\"cite_ref-CourierAnOver17_15-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Internationalization_and_localization#cite_note-CourierAnOver17-15\">[15]</a></sup>)</li>\r\n</ul>\r\n</li>\r\n<li>Government-assigned numbers have different formats (such as passports,&nbsp;<a class=\"mw-redirect\" title=\"Social Security Number\" href=\"https://en.wikipedia.org/wiki/Social_Security_Number\">Social Security Numbers</a>&nbsp;and other&nbsp;<a title=\"National identification number\" href=\"https://en.wikipedia.org/wiki/National_identification_number\">national identification numbers</a>)</li>\r\n</ul>\r\n<p>Localization also may take into account differences in culture, such as:</p>\r\n<ul>\r\n<li><a title=\"List of holidays by country\" href=\"https://en.wikipedia.org/wiki/List_of_holidays_by_country\">Local holidays</a></li>\r\n<li><a title=\"Personal name\" href=\"https://en.wikipedia.org/wiki/Personal_name\">Personal name</a>&nbsp;and&nbsp;<a title=\"Title\" href=\"https://en.wikipedia.org/wiki/Title\">title</a>&nbsp;conventions</li>\r\n<li><a title=\"Aesthetics\" href=\"https://en.wikipedia.org/wiki/Aesthetics\">Aesthetics</a></li>\r\n<li>Comprehensibility and cultural appropriateness of images and&nbsp;<a title=\"Color symbolism\" href=\"https://en.wikipedia.org/wiki/Color_symbolism\">color symbolism</a></li>\r\n<li><a class=\"mw-redirect\" title=\"Ethnicity\" href=\"https://en.wikipedia.org/wiki/Ethnicity\">Ethnicity</a>, clothing, and&nbsp;<a title=\"Socioeconomic status\" href=\"https://en.wikipedia.org/wiki/Socioeconomic_status\">socioeconomic status</a>&nbsp;of people and architecture of locations pictured</li>\r\n<li>Local customs and&nbsp;<a title=\"Convention (norm)\" href=\"https://en.wikipedia.org/wiki/Convention_(norm)\">conventions</a>, such as social taboos, popular local religions, or superstitions such as&nbsp;<a class=\"mw-redirect\" title=\"Blood types in Japanese culture\" href=\"https://en.wikipedia.org/wiki/Blood_types_in_Japanese_culture\">blood types in Japanese culture</a>&nbsp;vs. astrological signs in other cultures</li>\r\n</ul>",
+      "creator": 1,
+      "is_visible": true,
+      "category": []
+    }
+  },
+  {
+    "model": "com.news",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "Obs\u00e8ques de engelbert CHAGOM",
+      "slug": "obseques-de-engelbert-chagom",
+      "image": "",
+      "content": "<p>A tous les diplom&eacute;s de l'ENSAI,</p>\r\n<p>nous sommes invit&eacute;s &agrave; manisfester notre solidarit&eacute; &agrave; la famille &eacute;prouv&eacute;e en assistant massivement &agrave; la lev&eacute;e de corps ce 25/552/4555 &agrave; la morgue de la garnisson militaire de Douala &agrave; 8h.</p>\r\n<p>Pour la confection d'une gerbe de fleur au nom de l'ADEN, faite vos contributions main lev&eacute;e au</p>\r\n<p>&nbsp;</p>",
+      "creator": 1,
+      "is_visible": true,
+      "category": [1]
+    }
+  },
+  {
+    "model": "com.post",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "une nouvelle section",
+      "slug": "une-nouvelle-section",
+      "content": "<p>Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. In auctor lobortis lacus. Ut leo. Praesent ac massa at ligula laoreet iaculis.</p>\r\n<p>Nullam dictum felis eu pede mollis pretium. Nunc nulla. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Fusce a quam. Nam at tortor in tellus interdum sagittis.</p>\r\n<p>Fusce egestas elit eget lorem. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Nam at tortor in tellus interdum sagittis. Phasellus nec sem in justo pellentesque facilisis. Vivamus elementum semper nisi.</p>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.. Aenean ut eros et nisl sagittis vestibulum. In auctor lobortis lacus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>\r\n<p>Aenean vulputate eleifend tellus. Praesent egestas neque eu enim. Nullam cursus lacinia erat. Nullam quis ante. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.</p>",
+      "image": "posts/color.png",
+      "is_visible": true,
+      "creator": 1,
+      "category": []
+    }
+  },
+  {
+    "model": "com.post",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "une nouvelle section 1",
+      "slug": "une-nouvelle-section-1",
+      "content": "<p>Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. In auctor lobortis lacus. Ut leo. Praesent ac massa at ligula laoreet iaculis.</p>\r\n<p>Nullam dictum felis eu pede mollis pretium. Nunc nulla. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Fusce a quam. Nam at tortor in tellus interdum sagittis.</p>\r\n<p>Fusce egestas elit eget lorem. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Nam at tortor in tellus interdum sagittis. Phasellus nec sem in justo pellentesque facilisis. Vivamus elementum semper nisi.</p>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.. Aenean ut eros et nisl sagittis vestibulum. In auctor lobortis lacus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>\r\n<p>Aenean vulputate eleifend tellus. Praesent egestas neque eu enim. Nullam cursus lacinia erat. Nullam quis ante. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.</p>",
+      "image": "",
+      "is_visible": true,
+      "creator": 1,
+      "category": [1]
+    }
+  },
+  {
+    "model": "com.post",
+    "pk": 4,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "un nouveau chapitre",
+      "slug": "un-nouveau-chapitre",
+      "content": "<p>Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. In auctor lobortis lacus. Ut leo. Praesent ac massa at ligula laoreet iaculis.</p>\r\n<p>Nullam dictum felis eu pede mollis pretium. Nunc nulla. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Fusce a quam. Nam at tortor in tellus interdum sagittis.</p>\r\n<p>Fusce egestas elit eget lorem. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Nam at tortor in tellus interdum sagittis. Phasellus nec sem in justo pellentesque facilisis. Vivamus elementum semper nisi.</p>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.. Aenean ut eros et nisl sagittis vestibulum. In auctor lobortis lacus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>\r\n<p>Aenean vulputate eleifend tellus. Praesent egestas neque eu enim. Nullam cursus lacinia erat. Nullam quis ante. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.</p>",
+      "image": "",
+      "is_visible": true,
+      "creator": 1,
+      "category": []
+    }
+  },
+  {
+    "model": "com.post",
+    "pk": 5,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "Une nouvelle partie",
+      "slug": "une-nouvelle-partie",
+      "content": "<p>Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. In auctor lobortis lacus. Ut leo. Praesent ac massa at ligula laoreet iaculis.</p>\r\n<p>Nullam dictum felis eu pede mollis pretium. Nunc nulla. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Fusce a quam. Nam at tortor in tellus interdum sagittis.</p>\r\n<p>Fusce egestas elit eget lorem. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Nam at tortor in tellus interdum sagittis. Phasellus nec sem in justo pellentesque facilisis. Vivamus elementum semper nisi.</p>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.. Aenean ut eros et nisl sagittis vestibulum. In auctor lobortis lacus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>\r\n<p>Aenean vulputate eleifend tellus. Praesent egestas neque eu enim. Nullam cursus lacinia erat. Nullam quis ante. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.</p>",
+      "image": "",
+      "is_visible": true,
+      "creator": 1,
+      "category": [1]
+    }
+  },
+  {
+    "model": "com.post",
+    "pk": 6,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "Le titre de la premi\u00e8re section du cours",
+      "slug": "le-titre-de-la-premiere-section-du-cours",
+      "content": "<p>Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. In auctor lobortis lacus. Ut leo. Praesent ac massa at ligula laoreet iaculis.</p>\r\n<p>Nullam dictum felis eu pede mollis pretium. Nunc nulla. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Fusce a quam. Nam at tortor in tellus interdum sagittis.</p>\r\n<p>Fusce egestas elit eget lorem. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Nam at tortor in tellus interdum sagittis. Phasellus nec sem in justo pellentesque facilisis. Vivamus elementum semper nisi.</p>\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.. Aenean ut eros et nisl sagittis vestibulum. In auctor lobortis lacus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est.</p>\r\n<p>Aenean vulputate eleifend tellus. Praesent egestas neque eu enim. Nullam cursus lacinia erat. Nullam quis ante. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.</p>",
+      "image": "posts/dashboard.png",
+      "is_visible": true,
+      "creator": 1,
+      "category": [1]
+    }
+  },
+  {
+    "model": "com.event",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "Un nouveau agenda",
+      "slug": "",
+      "start_date": "2020-08-06",
+      "end_date": "2020-08-20",
+      "start_time": "13:30:00",
+      "end_time": "17:30:00",
+      "description": "Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Fusce convallis metus id felis luctus adipiscing.\r\n\r\nDonec id justo. Sed hendrerit. Integer tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
+      "location": "CDTIC",
+      "location_city": "Yaound\u00e9",
+      "expired": false,
+      "creator": 1,
+      "image": "events/2020/08/13/amono.png",
+      "published": true,
+      "registration": []
+    }
+  },
+  {
+    "model": "com.event",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "title": "un nouveau chapitre",
+      "slug": "",
+      "start_date": "2020-08-13",
+      "end_date": "2020-08-13",
+      "start_time": "13:00:05",
+      "end_time": "13:00:06",
+      "description": "Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Fusce convallis metus id felis luctus adipiscing.\r\n\r\nDonec id justo. Sed hendrerit. Integer tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
+      "location": "CDTIC",
+      "location_city": "Yaound\u00e9",
+      "expired": false,
+      "creator": 1,
+      "image": "events/2020/08/13/1.jpg",
+      "published": true,
+      "registration": []
+    }
+  },
+  {
+    "model": "project.project",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-07",
+      "updated_at": "2020-08-07",
+      "owner": "Construction",
+      "filiere": "MIP",
+      "school_out_date": "1522-07-23",
+      "name": "Group Tech",
+      "description": "Praesent turpis. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Curabitur vestibulum aliquam leo.\r\n\r\nMauris sollicitudin fermentum libero. Curabitur blandit mollis lacus. Nunc nulla.",
+      "estimatif_cost": "10.000.000",
+      "federation": "Fusce vel dui. Quisque id odio. Vestibulum volutpat pretium libero. Ut leo.\r\n\r\nNam at tortor in tellus interdum sagittis. Maecenas malesuada. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus.\r\n\r\nAenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Sed in libero ut nibh placerat accumsan. Phasellus gravida semper nisi. Sed a libero.",
+      "selected": true
+    }
+  },
+  {
+    "model": "project.project",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-07",
+      "updated_at": "2020-08-07",
+      "owner": "Construction",
+      "filiere": "MIP",
+      "school_out_date": "1522-07-23",
+      "name": "Tech Crunch",
+      "description": "Praesent turpis. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Curabitur vestibulum aliquam leo.\r\n\r\nMauris sollicitudin fermentum libero. Curabitur blandit mollis lacus. Nunc nulla.",
+      "estimatif_cost": "10.000.000",
+      "federation": "Fusce vel dui. Quisque id odio. Vestibulum volutpat pretium libero. Ut leo.\r\n\r\nNam at tortor in tellus interdum sagittis. Maecenas malesuada. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus.\r\n\r\nAenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Sed in libero ut nibh placerat accumsan. Phasellus gravida semper nisi. Sed a libero.",
+      "selected": true
+    }
+  },
+  {
+    "model": "project.project",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-07",
+      "updated_at": "2020-08-07",
+      "owner": "Construction 2",
+      "filiere": "MIP",
+      "school_out_date": "1522-07-23",
+      "name": "Technologie c",
+      "description": "'project:project-update'",
+      "estimatif_cost": "10.000.000",
+      "federation": "'project:project-update'",
+      "selected": true
+    }
+  },
+  {
+    "model": "us.strategiccomity",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "full_name": "Amono aymar",
+      "title": "Commissaire aux comptes",
+      "rule": "Mettre \u00e0 profit son sens pouss\u00e9 du regard sur les d\u00e9tails et le socioculturel.",
+      "location": "Douala",
+      "promotion": "IAA 2011",
+      "photo": "photos/amono.png",
+      "grade": "1"
+    }
+  },
+  {
+    "model": "us.strategiccomity",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "full_name": "Amono aymar",
+      "title": "Le titre de la premi\u00e8re section du cours",
+      "rule": "Mettre \u00e0 profit son sens pouss\u00e9 du regard sur les d\u00e9tails et le socioculturel.",
+      "location": "Douala",
+      "promotion": "IAA 2011",
+      "photo": "photos/excel.png",
+      "grade": "2"
+    }
+  },
+  {
+    "model": "us.strategiccomity",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "full_name": "Amono aymar",
+      "title": "Le titre de la premi\u00e8re section du cours",
+      "rule": "Mettre \u00e0 profit son sens pouss\u00e9 du regard sur les d\u00e9tails et le socioculturel.",
+      "location": "Douala",
+      "promotion": "IAA 2011",
+      "photo": "photos/1.jpg",
+      "grade": "2"
+    }
+  },
+  {
+    "model": "us.actionplan",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "year": "2020-08-13",
+      "file": "actions_plan/ADEN_-_Feuille_de_Route__Commissions_Sp\u00e9cialis\u00e9es.pdf",
+      "language": "fr"
+    }
+  },
+  {
+    "model": "us.status",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-06",
+      "updated_at": "2020-08-06",
+      "file": "status/Statuts_ADEN_-_22_Juin_2019.pdf",
+      "language": "fr"
+    }
+  },
+  {
+    "model": "us.status",
+    "pk": 4,
+    "fields": {
+      "created_at": "2020-08-06",
+      "updated_at": "2020-08-06",
+      "file": "status/R\u00e8glement_Int\u00e9rieur_ADEN_-_29_Sept_2019_fXDNjYY.pdf",
+      "language": "fr"
+    }
+  },
+  {
+    "model": "us.internalregulation",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "file": "status/R\u00e8glement_Int\u00e9rieur_ADEN_-_29_Sept_2019_GKzJicX.pdf",
+      "language": "fr"
+    }
+  },
+  {
+    "model": "us.socialnetwork",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-06",
+      "updated_at": "2020-08-11",
+      "name": "facebook",
+      "type": "facebook",
+      "accessibility": "private",
+      "link": "https://facebook.com/aden"
+    }
+  },
+  {
+    "model": "us.socialnetwork",
+    "pk": 2,
+    "fields": {
+      "created_at": "2020-08-06",
+      "updated_at": "2020-08-11",
+      "name": "twitter",
+      "type": "twitter",
+      "accessibility": "public",
+      "link": "https://twitter.com/aden"
+    }
+  },
+  {
+    "model": "us.socialnetwork",
+    "pk": 3,
+    "fields": {
+      "created_at": "2020-08-11",
+      "updated_at": "2020-08-11",
+      "name": "Linkedin",
+      "type": "linkedin",
+      "accessibility": "public",
+      "link": "https://www.linkedin.com/company/association-des-diplom%C3%A9s-de-l-ensai-de-ngaound%C3%A9r%C3%A9/"
+    }
+  },
+  {
+    "model": "us.about",
+    "pk": 1,
+    "fields": {
+      "created_at": "2020-08-13",
+      "updated_at": "2020-08-13",
+      "content": "<p>L&rsquo;Ecole Nationale Sup&eacute;rieure des Sciences Agro-industrielles (ENSAI), p&ocirc;le d&rsquo;excellence de formation<br />dans les diff&eacute;rents domaines de l&rsquo;Agro-industrie au Cameroun et dans la sous-r&eacute;gion de l&rsquo;Afrique<br />Centrale est un &eacute;tablissement phare de l&rsquo;Universit&eacute; de Ngaound&eacute;r&eacute;.</p>\r\n<p><br />Cr&eacute;e par arr&ecirc;t&eacute; pr&eacute;sidentiel N&deg; 433/CAB/PR du 04/10/1982 sous l&rsquo;appellation ENSIAAC, puis<br />r&eacute;organis&eacute;e en 1993, l&rsquo;ENSAI a six missions principales : La formation des dipl&ocirc;m&eacute;s de haut niveau, la<br />sp&eacute;cialisation des dipl&ocirc;m&eacute;s, la formation doctorale, l&rsquo;appui au d&eacute;veloppement, la promotion de la<br />recherche, recyclage et le perfectionnement des cadres.</p>\r\n<p><br />D&rsquo;ann&eacute;es en ann&eacute;es, cette prestigieuse institution a form&eacute; et mis &agrave; la disposition du monde industriel<br />de nombreuses comp&eacute;tences qui exercent dans divers domaines.</p>\r\n<p><br />Il est cr&eacute;&eacute; le 22 Juin 2019 &agrave; Douala entre les membres r&eacute;unis, dipl&ocirc;m&eacute;s de l&rsquo;ENSAI de Ngaound&eacute;r&eacute;, en assembl&eacute;e constitutive et ceux qui adh&egrave;reront par la suite, une association d&eacute;nomm&eacute;e Association des Dipl&ocirc;m&eacute;s de L&rsquo;ENSAI de Ngaound&eacute;r&eacute; en abr&eacute;g&eacute; &laquo; ADEN &raquo; conform&eacute;ment &agrave; la loi n&deg; 90/053 du 19 d&eacute;cembre 1990 relative &agrave; la libert&eacute; d&rsquo;association modifi&eacute;e et compl&eacute;t&eacute;e en certaines dispositions par la loi n&deg;99/011 du 20 juillet 1999 relative &agrave; la libert&eacute; d&rsquo;association. Cette association regroupe les dipl&ocirc;m&eacute;s de toutes les fili&egrave;res de l&rsquo;ENSAI et de l&rsquo;ENSIAAC de son ancienne appellation.<br />Cette association est apolitique, non confessionnelle et &agrave; but non lucratif.<br />(1)<br />L'Association a pour but :<br />&nbsp;De r&eacute;unir et d'assurer des liens amicaux entre les dipl&ocirc;m&eacute;s de L&rsquo;ENSAI ou de l&rsquo;ENSIAAC<br />de Ngaound&eacute;r&eacute; ;<br />De participer activement au d&eacute;veloppement et au rayonnement de l'ENSAI de Ngaound&eacute;r&eacute; ;<br />De d&eacute;finir, faire conna&icirc;tre et promouvoir le d&eacute;veloppement de l&rsquo;ADEN et les actions de ses<br />membres pour contribuer &agrave; am&eacute;liorer l&rsquo;environnement des affaires et l&rsquo;entreprenariat ;<br />D'assurer des liens amicaux entre les dipl&ocirc;m&eacute;s de L&rsquo;ENSAI ou de l&rsquo;ENSIAAC de<br />Ngaound&eacute;r&eacute; ;<br />De venir en aide aux membres momentan&eacute;ment en difficult&eacute; ;<br />De promouvoir aupr&egrave;s de ses membres l&rsquo;&eacute;thique, l&rsquo;&eacute;quit&eacute; et le respect de la d&eacute;ontologie ;<br />De mener des r&eacute;flexions pour l&rsquo;encadrement des professions des dipl&ocirc;m&eacute;s de l&rsquo;ENSAI ou de<br />l&rsquo;ENSIAAC de Ngaound&eacute;r&eacute; ;<br />De participer aux r&eacute;flexions sur les grandes orientations li&eacute;es au d&eacute;veloppement industriel<br />du Cameroun.<br />En cons&eacute;quence tout membre s'engage &agrave; faire conna&icirc;tre tout renseignement pouvant &ecirc;tre utile &agrave;<br />l'Association. Pour ce faire l&rsquo;Association dispose :<br /><br />D&rsquo;un site internet ;<br />Des comptes sur les r&eacute;seaux sociaux ;<br />D&rsquo;une bo&icirc;te postale ;<br />D&rsquo;un secr&eacute;tariat.</p>",
+      "language": "fr"
+    }
+  },
+  {
+    "model": "account.emailaddress",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "email": "a@gmail.com",
+      "verified": false,
+      "primary": true
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add site",
+      "content_type": 6,
+      "codename": "add_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change site",
+      "content_type": 6,
+      "codename": "change_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete site",
+      "content_type": 6,
+      "codename": "delete_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view site",
+      "content_type": 6,
+      "codename": "view_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add Utilisateur",
+      "content_type": 7,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change Utilisateur",
+      "content_type": 7,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete Utilisateur",
+      "content_type": 7,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view Utilisateur",
+      "content_type": 7,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add profile",
+      "content_type": 8,
+      "codename": "add_profile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change profile",
+      "content_type": 8,
+      "codename": "change_profile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete profile",
+      "content_type": 8,
+      "codename": "delete_profile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view profile",
+      "content_type": 8,
+      "codename": "view_profile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add Album",
+      "content_type": 9,
+      "codename": "add_galery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change Album",
+      "content_type": 9,
+      "codename": "change_galery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete Album",
+      "content_type": 9,
+      "codename": "delete_galery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view Album",
+      "content_type": 9,
+      "codename": "view_galery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add post category",
+      "content_type": 10,
+      "codename": "add_postcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change post category",
+      "content_type": 10,
+      "codename": "change_postcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete post category",
+      "content_type": 10,
+      "codename": "delete_postcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view post category",
+      "content_type": 10,
+      "codename": "view_postcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add Article de blog",
+      "content_type": 11,
+      "codename": "add_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change Article de blog",
+      "content_type": 11,
+      "codename": "change_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete Article de blog",
+      "content_type": 11,
+      "codename": "delete_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view Article de blog",
+      "content_type": 11,
+      "codename": "view_post"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add Actualit\u00e9",
+      "content_type": 12,
+      "codename": "add_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change Actualit\u00e9",
+      "content_type": 12,
+      "codename": "change_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete Actualit\u00e9",
+      "content_type": 12,
+      "codename": "delete_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view Actualit\u00e9",
+      "content_type": 12,
+      "codename": "view_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add galery image",
+      "content_type": 13,
+      "codename": "add_galeryimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change galery image",
+      "content_type": 13,
+      "codename": "change_galeryimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete galery image",
+      "content_type": 13,
+      "codename": "delete_galeryimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view galery image",
+      "content_type": 13,
+      "codename": "view_galeryimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add Agenda",
+      "content_type": 14,
+      "codename": "add_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change Agenda",
+      "content_type": 14,
+      "codename": "change_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete Agenda",
+      "content_type": 14,
+      "codename": "delete_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view Agenda",
+      "content_type": 14,
+      "codename": "view_event"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add document",
+      "content_type": 15,
+      "codename": "add_document"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change document",
+      "content_type": 15,
+      "codename": "change_document"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete document",
+      "content_type": 15,
+      "codename": "delete_document"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view document",
+      "content_type": 15,
+      "codename": "view_document"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add Comit\u00e9 Strat\u00e9gique",
+      "content_type": 16,
+      "codename": "add_strategiccomity"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change Comit\u00e9 Strat\u00e9gique",
+      "content_type": 16,
+      "codename": "change_strategiccomity"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete Comit\u00e9 Strat\u00e9gique",
+      "content_type": 16,
+      "codename": "delete_strategiccomity"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view Comit\u00e9 Strat\u00e9gique",
+      "content_type": 16,
+      "codename": "view_strategiccomity"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add email address",
+      "content_type": 17,
+      "codename": "add_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change email address",
+      "content_type": 17,
+      "codename": "change_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete email address",
+      "content_type": 17,
+      "codename": "delete_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view email address",
+      "content_type": 17,
+      "codename": "view_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add email confirmation",
+      "content_type": 18,
+      "codename": "add_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change email confirmation",
+      "content_type": 18,
+      "codename": "change_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete email confirmation",
+      "content_type": 18,
+      "codename": "delete_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view email confirmation",
+      "content_type": 18,
+      "codename": "view_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add Plan d'action",
+      "content_type": 19,
+      "codename": "add_actionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change Plan d'action",
+      "content_type": 19,
+      "codename": "change_actionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete Plan d'action",
+      "content_type": 19,
+      "codename": "delete_actionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view Plan d'action",
+      "content_type": 19,
+      "codename": "view_actionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add R\u00e8glement interieur",
+      "content_type": 20,
+      "codename": "add_internalregulation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change R\u00e8glement interieur",
+      "content_type": 20,
+      "codename": "change_internalregulation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete R\u00e8glement interieur",
+      "content_type": 20,
+      "codename": "delete_internalregulation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view R\u00e8glement interieur",
+      "content_type": 20,
+      "codename": "view_internalregulation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add R\u00e9seau Social",
+      "content_type": 21,
+      "codename": "add_socialnetwork"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change R\u00e9seau Social",
+      "content_type": 21,
+      "codename": "change_socialnetwork"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete R\u00e9seau Social",
+      "content_type": 21,
+      "codename": "delete_socialnetwork"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view R\u00e9seau Social",
+      "content_type": 21,
+      "codename": "view_socialnetwork"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can add Statut de l'association",
+      "content_type": 22,
+      "codename": "add_status"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can change Statut de l'association",
+      "content_type": 22,
+      "codename": "change_status"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can delete Statut de l'association",
+      "content_type": 22,
+      "codename": "delete_status"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view Statut de l'association",
+      "content_type": 22,
+      "codename": "view_status"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+      "name": "Can add Id\u00e9es de projet f\u00e9d\u00e9rateurs des fili\u00e8res ENSAI",
+      "content_type": 23,
+      "codename": "add_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+      "name": "Can change Id\u00e9es de projet f\u00e9d\u00e9rateurs des fili\u00e8res ENSAI",
+      "content_type": 23,
+      "codename": "change_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+      "name": "Can delete Id\u00e9es de projet f\u00e9d\u00e9rateurs des fili\u00e8res ENSAI",
+      "content_type": 23,
+      "codename": "delete_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+      "name": "Can view Id\u00e9es de projet f\u00e9d\u00e9rateurs des fili\u00e8res ENSAI",
+      "content_type": 23,
+      "codename": "view_project"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+      "name": "Can add A propos",
+      "content_type": 24,
+      "codename": "add_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+      "name": "Can change A propos",
+      "content_type": 24,
+      "codename": "change_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+      "name": "Can delete A propos",
+      "content_type": 24,
+      "codename": "delete_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+      "name": "Can view A propos",
+      "content_type": 24,
+      "codename": "view_about"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2020-08-03T23:32:07.964Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "admin@aden.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Lieu de naissance\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2020-08-03T23:38:46.448Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "admin@aden.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Photo de profile\", \"Promotion\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2020-08-04T00:09:02.797Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "admin@aden.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Photo de profile\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2020-08-04T13:32:01.315Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "1",
+      "object_repr": "Actualit\u00e9 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2020-08-04T13:34:47.009Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "1",
+      "object_repr": "Actualit\u00e9 1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Contenu de l'article\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2020-08-04T14:07:31.769Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "1",
+      "object_repr": "Actualit\u00e9 1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Contenu de l'article\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2020-08-06T22:12:03.299Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "1",
+      "object_repr": "ActionPlan object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2020-08-06T22:12:38.452Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "InternalRegulation object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2020-08-06T22:13:16.456Z",
+      "user": 1,
+      "content_type": 21,
+      "object_id": "1",
+      "object_repr": "SocialNetwork object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2020-08-06T22:13:55.681Z",
+      "user": 1,
+      "content_type": 21,
+      "object_id": "2",
+      "object_repr": "SocialNetwork object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2020-08-06T22:14:12.586Z",
+      "user": 1,
+      "content_type": 22,
+      "object_id": "1",
+      "object_repr": "Statut Version : french",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2020-08-06T22:22:52.575Z",
+      "user": 1,
+      "content_type": 22,
+      "object_id": "2",
+      "object_repr": "Statut Version : french",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2020-08-06T22:29:16.813Z",
+      "user": 1,
+      "content_type": 22,
+      "object_id": "2",
+      "object_repr": "Statut Version : french",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2020-08-06T22:29:16.953Z",
+      "user": 1,
+      "content_type": 22,
+      "object_id": "1",
+      "object_repr": "Statut Version : french",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2020-08-06T22:29:31.781Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "1",
+      "object_repr": "ActionPlan object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2020-08-06T22:29:48.653Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "InternalRegulation object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2020-08-06T22:30:15.931Z",
+      "user": 1,
+      "content_type": 22,
+      "object_id": "3",
+      "object_repr": "Statut Version : fr",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2020-08-06T22:30:28.317Z",
+      "user": 1,
+      "content_type": 22,
+      "object_id": "4",
+      "object_repr": "Statut Version : fr",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2020-08-11T08:05:36.544Z",
+      "user": 1,
+      "content_type": 21,
+      "object_id": "3",
+      "object_repr": "SocialNetwork object (3)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2020-08-11T08:05:49.323Z",
+      "user": 1,
+      "content_type": 21,
+      "object_id": "2",
+      "object_repr": "SocialNetwork object (2)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Type du r\\u00e9seau\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2020-08-11T08:06:02.949Z",
+      "user": 1,
+      "content_type": 21,
+      "object_id": "1",
+      "object_repr": "SocialNetwork object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Type du r\\u00e9seau\", \"Visibilit\\u00e9\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2020-08-13T11:04:29.912Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Communiqu\u00e9",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2020-08-13T11:04:34.048Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "2",
+      "object_repr": "Obs\u00e8ques de engelbert CHAGOM",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2020-08-13T11:59:06.653Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Un nouveau agenda",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2020-08-13T11:59:25.916Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Un nouveau agenda",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Publier\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2020-08-13T11:59:34.209Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Un nouveau agenda",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Publier\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2020-08-13T12:00:17.440Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "un nouveau chapitre",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2020-08-13T12:20:51.598Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "le dernier chasseur de sorcier",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2020-08-13T12:31:20.169Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "le dernier chasseur de sorcier",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2020-08-13T12:31:54.183Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "le dernier chasseur de sorcier",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2020-08-13T13:04:09.713Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "une nouvelle section",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2020-08-13T13:05:39.563Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "une nouvelle section",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2020-08-13T13:07:07.503Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "une nouvelle section",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2020-08-13T13:07:31.558Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "une nouvelle section 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2020-08-13T13:07:56.029Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "un nouveau chapitre",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2020-08-13T13:08:15.432Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "5",
+      "object_repr": "Une nouvelle partie",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2020-08-13T13:08:45.915Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "6",
+      "object_repr": "Le titre de la premi\u00e8re section du cours",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2020-08-13T18:20:05.501Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "le dernier chasseur de sorcier",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"files\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2020-08-13T20:28:03.759Z",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "About object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2020-08-13T22:06:40.531Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "Amono aymar",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2020-08-13T22:06:52.034Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "Amono aymar",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Priorit\\u00e9\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2020-08-13T22:11:03.342Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "2",
+      "object_repr": "Amono aymar",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2020-08-13T22:11:24.690Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "3",
+      "object_repr": "Amono aymar",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2020-08-13T22:23:34.903Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "2",
+      "object_repr": "InternalRegulation object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2020-08-13T22:25:06.541Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "2",
+      "object_repr": "ActionPlan object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  }
+]
