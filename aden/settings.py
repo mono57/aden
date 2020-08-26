@@ -186,9 +186,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CLOUDINARY = {
     'max_length': 200,
-    # 'cloud_name': 'adensite',
-    # 'api_key': '815289574411119',
-    # 'api_secret': 'ud2mDhLGDaxANsfRbP35H2m1UFY',
+    'cloud_name': 'adensite',
+    'api_key': '815289574411119',
+    'api_secret': 'ud2mDhLGDaxANsfRbP35H2m1UFY',
 }
 
 # Static files (CSS, JavaScript, Images)
