@@ -32,7 +32,7 @@ if os.getenv('ENV') == 'PROD':
     SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
     EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
     EMAIL_HOST = 'smtp.sendgrid.net'
-    EMAIL_HOST_USER = 'noreply@aden.com' # this is exactly the value 'apikey'
+    EMAIL_HOST_USER = 'noreply@aden.com'  # this is exactly the value 'apikey'
     EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'crispy_forms',
     'tinymce',
+    'cloudinary',
 
 ]
 
@@ -159,8 +160,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGES = [
-  ('fr', _('French')),
-  ('en', _('English')),
+    ('fr', _('French')),
+    ('en', _('English')),
 ]
 
 LOCALE_PATHS = (
@@ -180,6 +181,15 @@ USE_TZ = True
 # crispy config
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Cloudinary config
+
+CLOUDINARY = {
+    'max_length': 200,
+    'cloud_name': 'adensite',
+    'api_key': '815289574411119',
+    'api_secret': 'ud2mDhLGDaxANsfRbP35H2m1UFY',
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

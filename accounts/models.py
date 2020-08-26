@@ -4,6 +4,7 @@ from django.contrib.auth.models import (
 )
 from django.db.models.signals import post_save
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 from aden.utils import TimeStampModel
 
 from accounts.managers import UserManager
@@ -77,8 +78,7 @@ class User(AbstractBaseUser):
 
 
 class Profile(TimeStampModel):
-    photo = models.ImageField(
-        upload_to='photo/profiles/', blank=True, verbose_name="Photo de profile")
+    photo = CloudinaryField(resource_type='image', blank=True, verbose_name="Photo de profile")
     birthday = models.DateField(blank=True, null=True, verbose_name="Date de naissance")
     birth_location = models.CharField(
         max_length=100, blank=True, verbose_name='Lieu de naissance')
