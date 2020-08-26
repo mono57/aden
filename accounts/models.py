@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser, AbstractUser
 )
+from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
@@ -13,7 +14,7 @@ from accounts.managers import UserManager
 
 class User(AbstractBaseUser):
     email = models.EmailField(
-        verbose_name='Adresse email',
+        verbose_name=_('Adresse email'),
         max_length=255,
         unique=True,
     )
@@ -21,25 +22,25 @@ class User(AbstractBaseUser):
     first_name = models.CharField(
         max_length=50,
         blank=True,
-        verbose_name='Prenom'
+        verbose_name=_('Prenom')
     )
     last_name = models.CharField(
         max_length=50,
         blank=True,
-        verbose_name='Nom'
+        verbose_name=_('Nom')
     )
     date_joined = models.DateTimeField(
         auto_now=False,
         auto_now_add=True,
-        verbose_name='Date d\'inscription'
+        verbose_name=_('Date d\'inscription')
     )
     last_login = models.DateTimeField(
         default=timezone.now,
-        verbose_name='Dernière connexion'
+        verbose_name=_('Dernière connexion')
     )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    is_member = models.BooleanField(default=False, verbose_name='Membre')
+    is_member = models.BooleanField(default=False, verbose_name=_('Membre'))
     admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
@@ -72,16 +73,16 @@ class User(AbstractBaseUser):
 
 
     class Meta:
-        verbose_name = "Utilisateur"
-        verbose_name_plural = "Utilisateurs"
+        verbose_name = _("Utilisateur")
+        verbose_name_plural = _("Utilisateurs")
 
 
 
 class Profile(TimeStampModel):
-    photo = CloudinaryField(resource_type='image', blank=True, verbose_name="Photo de profile")
-    birthday = models.DateField(blank=True, null=True, verbose_name="Date de naissance")
+    photo = CloudinaryField(resource_type='image', blank=True, verbose_name=_("Photo de profile"))
+    birthday = models.DateField(blank=True, null=True, verbose_name=_("Date de naissance"))
     birth_location = models.CharField(
-        max_length=100, blank=True, verbose_name='Lieu de naissance')
+        max_length=100, blank=True, verbose_name=_('Lieu de naissance'))
     promo = models.CharField(max_length=50, blank=True,
                              verbose_name='Promotion')
 

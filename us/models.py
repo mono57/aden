@@ -1,6 +1,7 @@
 from django.db import models
 from aden.utils import TimeStampModel
 # Create your models here.
+from cloudinary.models import CloudinaryField
 
 LANGUAGE_CHOICES = (
     ('en', 'Anglaise'),
@@ -14,7 +15,7 @@ class StrategicComity(TimeStampModel):
     rule = models.CharField(max_length=150, verbose_name="Fonction ou Role")
     location = models.CharField(max_length=150, verbose_name="Domicile")
     promotion = models.CharField(max_length=80, verbose_name='Promotion')
-    photo = models.ImageField(upload_to='photos/', verbose_name='Photo')
+    photo = CloudinaryField(resource_type='image', verbose_name='Photo')
     grade = models.CharField(
         max_length=2,
         verbose_name='Priorité',

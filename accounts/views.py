@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView, FormView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from accounts.forms import ProfileModelForm, UserModelForm
 
 
@@ -10,7 +11,7 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
     form_class = ProfileModelForm
     template_name = 'account/profile.html'
     success_url = reverse_lazy('account_profile')
-    success_message = 'Votre profile a été bien mis à jour'
+    success_message = _('Votre profile a été bien mis à jour')
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -49,7 +50,7 @@ class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = UserModelForm
     template_name = 'account/profile.html'
     success_url = reverse_lazy('account_user_update')
-    success_message = 'Informations personnelles modifiées avec succès !'
+    success_message = _('Informations personnelles modifiées avec succès !')
 
     def get_object(self):
         return self.request.user

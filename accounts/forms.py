@@ -1,15 +1,16 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.utils.translation import gettext_lazy as _
 from accounts.models import Profile
 
 User = get_user_model()
 
 class UserAdminCreationForm(forms.ModelForm):
     password1 = forms.CharField(
-        label='Mot de passe', widget=forms.PasswordInput)
+        label=_('Mot de passe'), widget=forms.PasswordInput)
     password2 = forms.CharField(
-        label='Mot de passe confirmation', widget=forms.PasswordInput)
+        label=_('Mot de passe confirmation'), widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -21,7 +22,7 @@ class UserAdminCreationForm(forms.ModelForm):
 
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError(
-                'Les mots de passe ne correspondent pas')
+                _('Les mots de passe ne correspondent pas'))
         return password2
 
     def save(self, commit=True):
