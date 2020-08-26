@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-05 19:20+0100\n"
+"POT-Creation-Date: 2020-08-26 16:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: aden/settings.py:161
+#: aden/settings.py:163
 msgid "French"
 msgstr ""
 
-#: aden/settings.py:162
+#: aden/settings.py:164
 msgid "English"
 msgstr ""
 
@@ -190,6 +190,6 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: templates/base/navbar.html:53
+#: templates/base/navbar.html:74
 msgid "Accueil"
 msgstr "Home"
