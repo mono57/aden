@@ -7,7 +7,7 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from com.models import Post, News, Event, Document, Galery, PostCategory
+from com.models import Post, News, Event, Document, Galery, PostCategory, StrategicComity as ComStrategicComity
 from aden.decorators import aden_member_required
 from us.models import StrategicComity
 
@@ -100,3 +100,18 @@ class StrategicComityTempateView(TemplateView):
         context['second_grades'] = StrategicComity.objects.filter(grade=2)
         context['third_grades'] = StrategicComity.objects.filter(grade=3)
         return context
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class ComStrategicComityListView(ListView):
+    template_name = 'com/strategic_comity-list.html'
+    model = ComStrategicComity
+    context_object_name = 'comities'
+
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class ComStrategicComityDetailView(DetailView):
+    template_name = 'com/strategic_comity-detail.html'
+    model = ComStrategicComity
+    context_object_name = 'comity'

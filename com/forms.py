@@ -6,7 +6,8 @@ from com.models import (
     Galery,
     Post, 
     Document,
-    Event
+    Event,
+    StrategicComity
 )
 
 class GaleryModelForm(forms.ModelForm):
@@ -87,3 +88,12 @@ class DocumentModelForm(forms.ModelForm):
     class Meta:
         model = Document
         exclude = ('creator', 'title')
+
+
+class StrategicComityModelForm(forms.ModelForm):
+    class Meta:
+        model = StrategicComity
+        fields = '__all__'
+        widgets = {
+            'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
+        }

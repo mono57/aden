@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Communiqué comité strategique
+{% endblock title %}
+
+{% block content %}
+{% include "com/includes/banner.html" with banner_text='Communiqués comité stratégique' %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for comity in comities %}
+        <div class="col-6">
+            <h4>
+                <a href="{{comity.get_absolute_url}}">{{comity.object}}</a>
+            </h4>
+            <p>{{comity.content|safe|truncatewords:20}}</p>
+        </div>
+        {% empty %}
+        <p class="text-center"> Aucun communiqué n'a été publié </p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

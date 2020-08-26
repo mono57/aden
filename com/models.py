@@ -149,3 +149,15 @@ class Event(TimeStampModel):
     class Meta:
         verbose_name = 'Agenda'
         verbose_name_plural = 'Agendas'
+
+
+class StrategicComity(TimeStampModel):
+    object = models.CharField(max_length=100, verbose_name='Objet')
+    content = models.TextField(verbose_name='Messagé')
+
+    def get_absolute_url(self):
+        return reverse('com:comities-detail', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name = 'Communiqué Comité Stratégique'
+        verbose_name_plural = 'Communiqué(s) Comité Stratégique'

@@ -79,3 +79,9 @@ class PostCategoryModelAdmin(admin.ModelAdmin):
         return False
 
 admin.site.register(PostCategory, PostCategoryModelAdmin)
+
+class StrategicComityModelAdmin(admin.ModelAdmin):
+    list_display = ('object', )
+    form = StrategicComityModelForm
+
+admin.site.register(StrategicComity, StrategicComityModelAdmin)
