@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %}
+
 
 {% block title %}
-Liste des événements
+{% trans "Liste des événements" %}
 {% endblock title %}
 
 {% block content %}
@@ -13,7 +15,7 @@ Liste des événements
 <section class="event-listing">
     <div class="container">
         <div class="sec-title">
-            <h2>Tous les événements</h2>
+            <h2>{% trans "Tous les événements" %}</h2>
             <div class="divider">
                 <span class="fa fa-mortar-board"></span>
             </div>
@@ -22,7 +24,7 @@ Liste des événements
                 {% for event in events %}
                 {% include "com/includes/single-event.html" with event=event %}
                 {% empty %}
-                <h4 class="text-danger">Aucun événement trouvé!</h4>
+                <h4 class="text-danger">{% trans "Aucun événement trouvé!" %}</h4>
                 {% endfor %}
             </div>
         </div>

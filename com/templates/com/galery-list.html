@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}
 Albums
@@ -6,13 +7,13 @@ Albums
 
 {% block content %}
 
-{% include "com/includes/banner.html" with banner_text='Nos Albums' %}
+{% include "com/includes/banner.html" with banner_text="Nos Albums" %}
 
 <section class="course">
     <div class="container">
         <div class="sec-title text-center mb-3" data-aos="fade-up" data-aos-duration="1000">
-            <span class="title">Notre galerie photos</span>
-            <h2>Révivez nos meilleurs moments en images 😍😍😍</h2>
+            <span class="title">{% trans "Notre galerie photos" %}</span>
+            <h2>{% trans "Révivez nos meilleurs moments en images" %} 😍😍😍</h2>
             <div class="divider">
                 <span class="fa fa-mortar-board"></span>
             </div>
@@ -44,7 +45,7 @@ Albums
                     {% for photo in galery.images.all %}
                     {% include "com/includes/galery-item.html" with item=photo %}
                     {% empty %}
-                    <h4 class="text-danger text-center">Album vide</h4>
+                    <h4 class="text-danger text-center">{% trans "Album vide" %}</h4>
                     {% endfor %}
                     {% endfor %}
 

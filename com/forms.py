@@ -1,6 +1,6 @@
 from  django import forms
 from tinymce.widgets import TinyMCE
-
+from django.utils.translation import gettext_lazy as _
 from com.models import (
     News,
     Galery,

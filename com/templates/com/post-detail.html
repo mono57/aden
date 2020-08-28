@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load static %}
 
 {% block title %}
@@ -108,7 +109,7 @@
                     </form>
                 </div> -->
                 <div class="blog-category">
-                    <h6 class="text-uppercase font-weight-bold mb-3">Catégories</h6>
+                    <h6 class="text-uppercase font-weight-bold mb-3">{% trans "Catégories" %}</h6>
                     <ul class="list-unstyled">
                         {% for category in categories %}
                         <li><a href="{{category.get_absolute_url}}">{{category.name}</a></li>
@@ -116,7 +117,7 @@
                     </ul>
                 </div>
                 <div class="recent-blog ">
-                    <h6 class="text-uppercase font-weight-bold mb-3">Articles récents</h6>
+                    <h6 class="text-uppercase font-weight-bold mb-3">{% trans "Articles récents" %}</h6>
                     {% for recent_post in recent_posts %}
                     <div class="media">
                         {% if recent_post.image %}
@@ -125,7 +126,7 @@
                         {% endif %}
                         <div class="media-body">
                             <p class="font-weight-bold mb-2">{{recent_post.title}}</p>
-                            <p>Dernière modification: {{recent_post.updated_at|date}}</p>
+                            <p>{% trans "Dernière modification" %}: {{recent_post.updated_at|date}}</p>
                         </div>
                     </div>
                     {% endfor %}

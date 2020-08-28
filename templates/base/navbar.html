@@ -74,82 +74,82 @@
                         <a class="nav-link active" href="{{home_url}}">{% trans "Accueil" %}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{ensai_url}}" data-toggle="dropdown">L’ENSAI</a>
+                        <a class="nav-link dropdown-toggle" href="{{ensai_url}}" data-toggle="dropdown">{% trans "L’ENSAI" %}</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ensai_url}}#presentation">Présentation institutionnelle</a>
-                            <a class="dropdown-item" href="{{ensai_url}}#filiere">Ses filières et formations</a>
+                            <a class="dropdown-item" href="{{ensai_url}}#presentation">{% trans "Présentation institutionnelle" %}</a>
+                            <a class="dropdown-item" href="{{ensai_url}}#filiere">{% trans "Ses filières et formations" %}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{aden_url}} data-toggle=" dropdown">L’ADEN</a>
+                        <a class="nav-link dropdown-toggle" href="{{aden_url}} data-toggle=" dropdown">{% trans "L’ADEN" %}</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{about_url}}">Qui sommes-nous ?</a>
+                            <a class="dropdown-item" href="{{about_url}}">{% trans "Qui sommes-nous ?" %}</a>
                             <a class="dropdown-item" href="{% if status %}
                               {{status.file.url}}
                               {% else %} #
-                            {% endif %}">Les Statuts</a>
+                            {% endif %}">{% trans "Les Statuts" %}</a>
                             <a class="dropdown-item" href="{% if internal_regulation %}
                               {{internal_regulation.file.url}} {% else %} #
-                            {% endif %}">Le Règlement intérieur</a>
-                            <a class="dropdown-item" href="{{comity_url}}">Le Comité Stratégique</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">L'Assemblée générale</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">Les Coordonnées</a>
+                            {% endif %}">{% trans "Le Règlement intérieur" %}</a>
+                            <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
+                            <a class="dropdown-item" href="{{aden_url}}#">{% trans "L'Assemblée générale" %}</a>
+                            <a class="dropdown-item" href="{{aden_url}}#">{% trans "Les Coordonnées" %}</a>
                             <a class="dropdown-item" href="{% if action_plan %}
                               {{action_plan.file.url}} {% else %} #
-                            {% endif %}">Les missions et plans d’actions annuels</a>
+                            {% endif %}">{% trans "Les missions et plans d’actions annuels" %}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{network_url}}" data-toggle="dropdown">Le réseau</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{network_url}}#promotions">Associations des promotions</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Groupes internationaux</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Conventions avec les grandes écoles</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Annuaire</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Nominations</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Carnet</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Clubs</a>
-                            <a class="dropdown-item" href="{{network_url}}#">International</a>
+                            <a class="dropdown-item" href="{{network_url}}#promotions">{% trans "Associations des promotions" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Groupes internationaux" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Conventions avec les grandes écoles" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Annuaire" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Nominations" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Carnet" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Clubs" %}</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "International" %}</a>
                             <a class="dropdown-item" href="{{network_url}}#">News</a>
-                            <a class="dropdown-item" href="{{network_url}}#">Portrait des alumni</a>
+                            <a class="dropdown-item" href="{{network_url}}#">{% trans "Portrait des alumni" %}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Communication</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{news_url}}">Actualités</a>
-                            <a class="dropdown-item" href="{{events_url}}">Agenda</a>
-                            <a class="dropdown-item" href="{{galery_url}}">Photos</a>
-                            <a class="dropdown-item" href="{{comities_url}}">Le Comité Stratégique</a>
-                            <a class="dropdown-item" href="{{interface_url}}">Révue interface</a>
-                            <a class="dropdown-item" href="{{download_url}}">Téléchargements</a>
-                            <a class="dropdown-item" href="{{posts_url}}">Blog</a>
+                            <a class="dropdown-item" href="{{news_url}}">{% trans "Actualités" %}</a>
+                            <a class="dropdown-item" href="{{events_url}}">{% trans "Agenda" %}</a>
+                            <a class="dropdown-item" href="{{galery_url}}">{% trans "Photos" %}</a>
+                            <a class="dropdown-item" href="{{comities_url}}">{% trans "Le Comité Stratégique" %}</a>
+                            <a class="dropdown-item" href="{{interface_url}}">{% trans "Révue interface" %}</a>
+                            <a class="dropdown-item" href="{{download_url}}">{% trans "Téléchargements" %}</a>
+                            <a class="dropdown-item" href="{{posts_url}}">{% trans "Blog" %}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Carrières</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{% trans "Carrières" %}</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Trouver un poste</a>
-                            <a class="dropdown-item" href="#">Proposer une offre</a>
-                            <a class="dropdown-item" href="#">Déposer son CV</a>
-                            <a class="dropdown-item" href="#">Recruter un ENSAI</a>
+                            <a class="dropdown-item" href="#">{% trans "Trouver un poste" %}</a>
+                            <a class="dropdown-item" href="#">{% trans "Proposer une offre" %}</a>
+                            <a class="dropdown-item" href="#">{% trans "Déposer son CV" %}</a>
+                            <a class="dropdown-item" href="#">{% trans "Recruter un ENSAI" %}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Nos projets</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{% trans "Nos projets" %}</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{institutional_url}}">Projets institutionnels</a>
-                            <a class="dropdown-item" href="{{industrial_url}}">Projets industriels</a>
+                            <a class="dropdown-item" href="{{institutional_url}}">{% trans "Projets institutionnels" %}</a>
+                            <a class="dropdown-item" href="{{industrial_url}}">{% trans "Projets industriels" %}</a>
                             <a class="dropdown-item" href="{% url 'project:project-create' %}">Proposer une idée de
                                 projet</a>
 
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Aide</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{% trans "Aide" %}</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{faq_url}}">FAQ</a>
-                            <a class="dropdown-item" href="#">Mentions légales</a>
+                            <a class="dropdown-item" href="#">{% trans "Mentions légales" %}</a>
                             <a class="dropdown-item" href="{{contact_url}}">Contact</a>
                         </div>
                     </li>
@@ -186,81 +186,81 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="{{ensai_url}}#presentation">Présentation institutionnelle</a>
-            <a class="dropdown-item" href="{{ensai_url}}#filiere">Ses filières et formations</a>
+            <a class="dropdown-item" href="{{ensai_url}}#presentation">{% trans "Présentation institutionnelle" %}</a>
+            <a class="dropdown-item" href="{{ensai_url}}#filiere">{% trans "Ses filières et formations" %}</a>
 
         </div>
-        <button class="dropdown-btn">L'ADEN
+        <button class="dropdown-btn">{% trans "L'ADEN" %}
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="{{about_url}}">Qui sommes-nous ?</a>
+            <a class="dropdown-item" href="{{about_url}}">{% trans "Qui sommes-nous ?" %}</a>
             <a class="dropdown-item" href="{% if status %}
             {{status.file.url}}
             {% else %} #{% endif %}">Les Statuts</a>
             <a class="dropdown-item" href="{% if internal_regulation %}
-            {{internal_regulation.file.url}} {% else %} #{% endif %}">Le Règlement intérieur</a>
-            <a class="dropdown-item" href="{{comity_url}}">Le Comité Stratégique</a>
-            <a class="dropdown-item" href="{{aden_url}}#">L'Assemblée générale</a>
-            <a class="dropdown-item" href="{{aden_url}}#">Les Coordonnées</a>
+            {{internal_regulation.file.url}} {% else %} #{% endif %}">{% trans "Le Règlement intérieur" %}</a>
+            <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
+            <a class="dropdown-item" href="{{aden_url}}#">{% trans "L'Assemblée générale" %}</a>
+            <a class="dropdown-item" href="{{aden_url}}#">{% trans "Les Coordonnées" %}</a>
             <a class="dropdown-item" href="{% if action_plan %}
             {{action_plan.file.url}} {% else %} #
-          {% endif %}">Les missions et plans d’actions annuels</a>
+          {% endif %}">{% trans "Les missions et plans d’actions annuels" %}</a>
         </div>
-        <button class="dropdown-btn">Réseaux
+        <button class="dropdown-btn">{% trans "Réseaux" %}
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="#">Associations des promotions</a>
-            <a class="dropdown-item" href="#">Groupes internationaux</a>
-            <a class="dropdown-item" href="#">Conventions avec les grandes écoles</a>
-            <a class="dropdown-item" href="#">Annuaire</a>
-            <a class="dropdown-item" href="#">Nominations</a>
-            <a class="dropdown-item" href="#">Carnet</a>
-            <a class="dropdown-item" href="#">Clubs</a>
-            <a class="dropdown-item" href="#">International</a>
+            <a class="dropdown-item" href="#">{% trans "Associations des promotions" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Groupes internationaux" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Conventions avec les grandes écoles" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Annuaire" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Nominations" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Carnet" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Clubs" %}</a>
+            <a class="dropdown-item" href="#">{% trans "International" %}</a>
             <a class="dropdown-item" href="#">News</a>
-            <a class="dropdown-item" href="#">Portrait des alumni</a>
+            <a class="dropdown-item" href="#">{% trans "Portrait des alumni" %}</a>
         </div>
 
         <button class="dropdown-btn">Communication
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="{{news_url}}">Actualités</a>
-            <a class="dropdown-item" href="{{events_url}}">Agenda</a>
-            <a class="dropdown-item" href="{{galery_url}}">Photos</a>
-            <a class="dropdown-item" href="{{comity_url}}">Le Comité Stratégique</a>
-            <a class="dropdown-item" href="{{interface_url}}">Révue interface</a>
-            <a class="dropdown-item" href="{{interface_url}}">Téléchargements</a>
-            <a class="dropdown-item" href="{{posts_url}}">Blog</a>
+            <a class="dropdown-item" href="{{news_url}}">{% trans "Actualités" %}</a>
+            <a class="dropdown-item" href="{{events_url}}">{% trans "Agenda" %}</a>
+            <a class="dropdown-item" href="{{galery_url}}">{% trans "Photos" %}</a>
+            <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
+            <a class="dropdown-item" href="{{interface_url}}">{% trans "Révue interface" %}</a>
+            <a class="dropdown-item" href="{{interface_url}}">{% trans "Téléchargements" %}</a>
+            <a class="dropdown-item" href="{{posts_url}}">{% trans "Blog" %}</a>
         </div>
 
-        <button class="dropdown-btn">Carrières
+        <button class="dropdown-btn">{% trans "Carrières" %}
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="#">Trouver un poste</a>
-            <a class="dropdown-item" href="#">Proposer une offre</a>
-            <a class="dropdown-item" href="#">Déposer son CV</a>
-            <a class="dropdown-item" href="#">Recruter un ENSAI</a>
+            <a class="dropdown-item" href="#">{% trans "Trouver un poste" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Proposer une offre" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Déposer son CV" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Recruter un ENSAI" %}</a>
         </div>
 
-        <button class="dropdown-btn">Nos Projets
+        <button class="dropdown-btn">{% trans "Nos Projets" %}
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="{{institutional_url}}">Projets institutionnels</a>
-            <a class="dropdown-item" href="{{industrial_url}}">Projets industriels</a>
-            <a class="dropdown-item" href="{% url 'project:project-create' %}">Proposer une idée de projet</a>
+            <a class="dropdown-item" href="{{institutional_url}}">{% trans "Projets institutionnels" %}</a>
+            <a class="dropdown-item" href="{{industrial_url}}">{% trans "Projets industriels" %}</a>
+            <a class="dropdown-item" href="{% url 'project:project-create' %}">{% trans "Proposer une idée de projet" %}</a>
         </div>
 
-        <button class="dropdown-btn">Aide
+        <button class="dropdown-btn">{% trans "Aide" %}
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
             <a class="dropdown-item" href="{{faq_url}}">FAQ</a>
-            <a class="dropdown-item" href="#">Mentions légales</a>
+            <a class="dropdown-item" href="#">{% trans "Mentions légales" %}</a>
             <a class="dropdown-item" href="{{contact_url}}">Contact</a>
         </div>
 

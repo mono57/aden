@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 
 {% block title %}
 {{event.title}}
@@ -13,10 +13,9 @@
             {% if event.image %}
             <img src="{{event.image.url}}" alt="{{event.title}}" class="img-fluid mb-3" width="150">
             {% endif %}
-            <p>Date de debut: <span class="text-primary">{{event.start_date}}</span></p>
-            <p>Date de fin: <span class="text-primary">{{event.end_date}}</span></p>
-            <p>Heure de debut: <span class="text-primary">{{event.start_time}}</span> - Heure de
-                fin: <span class="text-primary">{{event.start_time}}</span></p>
+            <p> {% trans "Date de debut:" %} <span class="text-primary">{{event.start_date}}</span></p>
+            <p>{% trans "Date de fin:" %} <span class="text-primary">{{event.end_date}}</span></p>
+            <p>{% trans "Heure de debut:" %} <span class="text-primary">{{event.start_time}}</span> - {% trans "Heure de fin:" %} <span class="text-primary">{{event.start_time}}</span></p>
             <p>{{event.description|safe}}</p>
         </div>
         <div class="col-md-4">

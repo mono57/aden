@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block title %}
-  Actualités
+  {% trans "Actualités" %}
 {% endblock title %}
 
 {% block content %}
   
-{% include "com/includes/banner.html" with banner_text='Actualités' %}
+{% include "com/includes/banner.html" with banner_text="Actualités" %}
 
 <section class="blog-block">
     <div class="container">

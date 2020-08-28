@@ -66,7 +66,7 @@ i18n_url = i18n_patterns(
     path('com/', include('com.urls', namespace='com')),
     path('project/', include('project.urls', namespace='project')),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('admin/', admin.site.urls),
+    path('admin/staff/', admin.site.urls),
     prefix_default_language = False
 )
 urlpatterns = i18n_url + \
