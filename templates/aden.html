@@ -258,11 +258,11 @@
         <div class="col-8">
         
             {% if motif == 'status' %}
-            <a href="{{ STATIC_URL }}/status_fr.pdf" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici !</a>
+            <a href="{{ MEDIA_URL }}status_fr.pdf" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici !</a>
             {% elif motif == 'actions' %}
-            <a href="{{ STATIC_URL }}/missions_plan_action_fr.pdf" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici !</a>
+            <a href="{{ MEDIA_URL }}missions_plan_action_fr.pdf" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici !</a>
             {% else %}
-            <a href="{{ STATIC_URL }}/reglement_interieur_fr.pdf" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici !</a>
+            <a href="{{ MEDIA_URL }}reglement_interieur_fr.pdf" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici ! </a>
 
             {% endif %}
 
