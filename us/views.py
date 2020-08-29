@@ -12,7 +12,7 @@ class ActionPlanTemplateView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["obj"] = ActionPlan.objects.filter(
             language=self.request.LANGUAGE_CODE).last()
-        context['title'] = 'Plan d\'action'
+        context['title'] = 'Missions et Plans d\'actions annuels'
         return context
 
 
