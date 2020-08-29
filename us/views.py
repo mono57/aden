@@ -13,6 +13,7 @@ class ActionPlanTemplateView(TemplateView):
         context["obj"] = ActionPlan.objects.filter(
             language=self.request.LANGUAGE_CODE).last()
         context['title'] = 'Missions et Plans d\'actions annuels'
+        context['motif'] = 'actions'
         return context
 
 
@@ -24,6 +25,7 @@ class StatusTemplateView(TemplateView):
         context["obj"] = Status.objects.filter(
             language=self.request.LANGUAGE_CODE).last()
         context['title'] = 'Statut juridique'
+        context['motif'] = 'status'
         return context
 
 
@@ -35,4 +37,5 @@ class InternalRegulationTemplateView(TemplateView):
         context["obj"] = InternalRegulation.objects.filter(
             language=self.request.LANGUAGE_CODE).last()
         context['title'] = 'Règlement interieur'
+        context['motif'] = 'regulation'
         return context
