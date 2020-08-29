@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}
-ADEN
+{{title}}
 {% endblock title %}
 
 {% block content %}
 
 <!-- Reglement interieur -->
+{% include "com/includes/banner.html" with banner_text=title %}
+
 
 <section class="container py-5">
 
     <div class="row">
-        <div class="col-9 p-17">
+
+        <div class="col-8">
+            {{obj.content|safe}}
+        </div>
+        <!-- <div class="col-9 p-17">
             <h3>Réglement interieur</h3>
 
             <h5>PREAMBULE</h5>
@@ -245,8 +251,13 @@ ADEN
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <a href="{{obj.file.url}}" class="btn theme-orange" target="_blank">Télécharger le fichier pdf ici !</a>
+        </div>
     </div>
     </div>
 </section>

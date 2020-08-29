@@ -18,6 +18,9 @@
 {% url 'about' as about_url %}
 {% url 'interface' as interface_url %}
 {% url 'download' as download_url %}
+{% url 'regulation' as regulation_url %}
+{% url 'status' as status_url %}
+{% url 'actions' as actions_url %}
 
 {% get_current_language as LANGUAGE_CODE %}
 
@@ -84,19 +87,12 @@
                         <a class="nav-link dropdown-toggle" href="{{aden_url}} data-toggle=" dropdown">{% trans "L’ADEN" %}</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{about_url}}">{% trans "Qui sommes-nous ?" %}</a>
-                            <a class="dropdown-item" href="{% if status %}
-                              {{status.file.url}}
-                              {% else %} #
-                            {% endif %}">{% trans "Les Statuts" %}</a>
-                            <a class="dropdown-item" href="{% if internal_regulation %}
-                              {{internal_regulation.file.url}} {% else %} #
-                            {% endif %}">{% trans "Le Règlement intérieur" %}</a>
+                            <a class="dropdown-item" href="{{status_url}}">{% trans "Les Statuts" %}</a>
+                            <a class="dropdown-item" href="{{regulation_url}}">{% trans "Le Règlement intérieur" %}</a>
                             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">{% trans "L'Assemblée générale" %}</a>
-                            <a class="dropdown-item" href="{{aden_url}}#">{% trans "Les Coordonnées" %}</a>
-                            <a class="dropdown-item" href="{% if action_plan %}
-                              {{action_plan.file.url}} {% else %} #
-                            {% endif %}">{% trans "Les missions et plans d’actions annuels" %}</a>
+                            <a class="dropdown-item" href="#">{% trans "L'Assemblée générale" %}</a>
+                            <a class="dropdown-item" href="#">{% trans "Les Coordonnées" %}</a>
+                            <a class="dropdown-item" href="{{actions_url}}">{% trans "Les missions et plans d’actions annuels" %}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -195,17 +191,12 @@
         </button>
         <div class="dropdown-container">
             <a class="dropdown-item" href="{{about_url}}">{% trans "Qui sommes-nous ?" %}</a>
-            <a class="dropdown-item" href="{% if status %}
-            {{status.file.url}}
-            {% else %} #{% endif %}">Les Statuts</a>
-            <a class="dropdown-item" href="{% if internal_regulation %}
-            {{internal_regulation.file.url}} {% else %} #{% endif %}">{% trans "Le Règlement intérieur" %}</a>
+            <a class="dropdown-item" href="{{status_url}}">Les Statuts</a>
+            <a class="dropdown-item" href="{{regulation_url}}">{% trans "Le Règlement intérieur" %}</a>
             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
-            <a class="dropdown-item" href="{{aden_url}}#">{% trans "L'Assemblée générale" %}</a>
-            <a class="dropdown-item" href="{{aden_url}}#">{% trans "Les Coordonnées" %}</a>
-            <a class="dropdown-item" href="{% if action_plan %}
-            {{action_plan.file.url}} {% else %} #
-          {% endif %}">{% trans "Les missions et plans d’actions annuels" %}</a>
+            <a class="dropdown-item" href="#">{% trans "L'Assemblée générale" %}</a>
+            <a class="dropdown-item" href="#">{% trans "Les Coordonnées" %}</a>
+            <a class="dropdown-item" href="{{actions_url}}">{% trans "Les missions et plans d’actions annuels" %}</a>
         </div>
         <button class="dropdown-btn">{% trans "Réseaux" %}
             <i class="fa fa-caret-down"></i>

@@ -9,18 +9,18 @@ class StrategicComityModelAdmin(admin.ModelAdmin):
 admin.site.register(StrategicComity, StrategicComityModelAdmin)
 
 class StatusModelAdmin(admin.ModelAdmin):
-    list_display = ('created_at',)
+    list_display = ('language', 'created_at',)
 
 admin.site.register(Status, StatusModelAdmin)
 
 
 class ActionPlanModelAdmin(admin.ModelAdmin):
-    list_display = ('created_at', 'updated_at')
+    list_display = ('language','created_at', 'updated_at')
 
 admin.site.register(ActionPlan, ActionPlanModelAdmin)
 
 class InternalRegulationModelAdmin(admin.ModelAdmin):
-    list_display = ('created_at', 'updated_at')
+    list_display = ('language', 'created_at', 'updated_at')
 
 admin.site.register(InternalRegulation, InternalRegulationModelAdmin)
 

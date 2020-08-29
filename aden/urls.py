@@ -8,6 +8,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from accounts.views import ProfileUpdateView, UserUpdateView
 from aden.views import *
+from us.views import *
 
 i18n_url = i18n_patterns(
     path(
@@ -57,6 +58,21 @@ i18n_url = i18n_patterns(
         'permissions/',
         TemplateView.as_view(template_name='not_allowed.html'),
         name='not_allowed'),
+    path(
+        'actions/',
+        ActionPlanTemplateView.as_view(),
+        name='actions'
+    ),
+    path(
+        'internal_regulation/',
+        InternalRegulationTemplateView.as_view(),
+        name='regulation',
+    ),
+    path(
+        'status/',
+        StatusTemplateView.as_view(),
+        name='status'
+    ),
     path('accounts/', include('allauth.urls')),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('tinymce/', include('tinymce.urls')),

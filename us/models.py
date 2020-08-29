@@ -2,6 +2,8 @@ from django.db import models
 from aden.utils import TimeStampModel
 # Create your models here.
 from cloudinary.models import CloudinaryField
+from tinymce import models as tinymce_models
+
 
 LANGUAGE_CHOICES = (
     ('en', 'Anglaise'),
@@ -34,10 +36,14 @@ class StrategicComity(TimeStampModel):
         verbose_name_plural = 'Comités Stratégiques'
 
 
+def action_plan_file_upload(instance, filename):
+    return 'missions_plan_action_{}.{}'.format(instance.language, str(filename).split('.')[1])
+
 class ActionPlan(TimeStampModel):
-    year = models.DateField(verbose_name='Année d\'exécution')
+    # year = models.DateField(verbose_name='Année d\'exécution')
+    content = tinymce_models.HTMLField(verbose_name='Texte régit')
     file = models.FileField(
-        upload_to='actions_plan/',
+        upload_to=action_plan_file_upload,
         verbose_name='Fichier du plan d\'action')
     language = models.CharField(
         max_length=10,
@@ -49,9 +55,13 @@ class ActionPlan(TimeStampModel):
         verbose_name_plural = 'Plans d\'actions'
 
 
+def status_file_upload(instance, filename):
+    return 'statut_{}.{}'.format(instance.language, str(filename).split('.')[1])
+
 class Status(TimeStampModel):
+    content = tinymce_models.HTMLField(verbose_name='Texte régit')
     file = models.FileField(
-        upload_to='status/',
+        upload_to=status_file_upload,
         verbose_name='Joindre le fichier de statut'
     )
     language = models.CharField(
@@ -66,9 +76,14 @@ class Status(TimeStampModel):
         verbose_name = 'Statut de l\'association'
         verbose_name_plural = 'Statuts de l\'association'
 
+
+def regulation_file_upload(instance, filename):
+    return 'reglement_interieur_{}.{}'.format(instance.language, str(filename).split('.')[1])
+
 class InternalRegulation(TimeStampModel):
+    content = tinymce_models.HTMLField(verbose_name='Texte régit')
     file = models.FileField(
-        upload_to='status/',
+        upload_to=regulation_file_upload,
         verbose_name='Joindre le fichier'
     )
     language = models.CharField(
