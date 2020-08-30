@@ -10,6 +10,7 @@ admin.site.register(StrategicComity, StrategicComityModelAdmin)
 
 class StatusModelAdmin(admin.ModelAdmin):
     list_display = ('language', 'created_at',)
+    exclude = ('file', )
 
     # def save_model(self, request, obj, form, change):
     #     upload_info = cloudinary.uploader.upload(form.cleaned_data.get('file'))
@@ -22,11 +23,13 @@ admin.site.register(Status, StatusModelAdmin)
 
 class ActionPlanModelAdmin(admin.ModelAdmin):
     list_display = ('language','created_at', 'updated_at')
+    exclude = ('file', )
 
 admin.site.register(ActionPlan, ActionPlanModelAdmin)
 
 class InternalRegulationModelAdmin(admin.ModelAdmin):
     list_display = ('language', 'created_at', 'updated_at')
+    exclude = ('file', )
 
 admin.site.register(InternalRegulation, InternalRegulationModelAdmin)
 

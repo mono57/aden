@@ -40,12 +40,15 @@ class StrategicComity(TimeStampModel):
 def action_plan_file_upload(instance, filename):
     return 'missions_plan_action_{}.{}'.format(instance.language, str(filename).split('.')[1])
 
+
 class ActionPlan(TimeStampModel):
     # year = models.DateField(verbose_name='Année d\'exécution')
-    content = tinymce_models.HTMLField(verbose_name='Texte régit')
+    content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)
     file = models.FileField(
         upload_to=action_plan_file_upload,
-        verbose_name='Fichier du plan d\'action')
+        verbose_name='Fichier du plan d\'action',
+        blank=True,
+        default='missions_plan_action_fr.pdf')
     language = models.CharField(
         max_length=10,
         choices=LANGUAGE_CHOICES,
@@ -59,11 +62,13 @@ class ActionPlan(TimeStampModel):
 def status_file_upload(instance, filename):
     return 'statut_{}.{}'.format(instance.language, str(filename).split('.')[1])
 
+
 class Status(TimeStampModel):
-    content = tinymce_models.HTMLField(verbose_name='Texte régit')
+    content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)
     file = models.FileField(
         upload_to=status_file_upload,
-        verbose_name='Joindre le fichier de statut'
+        verbose_name='Joindre le fichier de statut', blank=True,
+        default='statut_fr.pdf'
     )
     language = models.CharField(
         max_length=10,
@@ -73,6 +78,7 @@ class Status(TimeStampModel):
 
     def __str__(self):
         return 'Statut Version : {}'.format(self.language)
+
     class Meta:
         verbose_name = 'Statut de l\'association'
         verbose_name_plural = 'Statuts de l\'association'
@@ -81,11 +87,14 @@ class Status(TimeStampModel):
 def regulation_file_upload(instance, filename):
     return 'reglement_interieur_{}.{}'.format(instance.language, str(filename).split('.')[1])
 
+
 class InternalRegulation(TimeStampModel):
-    content = tinymce_models.HTMLField(verbose_name='Texte régit')
+    content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)
     file = models.FileField(
         upload_to='regulations/',
         verbose_name='Joindre le fichier',
+        blank=True,
+        default='reglement_interieur_fr.pdf'
         # storage=RawMediaCloudinaryStorage()
     )
     language = models.CharField(
@@ -98,6 +107,7 @@ class InternalRegulation(TimeStampModel):
         verbose_name = 'Règlement interieur'
         verbose_name_plural = 'Règlements interieurs'
 
+
 SOCIAL_CHOICES = (
     ('facebook', 'Facebook'),
     ('twitter', 'Twitter'),
@@ -105,18 +115,19 @@ SOCIAL_CHOICES = (
     ('linkedin', 'LinkedIn'),
 )
 
+
 class SocialNetwork(TimeStampModel):
     name = models.CharField(
-        max_length=20, 
+        max_length=20,
         verbose_name='Nom du réseau social')
     type = models.CharField(
         max_length=10,
-        choices = SOCIAL_CHOICES,
+        choices=SOCIAL_CHOICES,
         verbose_name='Type du réseau'
     )
     accessibility = models.CharField(
         max_length=10,
-        choices = (('private', 'Membre seulement'), ('public', 'Public')),
+        choices=(('private', 'Membre seulement'), ('public', 'Public')),
         verbose_name='Visibilité',
         default='public'
     )
@@ -125,6 +136,7 @@ class SocialNetwork(TimeStampModel):
     class Meta:
         verbose_name = 'Réseau Social'
         verbose_name_plural = 'Résaux sociaux'
+
 
 class About(TimeStampModel):
     content = models.TextField(verbose_name='Contenu de a propos')
