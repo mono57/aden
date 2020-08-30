@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+import cloudinary
 # Register your models here.
 from us.models import *
 from us.forms import AboutModelForm
@@ -10,6 +10,12 @@ admin.site.register(StrategicComity, StrategicComityModelAdmin)
 
 class StatusModelAdmin(admin.ModelAdmin):
     list_display = ('language', 'created_at',)
+
+    # def save_model(self, request, obj, form, change):
+    #     upload_info = cloudinary.uploader.upload(form.cleaned_data.get('file'))
+    #     # res = cloudinary.api.resource(upload_info.get('original_filename'), pages = True)
+    #     print(upload_info)
+        
 
 admin.site.register(Status, StatusModelAdmin)
 

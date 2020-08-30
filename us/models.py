@@ -3,6 +3,7 @@ from aden.utils import TimeStampModel
 # Create your models here.
 from cloudinary.models import CloudinaryField
 from tinymce import models as tinymce_models
+# from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
 
 LANGUAGE_CHOICES = (
@@ -83,8 +84,9 @@ def regulation_file_upload(instance, filename):
 class InternalRegulation(TimeStampModel):
     content = tinymce_models.HTMLField(verbose_name='Texte régit')
     file = models.FileField(
-        upload_to=regulation_file_upload,
-        verbose_name='Joindre le fichier'
+        upload_to='regulations/',
+        verbose_name='Joindre le fichier',
+        # storage=RawMediaCloudinaryStorage()
     )
     language = models.CharField(
         max_length=10,
