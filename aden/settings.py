@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
+    # 'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
@@ -193,11 +193,11 @@ CLOUDINARY = {
     'api_secret': 'ud2mDhLGDaxANsfRbP35H2m1UFY',
 }
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'adensite',
-    'API_KEY': '815289574411119',
-    'API_SECRET': 'ud2mDhLGDaxANsfRbP35H2m1UFY'
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'adensite',
+#     'API_KEY': '815289574411119',
+#     'API_SECRET': 'ud2mDhLGDaxANsfRbP35H2m1UFY'
+# }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
