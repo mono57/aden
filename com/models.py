@@ -164,3 +164,11 @@ class StrategicComity(TimeStampModel):
     class Meta:
         verbose_name = _('Communiqué Comité Stratégique')
         verbose_name_plural = _('Communiqué(s) Comité Stratégique')
+
+
+class Faq(TimeStampModel):
+    question = models.CharField(max_length=200, verbose_name='Question')
+    response = models.TextField(verbose_name='Reponse')
+
+    def __str__(self):
+        return self.question

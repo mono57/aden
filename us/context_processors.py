@@ -1,4 +1,4 @@
-from us.models import Status, ActionPlan, InternalRegulation, SocialNetwork
+from us.models import Status, ActionPlan, InternalRegulation, SocialNetwork, Footer
 
 
 def aden(request):
@@ -9,4 +9,5 @@ def aden(request):
     kwargs['internal_regulation'] = InternalRegulation.objects.filter(
         language=lc).last()
     kwargs['social_networks'] = SocialNetwork.objects.all()
+    kwargs['footer_text'] = Footer.objects.last()
     return kwargs

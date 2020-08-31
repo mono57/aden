@@ -40,7 +40,12 @@ class StrategicComity(TimeStampModel):
 def action_plan_file_upload(instance, filename):
     return 'missions_plan_action_{}.{}'.format(instance.language, str(filename).split('.')[1])
 
+class Footer(TimeStampModel):
+    text = models.TextField(verbose_name='Texte')
 
+    class Meta:
+        verbose_name = 'Pied de page'
+        verbose_name_plural = 'Pieds de page'
 class ActionPlan(TimeStampModel):
     # year = models.DateField(verbose_name='Année d\'exécution')
     content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)

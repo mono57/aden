@@ -7,7 +7,8 @@ from com.models import (
     Post, 
     Document,
     Event,
-    StrategicComity
+    StrategicComity,
+    Faq
 )
 
 class GaleryModelForm(forms.ModelForm):
@@ -96,4 +97,13 @@ class StrategicComityModelForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
+        }
+
+
+class FaqModelForm(forms.ModelForm):
+    class Meta:
+        model = Faq
+        fields = '__all__'
+        widgets = {
+            'response': TinyMCE(attrs={'cols': 80, 'rows': 30})
         }

@@ -27,70 +27,28 @@
                 </div>
   
                 <div class="panel-group pt-3" id="accordion2" role="tablist" aria-multiselectable="true">
+                    {% for faq in faqs %}
                     <div class="panel panel-default mb-4">
                         <div class="panel-heading" role="tab" id="headingOne2">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion2"
                                    href="#collapseOne2"
                                    aria-expanded="true">
-                                    Comment adhérer à la communauté?
+                                   {{faq.question}}
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseOne2" class="panel-collapse collapse in" role="tabpanel"
                              aria-labelledby="headingOne2">
                             <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem,
-                                    dictum
-                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu
-                                    tincidunt
-                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
-                                    aliquam vitae. Curabitur molestie eros. </p>
+                                <p>{{faq.response|safe}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-default mb-4">
-                        <div class="panel-heading" role="tab" id="headingTwo2">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
-                                   href="#collapseTwo2" aria-expanded="false">
-                                    Comment adhérer à la communauté?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo2" class="panel-collapse collapse" role="tabpanel"
-                             aria-labelledby="headingTwo2">
-                            <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem,
-                                    dictum
-                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu
-                                    tincidunt
-                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
-                                    aliquam vitae. Curabitur molestie eros. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default mb-4">
-                        <div class="panel-heading" role="tab" id="headingThree2">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
-                                   href="#collapseThree2" aria-expanded="false">
-                                    Comment pouvez vous nous contacter?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree2" class="panel-collapse collapse" role="tabpanel"
-                             aria-labelledby="headingThree2">
-                            <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem,
-                                    dictum
-                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu
-                                    tincidunt
-                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
-                                    aliquam vitae. Curabitur molestie eros. </p>
-                            </div>
-                        </div>
-                    </div>
+                    {% empty %}
+                    <p class="text-center">Aucun faq </p>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>

@@ -85,3 +85,9 @@ class StrategicComityModelAdmin(admin.ModelAdmin):
     form = StrategicComityModelForm
 
 admin.site.register(StrategicComity, StrategicComityModelAdmin)
+
+class FaqModelAdmin(admin.ModelAdmin):
+    list_display = ('question', )
+    form = FaqModelForm
+
+admin.site.register(Faq, FaqModelAdmin)

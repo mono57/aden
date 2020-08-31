@@ -45,3 +45,8 @@ class AboutModelAdmin(admin.ModelAdmin):
     form = AboutModelForm
 
 admin.site.register(About, AboutModelAdmin)
+
+class FooterModelAdmin(admin.ModelAdmin):
+    list_display = ('text',)
+
+admin.site.register(Footer, FooterModelAdmin)

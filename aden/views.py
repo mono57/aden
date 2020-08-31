@@ -5,11 +5,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, ListView
 from aden.forms import ContactForm
 from aden.decorators import aden_member_required
-from com.models import Event, News, Galery, Post
-from us.models import About
+from com.models import Event, News, Galery, Post, Faq
+from us.models import About, Footer
 
 
 User = get_user_model()
@@ -49,6 +49,8 @@ class HomeTemplateView(TemplateView):
         context['members_count'] = User.objects.filter(is_member=True).count()
         context['photos_count'] = sum(
             [g.images.all().count() for g in Galery.objects.all()])
+        context['faqs'] = Faq.objects.all()[:3]
+        # context['footer_text'] = Footer.objects.last()
         return context
 
 
@@ -60,3 +62,9 @@ class AboutTemplateView(TemplateView):
         context['about'] = About.objects.filter(
             language=self.request.LANGUAGE_CODE).first()
         return context
+
+
+class FaqListView(ListView):
+    template_name = 'faq.html'
+    model = Faq
+    context_object_name = 'faqs'

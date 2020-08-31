@@ -34,7 +34,7 @@ i18n_url = i18n_patterns(
         name='ensai'),
     path(
         'faq/',
-        TemplateView.as_view(template_name='faq.html'),
+        FaqListView.as_view(),
         name='faq'),
     path(
         'interface/',
