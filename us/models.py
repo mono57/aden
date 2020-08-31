@@ -45,10 +45,11 @@ class ActionPlan(TimeStampModel):
     # year = models.DateField(verbose_name='Année d\'exécution')
     content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)
     file = models.FileField(
-        upload_to=action_plan_file_upload,
+        # upload_to=action_plan_file_upload,
         verbose_name='Fichier du plan d\'action',
         blank=True,
-        default='missions_plan_action_fr.pdf')
+        # default='missions_plan_action_fr.pdf'
+        )
     language = models.CharField(
         max_length=10,
         choices=LANGUAGE_CHOICES,
@@ -66,9 +67,9 @@ def status_file_upload(instance, filename):
 class Status(TimeStampModel):
     content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)
     file = models.FileField(
-        upload_to=status_file_upload,
+        # upload_to=status_file_upload,
         verbose_name='Joindre le fichier de statut', blank=True,
-        default='statut_fr.pdf'
+        # default='statut_fr.pdf'
     )
     language = models.CharField(
         max_length=10,
@@ -91,10 +92,10 @@ def regulation_file_upload(instance, filename):
 class InternalRegulation(TimeStampModel):
     content = tinymce_models.HTMLField(verbose_name='Texte régit', blank=True)
     file = models.FileField(
-        upload_to='regulations/',
+        # upload_to='regulations/',
         verbose_name='Joindre le fichier',
         blank=True,
-        default='reglement_interieur_fr.pdf'
+        # default='reglement_interieur_fr.pdf'
         # storage=RawMediaCloudinaryStorage()
     )
     language = models.CharField(

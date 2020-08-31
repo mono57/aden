@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'tinymce',
     'cloudinary',
+    'storages',
 
 ]
 
@@ -184,6 +185,18 @@ USE_TZ = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# AWS S3 Config
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'aden-media'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+print(os.getenv('AWS_SECRET_ACCESS_KEY'))
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_DEFAULT_ACL = None
+
 # Cloudinary config
 
 CLOUDINARY = {
@@ -234,7 +247,7 @@ TINYMCE_DEFAULT_CONFIG = {
 
 MEDIA_URL = '/media/'
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'aden.storage_backends.MediaStorage'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 django_heroku.settings(locals())
