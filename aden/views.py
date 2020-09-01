@@ -46,6 +46,7 @@ class HomeTemplateView(TemplateView):
         context['events'] = Event.objects.all()[:3]
         context['photos'] = first_galery.images.all()[:6] if first_galery else []
         context['posts_count'] = Post.objects.all().count()
+        context['posts'] = Post.objects.all()[:3]
         context['members_count'] = User.objects.filter(is_member=True).count()
         context['photos_count'] = sum(
             [g.images.all().count() for g in Galery.objects.all()])
@@ -68,3 +69,11 @@ class FaqListView(ListView):
     template_name = 'faq.html'
     model = Faq
     context_object_name = 'faqs'
+
+class LegalMentions(TemplateView):
+    template_name = 'legal_mentions.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Mentions légales'
+        return context

@@ -55,6 +55,29 @@ Albums
 
             </div>
         </div>
+        {% if galeries.has_other_pages %}
+        <div class="row">
+            <div class="col-12">
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if galeries.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ galeries.previous_page_number }}">Précedent</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Page {{ galeries.number }} sur {{ galeries.paginator.num_pages }}.
+                        </span>
+                
+                        {% if galeries.has_next %}
+                            <a href="?page={{ galeries.next_page_number }}">Suivant</a>
+                            <a href="?page={{ galeries.paginator.num_pages }}">Dernier &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </section>
 {% endblock content %}

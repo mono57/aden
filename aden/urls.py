@@ -73,6 +73,10 @@ i18n_url = i18n_patterns(
         StatusTemplateView.as_view(),
         name='status'
     ),
+    path('legal_mentions/',
+        LegalMentions.as_view(),
+        name='legal_mentions'
+    ),
     path('accounts/', include('allauth.urls')),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('tinymce/', include('tinymce.urls')),
@@ -80,6 +84,8 @@ i18n_url = i18n_patterns(
     path('accounts/user/update/', UserUpdateView.as_view(),
          name='account_user_update'),
     path('com/', include('com.urls', namespace='com')),
+    path('network/', include('network.urls', namespace='network')),
+    path('carriere/', include('carriere.urls', namespace='carriere')),
     path('project/', include('project.urls', namespace='project')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/staff/', admin.site.urls),

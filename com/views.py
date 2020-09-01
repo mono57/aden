@@ -26,7 +26,7 @@ class GaleryListView(ListView):
     model = Galery
     template_name = 'com/galery-list.html'
     context_object_name = 'galeries'
-
+    paginate_by = 10
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
