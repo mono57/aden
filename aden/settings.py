@@ -253,7 +253,9 @@ TINYMCE_DEFAULT_CONFIG = {
 
 MEDIA_URL = '/media/'
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
-DEFAULT_FILE_STORAGE = 'aden.storage_backends.MediaStorage'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if os.getenv('ENV') == 'PROD':
+    DEFAULT_FILE_STORAGE = 'aden.storage_backends.MediaStorage'
+else:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 django_heroku.settings(locals())

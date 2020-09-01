@@ -42,11 +42,10 @@ Albums
             <div class="d-flex align-items-center justify-content-center tab-content" id="pills-tabContent">
                 <div class="tab-pane  fade show active" id="showall" role="tabpanel" aria-labelledby="showall-tab">
                     {% for galery in galeries %}
-                    {% for photo in galery.images.all %}
-                    {% include "com/includes/galery-item.html" with item=photo %}
+                   
+                    {% include "com/includes/galery-item.html" with item=galery %}
                     {% empty %}
                     <h4 class="text-danger text-center">{% trans "Album vide" %}</h4>
-                    {% endfor %}
                     {% endfor %}
 
 
@@ -56,22 +55,22 @@ Albums
             </div>
         </div>
         {% if is_paginated %}
-        <div class="row">
+        <div class="row pt-5">
             <div class="col-12">
                 <div class="pagination">
                     <span class="step-links">
-                        {% if galeries.has_previous %}
-                            <a href="?page=1">&laquo; first</a>
-                            <a href="?page={{ galeries.previous_page_number }}">Précedent</a>
+                        {% if page_obj.has_previous %}
+                            <!-- <a href="?page=1">&laquo; first</a> -->
+                            <a href="?page={{ page_obj.previous_page_number }}" class="color-orange">Précedent</a>
                         {% endif %}
                 
                         <span class="current">
-                            Page {{ galeries.number }} sur {{ galeries.paginator.num_pages }}.
+                            Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
                         </span>
                 
-                        {% if galeries.has_next %}
-                            <a href="?page={{ galeries.next_page_number }}">Suivant</a>
-                            <a href="?page={{ galeries.paginator.num_pages }}">Dernier &raquo;</a>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="color-orange">Suivant</a>
+                            <!-- <a href="?page={{ page_obj.paginator.num_pages }}" class="color-orange">Dernier &raquo;</a> -->
                         {% endif %}
                     </span>
                 </div>
