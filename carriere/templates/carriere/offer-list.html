@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row mb-2 mb-md-3">
+        <div class="col-12">
+            <label for="query">Rechercher un poste:</label>
+            <form action="{% url 'carriere:find' %}" class="form-inline" method="get">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="query" value="{{query|default:''}}" name="query"
+                        placeholder="Motif de recherce">
+                </div>
+                <button type="submit" class="btn theme-orange ml-2">Rechercher</button>
+            </form>
+            {% if query %}
+            <p class="mt-2 mb-0">Résultats de recherche pour: <span class="color-orange">{{query}}</span></p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        {% for offer in offers %}
+        <div class="col-sm-12 col-md-4 mb-2 mb-md-0">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{offer.label}}</h3>
+                    <p class="text-muted small">Entreprise: <span class="color-orange">{{offer.entreprise}}</span></p>
+                    <p>{{offer.description}}</p>
+                    <p>{% for profil in offer.get_profils %}
+                        <span class="badge theme-orange">{{profil}}</span>
+                        {% endfor %}</p>
+                    <a href="" class="btn theme-orange btn-block btn-sm">Postuler</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12"><p>Aucune offre disponible pour le moment!</p></div>
+        {% endfor %}
+    </div>
+
+{% include "includes/pagination.html" %}
+
+</div>
+
+{% endblock content %}

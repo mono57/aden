@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row mb-2 mb-md-3">
+        <div class="col-12">
+            <label for="query">Rechercher un profil:</label>
+            <form action="" class="form-inline" method="get">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="query" value="{{query}}" name="query"
+                        placeholder="Motif de recherce">
+                </div>
+                <button type="submit" class="btn theme-orange ml-2">Rechercher</button>
+            </form>
+            {% if query %}
+            <p class="mt-2 mb-0">Résultats de recherche pour: <span class="color-orange">{{query}}</span></p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        {% for resume in resumes %}
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <small class="small">Nom(s) et Prenom(s)</small>
+                    <p>{{resume.full_name}}</p>
+                    <small class="small">Filière</small>
+                    <p>{{resume.filiere}}</p>
+                    <small class="small">Promotion</small>
+                    <p>{{resume.promotion}}</p>
+
+                    <a href="{{resume.file.url}}" class="color-orange" download="">Télécharger le CV</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+       <div class="col-12">
+        <p>Aucun ensai disponible pour le moment!</p>
+       </div>
+        {% endfor %}
+    </div>
+
+   {% include "includes/pagination.html" %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row d-flex">
+        <div class="col-6 mx-auto">
+            <div class="d-flex align-items-center">
+                <h3>Proposer une offre</h3>
+            <a href="{% url 'carriere:resume' %}" class="ml-auto color-orange">Voir les profils disponible</a>
+            </div>
+            <p class="help-text">Remplissez le formulaire ci-dessous</p>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} my-2">
+                {{message}}
+            </div>
+            {% endfor %}
+
+            {% endif %}
+            <form method="POST">
+
+                {% csrf_token %}
+
+                {{form|crispy}}
+
+                <button class="btn theme-orange" type="submit">Proposer l'offre</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
