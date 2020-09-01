@@ -23,9 +23,8 @@
            {% for new in news %}
             {% include "com/includes/single-post.html" with item=new %}
            {% endfor %}
-
-           
         </div>
+        {% include "includes/pagination.html" %}
     </div>
 </section>
 

@@ -19,7 +19,7 @@ class PostListView(ListView):
     template_name = 'com/post-list.html'
     model = Post
     context_object_name = 'posts'
-
+    paginate_by = 6
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
@@ -51,6 +51,8 @@ class NewsListView(ListView):
     template_name = 'com/news-list.html'
     model = News
     context_object_name = 'news'
+    paginate_by = 6
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -78,6 +80,8 @@ class EventListView(ListView):
     template_name = 'com/event-list.html'
     model = Event
     context_object_name = 'events'
+    paginate_by = 6
+
 
 
 @method_decorator(login_required, name='dispatch')
