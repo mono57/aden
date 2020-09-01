@@ -1,0 +1,23 @@
+{% if is_paginated %}
+<div class="row pt-5">
+    <div class="col-12">
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                <!-- <a href="?page=1">&laquo; first</a> -->
+                <a href="?page={{ page_obj.previous_page_number }}" class="color-orange">Précedent</a>
+                {% endif %}
+
+                <span class="current mx-3">
+                    Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="color-orange">Suivant</a>
+                <!-- <a href="?page={{ page_obj.paginator.num_pages }}" class="color-orange">Dernier &raquo;</a> -->
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+{% endif %}
