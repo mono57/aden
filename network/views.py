@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-# Create your views here.
+from django.views.generic import TemplateView, ListView, DetailView
+from django.contrib.auth.views import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth import get_user_model
 
+from aden.decorators import aden_member_required
 
+User = get_user_model()
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class PromotionsTemplateView(TemplateView):
     template_name = 'network.html'
 
@@ -11,7 +18,8 @@ class PromotionsTemplateView(TemplateView):
         context["title"] = 'Promotions'
         return context
 
-
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class InterGroupTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -21,6 +29,8 @@ class InterGroupTemplateView(TemplateView):
         return context
 
 
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class ConventionsTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -29,7 +39,8 @@ class ConventionsTemplateView(TemplateView):
         context["title"] = 'Conventions avec les grandes écoles'
         return context
 
-
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class AnnuaireTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -38,7 +49,8 @@ class AnnuaireTemplateView(TemplateView):
         context["title"] = 'Annuaire'
         return context
     
-
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class NominationsTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -48,6 +60,8 @@ class NominationsTemplateView(TemplateView):
         return context
 
 
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class CarnetTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -57,6 +71,8 @@ class CarnetTemplateView(TemplateView):
         return context
 
 
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class ClubsTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -65,7 +81,8 @@ class ClubsTemplateView(TemplateView):
         context["title"] = 'Clubs'
         return context
 
-
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class InternationalTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -75,6 +92,8 @@ class InternationalTemplateView(TemplateView):
         return context
     
 
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
 class NewsTemplateView(TemplateView):
     template_name = 'network.html'
     
@@ -84,10 +103,27 @@ class NewsTemplateView(TemplateView):
         return context
 
 
-class PortraitAlumniTemplateView(TemplateView):
-    template_name = 'network.html'
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class PortraitAlumniListView(ListView):
+    template_name = 'network/portrait-list.html'
+    model = User
+    context_object_name = 'portraits'
+    paginate_by = 10
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = 'Portrait des alumnis'
+        return context
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class PortraitAlumniDetailView(DetailView):
+    model = User
+    context_object_name = 'portrait'
+    template_name = 'network/portrait-detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Portrait - {}'.format(self.get_object().get_full_name())
         return context

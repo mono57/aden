@@ -71,20 +71,24 @@ class User(AbstractBaseUser):
     def is_admin(self):
         return self.admin
 
-
     class Meta:
         verbose_name = _("Utilisateur")
         verbose_name_plural = _("Utilisateurs")
 
 
-
 class Profile(TimeStampModel):
-    photo = CloudinaryField(resource_type='image', blank=True, verbose_name=_("Photo de profile"))
-    birthday = models.DateField(blank=True, null=True, verbose_name=_("Date de naissance"))
+    photo = CloudinaryField(resource_type='image',
+                            blank=True, verbose_name=_("Photo de profile"))
+    birthday = models.DateField(
+        blank=True, null=True, verbose_name=_("Date de naissance"))
     birth_location = models.CharField(
         max_length=100, blank=True, verbose_name=_('Lieu de naissance'))
+    filiere = models.CharField(max_length=50, verbose_name='Filière')
     promo = models.CharField(max_length=50, blank=True,
                              verbose_name='Promotion')
+    gender = models.CharField(max_length=10, blank=True, choices=(
+        ('male', 'Masculin'), ('female', 'Feminin')),verbose_name='Sexe')
+    
 
     user = models.OneToOneField(
         User, related_name='profile', on_delete=models.CASCADE)
@@ -99,7 +103,8 @@ def post_save_user_create_profile(sender, instance, created, **kwargs):
             instance = instance.profile
         except:
             Profile.objects.create(
-                user = instance
+                user=instance
             )
+
 
 post_save.connect(post_save_user_create_profile, sender=User)

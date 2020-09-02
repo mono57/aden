@@ -50,7 +50,11 @@ urlpatterns = [
     ),
     path(
         'portrait/',
-        PortraitAlumniTemplateView.as_view(),
+        PortraitAlumniListView.as_view(),
         name='portrait'
-    )
+    ),
+    path(
+        'portrait/<int:pk>/detail/',
+        PortraitAlumniDetailView.as_view(), 
+        name='portrait-detail')
 ]

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+{% block content %}
+  
+    {% include "com/includes/banner.html" with banner_text=title %}
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md-3 mb-2 mb-md-0">
+                {% if portrait.profile.photo %}
+                <img src="{{portrait.profile.photo.url}}" class="img-fluid rounded-circle">
+                  {% else %}
+                  <img src="{% static 'images/logo_user.png' %}" alt="" class="img-fluid">
+                  
+                {% endif %}
+            </div>
+            <div class="col-8 pl-md-5">
+                <h4 class="text-uppercase">{{portrait.get_full_name}}</h4>
+                <p>{{portrait.profile.promo}}</p>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

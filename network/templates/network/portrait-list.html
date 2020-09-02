@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-8">
+            <p>
+                {% blocktrans %}
+                Un grand nombre d'alumni sont présents à des postes clés
+                d'arganisations camerounaises et internationales
+                {% endblocktrans %}
+            </p>
+            <p>{% trans "Vous trouverez dans cette rubrique quelques protraits" %}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nom(s) & Prénom(s)</th>
+                            <th scope="col">Promotion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for portrait in portraits %}
+                        <tr>
+                            <th>{{forloop.counter}}</th>
+                            <td><a
+                                class="color-orange"    href="{% url 'network:portrait-detail' pk=portrait.pk %}">{{portrait.get_full_name}}</a>
+                            </td>
+                            <td>{{portrait.profile.promo}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% include "includes/pagination.html" %}
+
+</div>
+
+{% endblock content %}
