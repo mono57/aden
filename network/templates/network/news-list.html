@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-8">
+            {% for new in news %}
+            <div class="card  mb-2 mb-md-4">
+                <div class="card-body">
+                    <h4>{{new.title}}</h4>
+                    {% if new.link %}
+                    <p class="mb-2">
+                        <small>Plus de détails <a href="{{news.link}}" class="color-orange">ici</a>  </small>
+                    </p>
+                    
+                    {% endif %}
+                    <p>{{new.description}}</p>
+                    {% if new.file %}
+                    <a href="{{new.file.url}}" class="color-orange" download>Télécharger le fichier joint</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <p>Auncune news n'est encore enregistrée !</p>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% include "includes/pagination.html" %}
+</div>
+
+
+{% endblock content %}

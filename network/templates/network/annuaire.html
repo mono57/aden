@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for member in members %}
+        <div class="col-12 col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    {% if member.profile.photo %}
+                    <img src="{{member.profile.photo}}" class="img-fluid rounded-circle" alt="{{member.get_full_name}}">
+                    {% else %}
+                    <img src="{% static 'images/aden.jpg' %}" alt="">
+                    {% endif %}
+                    <h4>{{member.first_name}} <br> {{member.last_name}}</h4>
+                    {% with member.profile as profile %}
+                    <p>{{profile.degree}} - {{profile.filiere}} - {{profile.promo}}</p>
+                    <p>{{profile.poste}}</p>
+                    <p>{{profile.entreprise}}</p>
+                    <br>
+                    {% if request.user.is_member %}
+                    <p>{{profile.phone}}</p>
+                    <p>{{profile.email}}</p>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Annuaire vide !</p>
+        {% endfor %}
+    </div>
+
+    {% include "includes/pagination.html" %}
+</div>
+
+{% endblock content %}

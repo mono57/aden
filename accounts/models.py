@@ -87,8 +87,29 @@ class Profile(TimeStampModel):
     promo = models.CharField(max_length=50, blank=True,
                              verbose_name='Promotion')
     gender = models.CharField(max_length=10, blank=True, choices=(
-        ('male', 'Masculin'), ('female', 'Feminin')),verbose_name='Sexe')
-    
+        ('male', 'Masculin'), ('female', 'Feminin')), verbose_name='Sexe')
+
+    degree = models.CharField(
+        max_length=100, blank=True, verbose_name='Intitulé du Diplome')
+    in_ensai_year = models.DateField(
+        verbose_name='Année d\'entrée à l\'ENSAI', blank=True,null=True)
+    out_ensai_year = models.DateField(
+        verbose_name='Année de sortie', blank=True, null=True)
+    situation = models.CharField(
+        max_length=100, blank=True, verbose_name='Situation actuelle')
+    entreprise = models.CharField(
+        max_length=100, blank=True, verbose_name='Nom de l\'entreprise qui vous emploi')
+    poste = models.CharField(max_length=100, blank=True,
+                             verbose_name='Poste occupé')
+    phone = models.CharField(max_length=20, blank=True,
+                             verbose_name='Numéro de téléphone')
+    waiting = models.TextField(
+        blank=True, verbose_name='Quelles sont vos attentes du groupe ALUMNI ENSAI?')
+
+    contribution = models.TextField(
+        blank=True, verbose_name='Que pouvez vous apporter comme contribution pour que vos attentes soient comblées?')
+
+    region = models.CharField(max_length=50, blank=True, verbose_name='Région')
 
     user = models.OneToOneField(
         User, related_name='profile', on_delete=models.CASCADE)

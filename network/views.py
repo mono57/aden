@@ -5,6 +5,8 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth import get_user_model
 
 from aden.decorators import aden_member_required
+from network.models import NetworkNews
+
 
 User = get_user_model()
 
@@ -41,8 +43,11 @@ class ConventionsTemplateView(TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class AnnuaireTemplateView(TemplateView):
-    template_name = 'network.html'
+class AnnuaireListView(ListView):
+    model = User
+    context_object_name = 'members'
+    template_name = 'network/annuaire.html'
+    paginate_by = 8
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -94,8 +99,11 @@ class InternationalTemplateView(TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class NewsTemplateView(TemplateView):
-    template_name = 'network.html'
+class NewsListView(ListView):
+    model = NetworkNews
+    context_object_name = 'news'
+    template_name = 'network/news-list.html'
+    paginate_by = 6
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

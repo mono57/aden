@@ -16,7 +16,7 @@ urlpatterns = [
     ),
     path(
         'annuaire/',
-        AnnuaireTemplateView.as_view(),
+        AnnuaireListView.as_view(),
         name='annuaire'
     ),
     path(
@@ -45,7 +45,7 @@ urlpatterns = [
     ),
     path(
         'news/',
-        NewsTemplateView.as_view(),
+        NewsListView.as_view(),
         name='news'
     ),
     path(
