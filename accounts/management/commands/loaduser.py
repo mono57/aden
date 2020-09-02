@@ -30,7 +30,7 @@ class Command(BaseCommand):
             self.print("load users from {}".format(url))
             r = requests.get(url, allow_redirects=True)
             data = json.loads(r.text)
-            for obj in data[:10]:
+            for obj in data:
                 try:
                     user = User.objects.create_user(
                         email=obj.get('email'),
