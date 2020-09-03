@@ -49,6 +49,10 @@ class AnnuaireListView(ListView):
     template_name = 'network/annuaire.html'
     paginate_by = 8
     
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.exclude(pk=self.request.user.pk)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = 'Annuaire'
