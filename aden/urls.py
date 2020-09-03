@@ -30,7 +30,7 @@ i18n_url = i18n_patterns(
     ),
     path(
         'ensai/',
-        TemplateView.as_view(template_name='ensai.html'),
+        EnsaiTemplateView.as_view(),
         name='ensai'),
     path(
         'faq/',
@@ -58,11 +58,7 @@ i18n_url = i18n_patterns(
         'permissions/',
         TemplateView.as_view(template_name='not_allowed.html'),
         name='not_allowed'),
-    path(
-        'actions/',
-        ActionPlanTemplateView.as_view(),
-        name='actions'
-    ),
+
     path(
         'internal_regulation/',
         InternalRegulationTemplateView.as_view(),
@@ -87,6 +83,7 @@ i18n_url = i18n_patterns(
     path('network/', include('network.urls', namespace='network')),
     path('carriere/', include('carriere.urls', namespace='carriere')),
     path('project/', include('project.urls', namespace='project')),
+    path('aden/', include('us.urls', namespace='aden')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/staff/', admin.site.urls),
     prefix_default_language = False

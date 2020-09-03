@@ -5,15 +5,22 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 
-class ActionPlanTemplateView(TemplateView):
-    template_name = 'aden.html'
+class ActionPlanListView(ListView):
+    template_name = 'us/action_plans.html'
+    model = ActionPlan
+    context_object_name = 'actions'
+    paginate_by = 9
+
+    def get_queryset(self):
+        lc = self.request.LANGUAGE_CODE
+        qs = super().get_queryset()
+        return qs.filter(language=lc)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["obj"] = ActionPlan.objects.filter(
-            language=self.request.LANGUAGE_CODE).last()
+        # context["obj"] = ActionPlan.objects.filter(
+        #     language=self.request.LANGUAGE_CODE).last()
         context['title'] = 'Missions et Plans d\'actions annuels'
-        context['motif'] = 'actions'
         return context
 
 
@@ -39,3 +46,8 @@ class InternalRegulationTemplateView(TemplateView):
         context['title'] = 'Règlement interieur'
         context['motif'] = 'regulation'
         return context
+
+class GeneralAssemblyListView(ListView):
+    model = GeneralAssembly
+    template_name = 'us/ga.html'
+    context_object_name = 'gassemblies'

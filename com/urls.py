@@ -33,15 +33,17 @@ urlpatterns = [
         GaleryListView.as_view(), 
         name='galery-list'),
     path(
+        'galeries/<int:pk>/detail/',
+        GeleryDetailView.as_view(),
+        name='galery-detail'),
+    path(
         'comities/', 
         ComStrategicComityListView.as_view(), 
         name='comities'),
-
     path(
         'comities/<int:pk>/detail/', 
         ComStrategicComityDetailView.as_view(), 
         name='comities-detail'),
-
     path(
         'strategic/comity/', 
         StrategicComityTempateView.as_view(), 

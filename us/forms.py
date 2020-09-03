@@ -10,3 +10,4 @@ class AboutModelForm(forms.ModelForm):
         widgets = {
             'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
         }
+

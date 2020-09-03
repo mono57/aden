@@ -12,11 +12,15 @@
 <div class="container py-5">
     <div class="row">
         {% for comity in comities %}
-        <div class="col-6">
-            <h4>
-                <a href="{{comity.get_absolute_url}}">{{comity.object}}</a>
-            </h4>
-            <p>{{comity.content|safe|truncatewords:20}}</p>
+        <div class="col-12 col-md-6">
+            <h5>
+                {{comity.object}}
+                <!-- <a href="{{comity.get_absolute_url}}">{{comity.object}}</a> -->
+            </h5>
+            <p class="text-justify">{{comity.content|safe}}</p>
+            {% if comity.file %}
+            <a href="{{comity.file.url}}" class="color-orange" download>Télécharger le fichier joint ici !</a>
+            {% endif %}
         </div>
         {% empty %}
         <p class="text-center"> Aucun communiqué n'a été publié </p>

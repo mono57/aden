@@ -105,24 +105,34 @@ Accueil
 
 <section class="about-us" data-aos="fade-up" data-aos-duration="950">
     <div class="container">
-        <div class="about-box pb-3">
-            <img src="{% static "assets/images/logo.jpg" %}" width="100" alt="" srcset="">
-        </div>
-        <h3 data-aos="fade-up" data-aos-duration="1050" class="font-weight-bold">École Nationale Superieure des Sciences
-            Agro-Industrielles</h5>
-            <h6 class="pb-3 px-5 mb-0" data-aos="fade-up" data-aos-duration="1050">Réunir et assurer des liens amicaux
-                entre les diplômés de L’ENSAI ou de l’ENSIAAC
-                de Ngaoundéré ; Participer activement au développement et au rayonnement de l'ENSAI de Ngaoundéré;</h6>
-
-
-            <!-- <div class="button-box mt-2">
-          <a href="#" class="left-btn">Lire plus a propos de nous</a>
-          <a href="#" class="right-btn">Contactez-nous</a>
-      </div> -->
-            <div class="">
-                <a href="{% url 'about' %}" class="btn theme-orange">Lire plus a propos de nous</a>
-                <a href="{% url 'contact' %}" class="btn theme-orange ml-3">Contactez-nous</a>
+        <div class="row d-flex">
+            <div class="col-12 col-md-7 mx-auto p-2 p-md-0">
+                <div class="about-box pb-3">
+                    <img src="{% static "assets/images/logo.jpg" %}" width="100" alt="" srcset="">
+                </div>
+                <h5 class="font-weight-bold">ASSOCIATION DES DIPLOMÉS DE L’ENSAI DE
+                    NGAOUNDÉRÉ</h5>
+                <h5 class="font-weight-bold">ASSOCIATION OF GRADUATES OF ENSAI
+                    NGAOUNDERE</h5>
+                <ul class="list-unstyled my-4">
+                    <li>Réunir et assurer des liens amicaux
+                        entre les diplomés de l’ENSIAAC/ENSAI (Ecole
+                        Nationale Supérieure des Sciences Agro-Industrielles) de
+                        l’Université de Ngaoundéré; </li>
+                    <!-- <li>Participer activement au développement et au rayonnement de l'ENSAI de Ngaoundéré;</li> -->
+                </ul>
+        
+        
+                <!-- <div class="button-box mt-2">
+                  <a href="#" class="left-btn">Lire plus a propos de nous</a>
+                  <a href="#" class="right-btn">Contactez-nous</a>
+              </div> -->
+                <div class="">
+                    <a href="{% url 'about' %}" class="btn theme-orange">Lire plus a propos de nous</a>
+                    <a href="{% url 'contact' %}" class="btn theme-orange ml-3">Contactez-nous</a>
+                </div>
             </div>
+        </div>
     </div>
 </section>
 

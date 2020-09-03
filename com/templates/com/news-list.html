@@ -3,11 +3,11 @@
 {% load i18n %}
 
 {% block title %}
-  {% trans "Actualités" %}
+{% trans "Actualités" %}
 {% endblock title %}
 
 {% block content %}
-  
+
 {% include "com/includes/banner.html" with banner_text="Actualités" %}
 
 <section class="blog-block">
@@ -19,10 +19,15 @@
                 <span class="fa fa-mortar-board"></span>
             </div>
         </div> -->
+
         <div class="row">
-           {% for new in news %}
+            <p>
+                <a href="{% url 'com:event-list' %}" class="color-orange mr-0 mr-md-4">Voir les événements</a>
+                <a href="{% url 'com:comities' %}" class="color-orange">Voir les news</a>
+            </p>
+            {% for new in news %}
             {% include "com/includes/single-post.html" with item=new %}
-           {% endfor %}
+            {% endfor %}
         </div>
         {% include "includes/pagination.html" %}
     </div>

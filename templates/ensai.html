@@ -14,15 +14,7 @@ ENSAI
     <div class="row">
         <div class="col-8 mx-auto d-flex flex-column align-items-center">
             <img src="{% static "assets/images/ensai.png" %}" class="img-fluid mb-3" alt="ENSAI">
-            <h5 class="text-justify">L’Ecole Nationale Supérieure des Sciences Agro-industrielles (ENSAI), pôle d’excellence de formation
-                dans les différents domaines de l’Agro-industrie au Cameroun et dans la sous-région de l’Afrique
-                Centrale est un établissement phare de l’Université de Ngaoundéré.
-            </h5>
-            <br>
-            <h5 class="text-justify">Crée par arrêté présidentiel N° 433/CAB/PR du 04/10/1982 sous l’appellation ENSIAAC, puis
-                réorganisée en 1993, l’ENSAI a six missions principales : La formation des diplômés de haut niveau, la
-                spécialisation des diplômés, la formation doctorale, l’appui au développement, la promotion de la
-                recherche, recyclage et le perfectionnement des cadres.</h5>
+            {{presentation.content|safe}}
         </div>
     </div>
 </div>
@@ -34,7 +26,7 @@ ENSAI
 <div class="container py-4">
     <div class="row">
         <div class="col-7">
-            
+            {{filiere.content|safe}}
         </div>
     </div>
 </div>

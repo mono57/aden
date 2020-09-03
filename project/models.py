@@ -40,3 +40,25 @@ class Project(TimeStampModel):
     class Meta:
         verbose_name = 'Idée de projet fédérateurs des filières ENSAI'
         verbose_name = 'Idées de projet fédérateurs des filières ENSAI'
+
+class BaseProject(TimeStampModel):
+    content = models.TextField(verbose_name='Texte')
+    file = models.FileField(verbose_name='Fichier joint')
+
+    def __str__(self):
+        return self.content[:20]
+
+    class Meta:
+        abstract = True
+    
+
+class InstitutionalProject(BaseProject):
+    class Meta:
+        verbose_name = 'Projet institutionel'
+        verbose_name_plural = 'Projets institutionels'
+
+
+class IndustrialProject(BaseProject):
+    class Meta:
+        verbose_name = 'Projet industriel'
+        verbose_name_plural = 'Projets industriels'

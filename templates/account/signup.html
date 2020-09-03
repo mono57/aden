@@ -3,26 +3,34 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-  Inscription
+Inscription
 {% endblock title %}
 
 {% block content %}
-  <section>
+<section>
 
-      <div class="container">
-        <div class="row py-5">
-          <div class="col-md-6">
-              <p>Ici les conditions d'adhésion à la communauté</p>
-          </div>
-          <div class="col-md-6">
-            <h3>Formulaire d'inscription</h3>
+  <div class="container">
+    <div class="row py-3 py-md-5">
+      <div class="col-12 col-md-6 mb-2 mb-md-2">
+        <h5 class="text-center text-md-left">Les conditions d'adhésion à l'ADEN</h5>
+        <ul class="">
+          {% for c in adhesion.get_conditions_list %}
+          <li>{{c}}</li>
+          {% endfor %}
+        </ul>
+        <p>Plus d'informations ici 👉🏾 : <a href="{% url 'contact' %}" class="color-orange">contactez - nous</a></p>
+        {% if adhesion.file %}
+        <a href="{{adhesion.file.url}}" class="color-orange text-center text-md-left text-lg-left">Télécharger le fichier joint ici !</a>
+        {% endif %}
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>Formulaire d'inscription</h3>
+        <form method="POST">
 
-            <form method="POST">
+          {% csrf_token %}
 
-              {% csrf_token %}
-
-              {{form|crispy}}
-<!--           
+          {{form|crispy}}
+          <!--           
               {% for input in form %}
                 <div class="form-group">
                   <label for="id_{{input.name}}">{{input.label}}</label>
@@ -33,12 +41,12 @@
                   </div>
                 </div>
               {% endfor %} -->
-          
-              <button class="btn theme-orange btn-block" type="submit">Je m'inscris</button>
-            </form>
-          </div>
-        </div>
-      </div>
 
-  </section>
+          <button class="btn theme-orange btn-block" type="submit">Je m'inscris</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
 {% endblock content %}

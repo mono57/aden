@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for action in actions %}
+        <div class="col-12 col-md-4 mb-2 mb-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <p>{{action.get_title}}</p>
+                    <a href="{{action.file.url}}" class="color-orange">{% trans "Télécharger le document" %}</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Aucun plan d'action n'a été ajouté !</p>
+        {% endfor %}
+    </div>
+
+    {% include "includes/pagination.html" %}
+
+</div>
+
+{% endblock content %}

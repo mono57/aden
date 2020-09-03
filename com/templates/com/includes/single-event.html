@@ -20,6 +20,11 @@
                     <i class="ti-location-arrow pr-2"></i>
                     <span>{{event.location}} / {{event.location_city}}</span>
                 </li>
+                {% with event.galery as galery %}
+                {% if galery %}
+                <p><a href="{{galery.get_absolute_url}}" class="color-orange">Voir les photos</a></p>
+                {% endif %}
+                {% endwith %}
             </ul>
         </div>
     </div>

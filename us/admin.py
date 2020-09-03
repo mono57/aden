@@ -23,7 +23,13 @@ admin.site.register(Status, StatusModelAdmin)
 
 class ActionPlanModelAdmin(admin.ModelAdmin):
     list_display = ('language','created_at', 'updated_at')
-    # exclude = ('file', )
+    exclude = ('file_name', )
+
+    def save_model(self, request, obj, form, change):
+        file = form.cleaned_data.get('file')
+        file_name = str(file).split('.')[0]
+        obj.file_name = file_name
+        super().save_model(request, obj, form, change)
 
 admin.site.register(ActionPlan, ActionPlanModelAdmin)
 
@@ -32,7 +38,7 @@ class InternalRegulationModelAdmin(admin.ModelAdmin):
     # exclude = ('file', )
 
 admin.site.register(InternalRegulation, InternalRegulationModelAdmin)
-
+admin.site.register(AdhesionCondition)
 
 class SocialNetworkModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'type', 'accessibility')
@@ -50,3 +56,15 @@ class FooterModelAdmin(admin.ModelAdmin):
     list_display = ('text',)
 
 admin.site.register(Footer, FooterModelAdmin)
+
+admin.site.register(GeneralAssembly)
+admin.site.register(Nomination)
+admin.site.register(Carnet)
+admin.site.register(International)
+admin.site.register(InstitutionalPresentation)
+admin.site.register(Coord)
+admin.site.register(Association)
+admin.site.register(Convention)
+# admin.site.register(AdhesionCondition)
+admin.site.register(Filiere)
+admin.site.register(RevueInterface)

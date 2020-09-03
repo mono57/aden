@@ -9,10 +9,22 @@ from django.views.generic import TemplateView, FormView, ListView
 from aden.forms import ContactForm
 from aden.decorators import aden_member_required
 from com.models import Event, News, Galery, Post, Faq
-from us.models import About, Footer
+from us.models import About, Footer, InstitutionalPresentation, Filiere
 
 
 User = get_user_model()
+
+
+class EnsaiTemplateView(TemplateView):
+    template_name = 'ensai.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        lc = self.request.LANGUAGE_CODE
+        context['presentation'] = InstitutionalPresentation.objects.filter(
+            language=lc).last()
+        context['filiere'] = Filiere.objects.filter(language=lc).last()
+        return context
 
 
 class ContactFormView(SuccessMessageMixin, FormView):
@@ -44,7 +56,8 @@ class HomeTemplateView(TemplateView):
         first_galery = Galery.objects.first()
         context['news'] = News.objects.all()
         context['events'] = Event.objects.all()[:3]
-        context['photos'] = first_galery.images.all()[:6] if first_galery else []
+        context['photos'] = first_galery.images.all()[
+            :6] if first_galery else []
         context['posts_count'] = Post.objects.all().count()
         context['posts'] = Post.objects.all()[:3]
         context['members_count'] = User.objects.filter(is_member=True).count()
@@ -69,6 +82,7 @@ class FaqListView(ListView):
     template_name = 'faq.html'
     model = Faq
     context_object_name = 'faqs'
+
 
 class LegalMentions(TemplateView):
     template_name = 'legal_mentions.html'

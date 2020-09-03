@@ -95,9 +95,9 @@ class StrategicComityModelForm(forms.ModelForm):
     class Meta:
         model = StrategicComity
         fields = '__all__'
-        widgets = {
-            'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
-        }
+        # widgets = {
+        #     'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
+        # }
 
 
 class FaqModelForm(forms.ModelForm):

@@ -20,7 +20,8 @@
 {% url 'download' as download_url %}
 {% url 'regulation' as regulation_url %}
 {% url 'status' as status_url %}
-{% url 'actions' as actions_url %}
+{% url 'aden:actions' as actions_url %}
+{% url 'aden:ga' as ga_url %}
 {% url 'legal_mentions' as legal_mentions_url %}
 
 {% url 'network:conventions' as conventions_url %}
@@ -113,7 +114,7 @@
                             <a class="dropdown-item" href="{{status_url}}">{% trans "Les Statuts" %}</a>
                             <a class="dropdown-item" href="{{regulation_url}}">{% trans "Le Règlement intérieur" %}</a>
                             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
-                            <a class="dropdown-item" href="#">{% trans "L'Assemblée générale" %}</a>
+                            <a class="dropdown-item" href="{{ga_url}}">{% trans "L'Assemblée générale" %}</a>
                             <a class="dropdown-item" href="#">{% trans "Les Coordonnées" %}</a>
                             <a class="dropdown-item"
                                 href="{{actions_url}}">{% trans "Les missions et plans d’actions annuels" %}</a>
@@ -181,7 +182,7 @@
                     {% static "assets/images/i18n/united-kingdom.png" as english %}
                     {% static "assets/images/i18n/france.png" as french %}
                     {% with LANGUAGE_CODE as lc %}
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <form action="{% url 'set_language' %}" method="POST" id="form-change-lang">
                             {% csrf_token %}
                             <a class="nav-link active change-lang" href="{{home_url}}">
@@ -195,7 +196,7 @@
 
                             </a>
                         </form>
-                    </li>
+                    </li> -->
                     {% endwith %}
                 </ul>
             </div>
@@ -223,7 +224,7 @@
             <a class="dropdown-item" href="{{status_url}}">Les Statuts</a>
             <a class="dropdown-item" href="{{regulation_url}}">{% trans "Le Règlement intérieur" %}</a>
             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
-            <a class="dropdown-item" href="#">{% trans "L'Assemblée générale" %}</a>
+            <a class="dropdown-item" href="{{ga_url}}">{% trans "L'Assemblée générale" %}</a>
             <a class="dropdown-item" href="#">{% trans "Les Coordonnées" %}</a>
             <a class="dropdown-item" href="{{actions_url}}">{% trans "Les missions et plans d’actions annuels" %}</a>
         </div>
@@ -289,7 +290,7 @@
         {% static "assets/images/i18n/united-kingdom.png" as english %}
         {% static "assets/images/i18n/france.png" as french %}
         {% with LANGUAGE_CODE as lc %}
-        <li class="nav-item ">
+        <!-- <li class="nav-item ">
             <form action="{% url 'set_language' %}" method="POST" id="form-change-lang">
                 {% csrf_token %}
                 <a class="nav-link active change-lang" href="{{home_url}}">
@@ -303,7 +304,7 @@
 
                 </a>
             </form>
-        </li>
+        </li> -->
         {% endwith %}
     </div>
 </div>

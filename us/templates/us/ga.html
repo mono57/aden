@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for ga in gassemblies %}
+        <div class="col-12 col-md-4 mb-2 mb-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <p>Assemblée du : <span class="color-orange">{{ga.date}}</span></p>
+                    <p>{{ga.description}}</p>
+                    <a href="{{ga.file.url}}" class="btn theme-orange">{% trans "Télécharger le document" %}</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>{% trans "Aucun document d'assemblée générale n'a été enregistré !" %}</p>
+        {% endfor %}
+    </div>
+
+    {% include "includes/pagination.html" %}
+</div>
+
+{% endblock content %}

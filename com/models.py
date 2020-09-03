@@ -11,6 +11,7 @@ User = get_user_model()
 visible_on_site = _('Visible sur le site ?')
 cover_image = _('Image de couverture')
 
+
 class Galery(TimeStampModel):
     name = models.CharField(max_length=250, verbose_name=_('Nom de l\'album'))
     slug = models.SlugField(blank=True)
@@ -25,6 +26,9 @@ class Galery(TimeStampModel):
     def save(self):
         self.slug = slugify(self.name)
         super().save()
+
+    def get_absolute_url(self):
+        return reverse('com:galery-detail', kwargs={'pk':self.pk})
 
     class Meta:
         verbose_name = _('Album')
@@ -55,7 +59,7 @@ class News(TimeStampModel):
         max_length=255, verbose_name=_('Titre de l\'actualité'))
     slug = models.SlugField(blank=True)
     image = CloudinaryField(resource_type='image',
-                                   verbose_name=cover_image, blank=True)
+                            verbose_name=cover_image, blank=True)
     content = models.TextField(verbose_name=_('Contenu de l\'article'))
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ManyToManyField(
@@ -86,7 +90,7 @@ class Post(TimeStampModel):
     category = models.ManyToManyField(
         PostCategory, related_name='posts', blank=True, verbose_name=_('Categories d\'article'))
     image = CloudinaryField(resource_type='image',
-                                   verbose_name=cover_image, blank=True)
+                            verbose_name=cover_image, blank=True)
     is_visible = models.BooleanField(
         default=True, verbose_name=visible_on_site)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -120,12 +124,12 @@ class Document(TimeStampModel):
 class Event(TimeStampModel):
     title = models.CharField(max_length=100, verbose_name=_('Titre'))
     slug = models.SlugField(blank=True)
-    start_date = models.DateField(verbose_name=_('Date de debut'))
-    end_date = models.DateField(verbose_name=_('Date de fin'))
-    start_time = models.TimeField(verbose_name=_('Heure de debut'))
-    end_time = models.TimeField(verbose_name=_('Heure de Fin'))
-    description = models.TextField(verbose_name='Description')
-    location = models.CharField(max_length=50, verbose_name=_('Lieu'))
+    start_date = models.DateField(verbose_name=_('Date de debut'), blank=True)
+    end_date = models.DateField(verbose_name=_('Date de fin'), blank=True)
+    start_time = models.TimeField(verbose_name=_('Heure de debut'), blank=True)
+    end_time = models.TimeField(verbose_name=_('Heure de Fin'), blank=True)
+    description = models.TextField(verbose_name='Description', blank=True)
+    location = models.CharField(max_length=50, verbose_name=_('Lieu'), blank=True)
     location_city = models.CharField(
         max_length=50, verbose_name=_('Ville'), default='Yaoundé')
     # event_type = models.CharField(
@@ -139,6 +143,8 @@ class Event(TimeStampModel):
     image = CloudinaryField(
         resource_type='image', blank=True, null=True, verbose_name=cover_image)
     published = models.BooleanField(default=True, verbose_name=_('Publier'))
+    galery = models.ForeignKey(
+        Galery, verbose_name='Joindre un album photos', blank=True, on_delete=models.CASCADE)
     # organizer = models.ManyToManyField(User)
     registration = models.ManyToManyField(
         User, blank=True, related_name='register_events', verbose_name=_('Inscris'))
@@ -157,6 +163,7 @@ class Event(TimeStampModel):
 class StrategicComity(TimeStampModel):
     object = models.CharField(max_length=100, verbose_name='Objet')
     content = models.TextField(verbose_name='Message')
+    file = models.FileField(verbose_name='Fichier joint', blank=True)
 
     def get_absolute_url(self):
         return reverse('com:comities-detail', kwargs={'pk': self.pk})
