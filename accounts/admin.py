@@ -45,7 +45,7 @@ class UserAdmin(BaseUserAdmin):
 
     def confirm_member(self, request, queryset):
         self.make_actions(queryset, True)
-
+        
         self.message_user(request, _('Membre(s) confirmé(s)'), messages.SUCCESS)
 
     confirm_member.short_description = _('Confirmer l\'adhésion') 
