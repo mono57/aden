@@ -3,7 +3,7 @@
 
 {% url 'home' as home_url %}
 {% url 'com:galery-list' as galery_url %}
-{% url 'com:news-list' as news_url %}
+{% url 'com:news-list' as com_news_url %}
 {% url 'com:event-list' as events_url %}
 {% url 'com:post-list' as posts_url %}
 {% url 'com:comity' as comity_url %}
@@ -145,7 +145,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Communication</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{news_url}}">{% trans "Actualités" %}</a>
+                            <a class="dropdown-item" href="{{com_news_url}}">{% trans "Actualités" %}</a>
                             <a class="dropdown-item" href="{{events_url}}">{% trans "Agenda" %}</a>
                             <a class="dropdown-item" href="{{galery_url}}">{% trans "Photos" %}</a>
                             <a class="dropdown-item" href="{{comities_url}}">{% trans "Le Comité Stratégique" %}</a>
@@ -253,7 +253,7 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a class="dropdown-item" href="{{news_url}}">{% trans "Actualités" %}</a>
+            <a class="dropdown-item" href="{{com_news_url}}">{% trans "Actualités" %}</a>
             <a class="dropdown-item" href="{{events_url}}">{% trans "Agenda" %}</a>
             <a class="dropdown-item" href="{{galery_url}}">{% trans "Photos" %}</a>
             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
