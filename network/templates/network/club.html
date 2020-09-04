@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+{% block content %}
+  
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for club in clubs %}
+        <div class="col-12 col-md-3 mb-2 mb-md-3">
+            <div class="card">
+                <img src="{{club.photo.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{club.content}}</p>
+                    <a href="{{club.file.url}}" class="color-orange">Voir le fichier !</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Aucun club n'a été crée !</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

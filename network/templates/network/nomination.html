@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+
+{% block content %}
+  
+    {% include "com/includes/banner.html" with banner_text=title %}
+
+    <div class="container py-5">
+        <div class="row">
+            {% for nomination in nominations %}
+            <div class="col-12 col-md-3">
+                <img src="{{nomination.photo.url}}" alt="{{nomination.title}}" class="img-fluid">
+                <h5>{{nomination.title}}</h5>
+                <p><a href="{{nomination.file.url}}" class="color-orange">Télécharger le fichier !</a></p>
+            </div>
+            {% empty %}
+            <p>Aucune nomination enregistrée !</p>
+            {% endfor %}
+        </div>
+        {% include "includes/pagination.html" %}
+    </div>
+
+{% endblock content %}

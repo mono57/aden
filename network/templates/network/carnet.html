@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+{% block content %}
+  
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for carnet in carnets %}
+        <div class="col-12 col-md-3 mb-2 mb-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{carnet.title}}</h5>
+                    <a href="{{carnet.file.url}}" class="color-orange">Voir le fichier !</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Aucun carnet n'a été crée !</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

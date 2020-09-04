@@ -58,13 +58,7 @@ class FooterModelAdmin(admin.ModelAdmin):
 admin.site.register(Footer, FooterModelAdmin)
 
 admin.site.register(GeneralAssembly)
-admin.site.register(Nomination)
-admin.site.register(Carnet)
-admin.site.register(International)
+
 admin.site.register(InstitutionalPresentation)
 admin.site.register(Coord)
-admin.site.register(Association)
-admin.site.register(Convention)
-# admin.site.register(AdhesionCondition)
 admin.site.register(Filiere)
-admin.site.register(RevueInterface)

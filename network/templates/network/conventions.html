@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+
+{% block content %}
+  
+{% include "com/includes/banner.html" with banner_text=title %}
+
+    <div class="container py-5">
+        <div class="row">
+            {% for convention in conventions %}
+              <div class="col-12 col-md-4">
+                  <h5>{{convention.label}}</h5>
+                  <a href="{{convention.file.url}}" class="color-orange">Télécharger le fichier joint !</a>
+              </div>
+              {% empty %}
+              <p>Aucune convention n'a été faite avec les grandes écoles !</p>
+              {% endfor %}
+        </div>
+        {% include "includes/pagination.html" %}
+    </div>
+
+{% endblock content %}

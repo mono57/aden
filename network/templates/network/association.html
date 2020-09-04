@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for association in associations %}
+        {% include "network/includes/group.html" with group=association %}
+        {% empty %}
+        <p>Aucune association n'a été créée !</p>
+        {% endfor %}
+    </div>
+    {% include "includes/pagination.html" %}
+</div>
+
+{% endblock content %}

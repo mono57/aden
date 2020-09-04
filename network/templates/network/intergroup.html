@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+{% block content %}
+
+{% include "com/includes/banner.html" with banner_text=title %}
+  
+<div class="container py-5">
+  <div class="row">
+    {% for intergroup in intergroups %}
+      {% include "network/includes/group.html" with group=intergroup %}
+      {% empty %}
+      <p>Aucun groupe international n'a été crée !</p>
+    {% endfor %}
+
+    {% include "includes/pagination.html" %}
+  </div>
+</div>
+
+{% endblock content %}

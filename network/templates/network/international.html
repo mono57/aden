@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+{% block content %}
+  
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for international in internationals %}
+        <div class="col-12 col-md-3 mb-2 mb-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{international.name}}</h5>
+                    <a href="{{international.link}}" class="color-orange">Aller au groupe</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Aucun groupe international n'a été crée !</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -51,3 +51,13 @@ class GeneralAssemblyListView(ListView):
     model = GeneralAssembly
     template_name = 'us/ga.html'
     context_object_name = 'gassemblies'
+
+
+class CoordTemplateView(TemplateView):
+    template_name = 'us/coords.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['coords'] = Coord.objects.last()
+        context['title'] = 'Coordonnées'
+        return context

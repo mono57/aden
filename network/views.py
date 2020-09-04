@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Q
 
 from aden.decorators import aden_member_required
-from network.models import NetworkNews
+from network.models import *
 
 
 User = get_user_model()
@@ -14,19 +14,25 @@ User = get_user_model()
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class PromotionsTemplateView(TemplateView):
-    template_name = 'network.html'
+class AssociationListView(ListView):
+    template_name = 'network/association.html'
+    model = Association
+    context_object_name = 'associations'
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = 'Promotions'
+        context["title"] = 'Association de promotions'
         return context
 
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class InterGroupTemplateView(TemplateView):
-    template_name = 'network.html'
+class InterGroupListView(ListView):
+    template_name = 'network/intergroup.html'
+    model = InterGroup
+    context_object_name = 'intergroups'
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,8 +42,11 @@ class InterGroupTemplateView(TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class ConventionsTemplateView(TemplateView):
-    template_name = 'network.html'
+class ConventionsListView(ListView):
+    template_name = 'network/conventions.html'
+    model = Convention
+    context_object_name = 'conventions'
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,8 +74,11 @@ class AnnuaireListView(ListView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class NominationsTemplateView(TemplateView):
-    template_name = 'network.html'
+class NominationsListView(ListView):
+    template_name = 'network/nomination.html'
+    model = Nomination
+    context_object_name = 'nominations'
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -76,8 +88,11 @@ class NominationsTemplateView(TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class CarnetTemplateView(TemplateView):
-    template_name = 'network.html'
+class CarnetListView(ListView):
+    template_name = 'network/carnet.html'
+    model = Carnet
+    context_object_name = 'carnets'
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -87,8 +102,11 @@ class CarnetTemplateView(TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class ClubsTemplateView(TemplateView):
-    template_name = 'network.html'
+class ClubsListView(ListView):
+    template_name = 'network/club.html'
+    model = Club
+    context_object_name = 'clubs'
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -98,8 +116,11 @@ class ClubsTemplateView(TemplateView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class InternationalTemplateView(TemplateView):
-    template_name = 'network.html'
+class InternationalListView(ListView):
+    template_name = 'network/international.html'
+    model = International
+    context_object_name = 'internationals'
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

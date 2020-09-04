@@ -6,12 +6,12 @@ app_name = 'network'
 urlpatterns = [
     path(
         'promotions/',
-        PromotionsTemplateView.as_view(),
+        AssociationListView.as_view(),
         name='promotions'
     ),
     path(
         'inter_group/',
-        InterGroupTemplateView.as_view(),
+        InterGroupListView.as_view(),
         name='inter_group'
     ),
     path(
@@ -21,26 +21,26 @@ urlpatterns = [
     ),
     path(
         'conventions/',
-        ConventionsTemplateView.as_view(),name='conventions'
+        ConventionsListView.as_view(),name='conventions'
     ),
     path(
-        'nomintations/',
-        NominationsTemplateView.as_view(),
+        'nominations/',
+        NominationsListView.as_view(),
         name='nominations'
     ),
     path(
         'carnet/',
-        CarnetTemplateView.as_view(),
+        CarnetListView.as_view(),
         name='carnet'
     ),
     path(
         'clubs/',
-        ClubsTemplateView.as_view(),
+        ClubsListView.as_view(),
         name='clubs'
     ),
     path(
         'international/',
-        InternationalTemplateView.as_view(),
+        InternationalListView.as_view(),
         name='international'
     ),
     path(

@@ -22,6 +22,8 @@
 {% url 'status' as status_url %}
 {% url 'aden:actions' as actions_url %}
 {% url 'aden:ga' as ga_url %}
+{% url 'aden:coords' as coords_url %}
+
 {% url 'legal_mentions' as legal_mentions_url %}
 
 {% url 'network:conventions' as conventions_url %}
@@ -115,7 +117,7 @@
                             <a class="dropdown-item" href="{{regulation_url}}">{% trans "Le Règlement intérieur" %}</a>
                             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
                             <a class="dropdown-item" href="{{ga_url}}">{% trans "L'Assemblée générale" %}</a>
-                            <a class="dropdown-item" href="#">{% trans "Les Coordonnées" %}</a>
+                            <a class="dropdown-item" href="{{coords_url}}">{% trans "Les Coordonnées" %}</a>
                             <a class="dropdown-item"
                                 href="{{actions_url}}">{% trans "Les missions et plans d’actions annuels" %}</a>
                         </div>
@@ -225,7 +227,7 @@
             <a class="dropdown-item" href="{{regulation_url}}">{% trans "Le Règlement intérieur" %}</a>
             <a class="dropdown-item" href="{{comity_url}}">{% trans "Le Comité Stratégique" %}</a>
             <a class="dropdown-item" href="{{ga_url}}">{% trans "L'Assemblée générale" %}</a>
-            <a class="dropdown-item" href="#">{% trans "Les Coordonnées" %}</a>
+            <a class="dropdown-item" href="{{coords_url}}">{% trans "Les Coordonnées" %}</a>
             <a class="dropdown-item" href="{{actions_url}}">{% trans "Les missions et plans d’actions annuels" %}</a>
         </div>
         <button class="dropdown-btn">{% trans "Réseaux" %}
