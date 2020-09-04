@@ -53,18 +53,18 @@ class HomeTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # first_galery = Galery.objects.first()
-        # context['news'] = News.objects.all()
-        # context['events'] = Event.objects.all()[:3]
-        # context['photos'] = first_galery.images.all()[
-        #     :6] if first_galery else []
-        # context['posts_count'] = Post.objects.all().count()
-        # context['posts'] = Post.objects.all()[:3]
-        # context['members_count'] = User.objects.filter(is_member=True).count()
-        # context['photos_count'] = sum(
-        #     [g.images.all().count() for g in Galery.objects.all()])
-        # context['faqs'] = Faq.objects.all()[:3]
-        # context['footer_text'] = Footer.objects.last()
+        first_galery = Galery.objects.first()
+        context['news'] = News.objects.all()
+        context['events'] = Event.objects.all()[:3]
+        context['photos'] = first_galery.images.all()[
+            :6] if first_galery else []
+        context['posts_count'] = Post.objects.all().count()
+        context['posts'] = Post.objects.all()[:3]
+        context['members_count'] = User.objects.filter(is_member=True).count()
+        context['photos_count'] = sum(
+            [g.images.all().count() for g in Galery.objects.all()])
+        context['faqs'] = Faq.objects.all()[:3]
+        context['footer_text'] = Footer.objects.last()
         return context
 
 
