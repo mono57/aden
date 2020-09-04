@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import (
     ListView,
     DetailView,
@@ -7,7 +7,7 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from com.models import (Post, News, Event, Document, Galery, GaleryImage,
+from com.models import (Post, News, Event, Document, Galery, GaleryImage, RevueInterface,
                         PostCategory, StrategicComity as ComStrategicComity)
 from aden.decorators import aden_member_required
 from us.models import StrategicComity
@@ -138,3 +138,17 @@ class GeleryDetailView(DetailView):
         galery = get_object_or_404(Galery, pk=pk_galery)
         qs = super().get_queryset()
         return qs.filter(galery=galery)
+
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class RevueInterfaceListView(ListView):
+    template_name = 'com/interface.html'
+    model = RevueInterface
+    context_object_name = 'interfaces'
+    paginate_by = 8
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Revue Interface'
+        return context

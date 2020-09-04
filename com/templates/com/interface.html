@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+  
+{% include "com/includes/banner.html" with banner_text=title %}
+
+<div class="container py-5">
+    <div class="row">
+        {% for interface in interfaces %}
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <p>{{interface.subject}}</p>
+                    <a href="{{interface.link}}" class="color-orange">Voir le fichier !</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Aucun sujet crée !</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock title %}

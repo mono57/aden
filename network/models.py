@@ -101,7 +101,7 @@ class Club(TimeStampModel):
 
     def __str__(self):
         return self.content[:20]
-        
+
 
 class International(TimeStampModel):
     name = models.CharField(
@@ -111,14 +111,3 @@ class International(TimeStampModel):
     def __str__(self):
         return self.name
 
-
-class RevueInterface(TimeStampModel):
-    text = models.TextField(verbose_name='Sujet')
-    file = models.FileField(verbose_name='Joindre un fichier')
-
-    def __str__(self):
-        return self.text
-
-    class Meta:
-        verbose_name = 'Revue interface'
-        verbose_name_plural = 'Revues interfaces'

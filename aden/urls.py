@@ -36,11 +36,7 @@ i18n_url = i18n_patterns(
         'faq/',
         FaqListView.as_view(),
         name='faq'),
-    path(
-        'interface/',
-        TemplateView.as_view(template_name='interface.html'),
-        name='interface'
-    ),
+    
     path(
         'downloads/',
         TemplateView.as_view(template_name='download.html'),

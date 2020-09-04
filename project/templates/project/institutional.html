@@ -7,7 +7,16 @@
 {% block content %}
   {% include "com/includes/banner.html" with banner_text='Projets institutionnels' %}
 
-  <div class="container py-5"></div>
+  <div class="container py-5">
+
+    <div class="row">
+      {% for project in projects %}
+        {% include "project/includes/project.html" with project=project %}
+        {% empty %}
+        <p>Aucun projet institutionel enregistré !</p>
+      {% endfor %}
+    </div>
+  </div>
 
 
 {% endblock content %}
