@@ -33,8 +33,8 @@ class FindJobListView(ListView):
         return context
         
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class OfferJobCreateView(SuccessMessageMixin, CreateView):
     template_name = 'carriere/job_offer-form.html'
     form_class = OfferModelForm
@@ -61,8 +61,8 @@ class ResumeCreateView(SuccessMessageMixin, CreateView):
         return context
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')  
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')  
 class EnsaiRecruterListView(ListView):
     template_name = 'carriere/resume-list.html'
     model = Resume

@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 from django.views.generic import TemplateView, FormView, ListView
 from aden.forms import ContactForm
 from aden.decorators import aden_member_required
-from com.models import Event, News, Galery, Post, Faq
+from com.models import Event, News, Galery, Post, Faq, StrategicComity
 from us.models import About, Footer, InstitutionalPresentation, Filiere
 
 
@@ -65,6 +65,7 @@ class HomeTemplateView(TemplateView):
             [g.images.all().count() for g in Galery.objects.all()])
         context['faqs'] = Faq.objects.all()[:3]
         context['footer_text'] = Footer.objects.last()
+        context['com_news'] = StrategicComity.objects.all()[:3]
         return context
 
 

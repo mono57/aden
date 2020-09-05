@@ -12,16 +12,19 @@
 <div class="container py-5">
     <div class="row">
         {% for comity in comities %}
-        <div class="col-12 col-md-6">
-            <h5>
-                {{comity.object}}
-                <!-- <a href="{{comity.get_absolute_url}}">{{comity.object}}</a> -->
-            </h5>
-            <p class="text-justify">{{comity.content|safe}}</p>
-            {% if comity.file %}
-            <a href="{{comity.file.url}}" class="color-orange" download>Télécharger le fichier joint ici !</a>
-            {% endif %}
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p><span class="color-orange">Communiqué :</span> {{comity.object}}</p>
+                    <p class="text-justify">{{comity.content|safe|truncatewords:20}}</p>
+                    {% if comity.file %}
+                    <a href="{{comity.file.url}}" class="color-orange" blank=True>Télécharger le fichier !</a>
+                    {% endif %}
+                    <a href="{{comity.get_absolute_url}}" class="color-orange">Lire plus</a>
+                </div>
+            </div>
         </div>
+      
         {% empty %}
         <p class="text-center"> Aucun communiqué n'a été publié </p>
         {% endfor %}

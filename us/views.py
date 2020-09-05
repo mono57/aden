@@ -5,6 +5,19 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 
+class StrategicComityTempateView(TemplateView):
+    template_name = 'us/comity.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['first_grade'] = StrategicComity.objects.filter(
+            grade=1).first()
+        context['second_grades'] = StrategicComity.objects.filter(grade=2)
+        context['third_grades'] = StrategicComity.objects.filter(grade=3)
+        return context
+
+
+
 class ActionPlanListView(ListView):
     template_name = 'us/action_plans.html'
     model = ActionPlan
@@ -58,6 +71,6 @@ class CoordTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['coords'] = Coord.objects.last()
+        context['coord'] = Coord.objects.last()
         context['title'] = 'Coordonnées'
         return context
