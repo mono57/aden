@@ -12,8 +12,8 @@ from aden.decorators import aden_member_required
 # Create your views here.
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class ProjectCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'project/project-edit.html'
     form_class = ProjectModelForm
@@ -29,8 +29,8 @@ class ProjectCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return reverse('project:project-update', kwargs={'pk': self.kwargs.get('pk')})
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class ProjectUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'project/project-edit.html'
     form_class = ProjectModelForm
@@ -43,8 +43,8 @@ class ProjectUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class IndustrialProjectListView(ListView):
     template_name = 'project/industrial.html'
     model = IndustrialProject
@@ -57,8 +57,8 @@ class IndustrialProjectListView(ListView):
         return context
 
     
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class InstitutionallProjectListView(ListView):
     template_name = 'project/institutional.html'
     model = IndustrialProject
