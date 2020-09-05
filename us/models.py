@@ -178,9 +178,9 @@ class GeneralAssembly(TimeStampModel):
     description = models.TextField(verbose_name='Description du contenu')
     date = models.DateField(verbose_name='Assemblée générale du', blank=True)
     version = models.CharField(choices=LANGUAGE_CHOICES, max_length=3,
-                               verbose_name='Version de langue du fichier', blank=True)
+                               verbose_name='Version de langue du fichier')
     file = models.FileField(
-        verbose_name='Fichier joint', blank=True)
+        verbose_name='Fichier joint')
 
     class Meta:
         verbose_name = 'Assemblée Générale'
