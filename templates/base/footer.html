@@ -18,12 +18,12 @@
                         <h5 class="font-weight-bold mb-3">{% trans "Liens rapides" %}</h5>
                         <ul>
                             <li><a href="{% url 'home' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Accueil" %}</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right mr-2"></i>{% trans "A propos" %}</a></li>
-                            <li><a href="student.html"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Offres d'emploi" %}</a></li>
+                            <li><a href="{% url 'about' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "A propos" %}</a></li>
+                            <li><a href="{% url 'carriere:find' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Offres d'emploi" %}</a></li>
                             <li><a href="{% url 'com:news-list' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Actualités" %}</a></li>
                             <li><a href="{% url 'com:post-list' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Articles" %}</a></li>
                             <li><a href="{% url 'account_signup' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Devenir membre" %}</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right mr-2"></i>Contact</a></li>
+                            <li><a href="{% url 'contact' %}"><i class="fa fa-angle-double-right mr-2"></i>Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-md-5 mb-4" data-aos="fade-in" data-aos-duration="1050">
