@@ -14,10 +14,11 @@
     <div class="row">
         <div class="col-12 col-md-7">
             <h4 class="mb-3 color-orange">{{comity.object}}</h4>
-            <p>{{comity.content|safe}}</p>
-            {% if com_new.file %}
-            <a href="{{com_new.file.url}}" class="color-orange" blank=True>Télécharger le fichier !</a>
+            {% if comity.file %}
+            <a href="{{comity.file.url}}" class="color-orange" blank=True download="">Télécharger le fichier !</a>
             {% endif %}
+            <p>{{comity.content|safe}}</p>
+
         </div>
     </div>
 </div>

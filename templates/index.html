@@ -154,18 +154,8 @@ Accueil
         <div class="row">
           
             {% for com_new in com_news %}
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <p><span class="color-orange">Communiqué :</span> {{com_new.object}}</p>
-                        <p class="text-justify">{{com_new.content|safe|truncatewords:20}}</p>
-                        {% if com_new.file %}
-                        <a href="{{com_new.file.url}}" class="color-orange" blank=True>Télécharger le fichier !</a>
-                        {% endif %}
-                        <a href="{{com_new.get_absolute_url}}" class="color-orange">Lire plus</a>
-                    </div>
-                </div>
-            </div>
+            {% include "com/includes/comity-single.html" with comity=com_new %}
+
             {% endfor %}
         </div>
     </div>

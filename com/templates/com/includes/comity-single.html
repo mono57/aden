@@ -1,0 +1,12 @@
+<div class="col-12 col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <p><span class="color-orange">Communiqué :</span> {{comity.object}}</p>
+            <!-- <p class="text-justify">{{comity.content|truncatewords:20|safe}}</p> -->
+            {% if comity.file %}
+            <a href="{{comity.file.url}}" class="color-orange" download="">Télécharger le fichier !</a>
+            {% endif %}
+            <a href="{{comity.get_absolute_url}}" class="color-orange">Lire plus</a>
+        </div>
+    </div>
+</div>
