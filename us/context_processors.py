@@ -10,6 +10,6 @@ def aden(request):
         language=lc).last()
     kwargs['social_networks'] = SocialNetwork.objects.all()
     kwargs['footer_text'] = Footer.objects.last()
-    kwargs['quick_news'] = News.objects.order_by('-created_at').all()ç[:5]
+    kwargs['quick_news'] = News.objects.order_by('-created_at').all()[:5]
     kwargs['adhesion'] = AdhesionCondition.objects.filter(language=lc).last()
     return kwargs
