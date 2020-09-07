@@ -12,7 +12,15 @@ class Offer(TimeStampModel):
     description = models.TextField(verbose_name='Description de l\'offre')
     profil = models.TextField(verbose_name='Profil reherché',
                               help_text='Listez les profils separés par des virgules')
-
+    website_url = models.URLField(
+        blank=True,
+        verbose_name='Référence', 
+        help_text='Lien vers un site web pour plus d\informations')
+        
+    contact_address = models.EmailField(
+        verbose_name='Adresse de contact',
+        help_text='Une adresse pour des éventuels postulats'
+    )
     objects = OfferManager()
 
     def get_profils(self):

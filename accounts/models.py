@@ -101,6 +101,10 @@ class Profile(TimeStampModel):
         max_length=100, blank=True, verbose_name='Nom de l\'entreprise qui vous emploi')
     poste = models.CharField(max_length=100, blank=True,
                              verbose_name='Poste occupé')
+    postes = models.TextField(
+        verbose_name='Les postes precédements occupés et les entreprises respectives', 
+        help_text='Renseigner sous le format (post, entreprise) séparer par un point-virgule(;)',
+        blank=True)
     phone = models.CharField(max_length=20, blank=True,
                              verbose_name='Numéro de téléphone')
     waiting = models.TextField(
@@ -121,6 +125,8 @@ class Profile(TimeStampModel):
     def full_name(self):
         return self.user.first_name + ' ' + self.user.last_name
     
+    def get_postes(self):
+        return self.postes.split(';')
 
     def __str__(self):
         return str(self.user.email)

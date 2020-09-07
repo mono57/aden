@@ -12,7 +12,8 @@
 <div class="container py-5">
     <div class="row mb-2 mb-md-3">
         <div class="col-12">
-            <label for="query">Rechercher un profil:</label>
+
+            <label for="query">Rechercher un profil: &ensp; <a href="{% url 'carriere:find' %}" class="ml-auto color-orange">Trouver un poste</a></label>
             <form action="" class="form-inline" method="get">
                 <div class="form-group">
                     <input type="text" class="form-control" id="query" value="{{query}}" name="query"
@@ -23,6 +24,7 @@
             {% if query %}
             <p class="mt-2 mb-0">Résultats de recherche pour: <span class="color-orange">{{query}}</span></p>
             {% endif %}
+
         </div>
     </div>
     <div class="row">
@@ -42,13 +44,13 @@
             </div>
         </div>
         {% empty %}
-       <div class="col-12">
-        <p>Aucun ensai disponible pour le moment!</p>
-       </div>
+        <div class="col-12">
+            <p>Aucun ensai disponible pour le moment!</p>
+        </div>
         {% endfor %}
     </div>
 
-   {% include "includes/pagination.html" %}
+    {% include "includes/pagination.html" %}
 </div>
 
 {% endblock content %}

@@ -120,6 +120,9 @@ class Document(TimeStampModel):
     def __str__(self):
         return self.title
 
+    def save(self):
+        self.title = str(self.file).split('.')[0]
+        super().save()
 
 class Event(TimeStampModel):
     title = models.CharField(max_length=100, verbose_name=_('Titre'))

@@ -137,7 +137,7 @@ SOCIAL_CHOICES = (
     ('telegram', 'Telegram'),
     ('linkedin', 'LinkedIn'),
     ('envelope', 'Gmail'),
-    
+
 )
 
 
@@ -259,3 +259,16 @@ class Filiere(TimeStampModel):
         verbose_name = 'Filière et Formation'
         verbose_name_plural = 'Filières et Formations'
 
+
+class Contact(TimeStampModel):
+    name = models.CharField(max_length=150, verbose_name='Nom complet')
+    email = models.EmailField(verbose_name='Adresse email')
+    phone = models.CharField(max_length=20, verbose_name='Numéro de téléphone')
+    message = models.TextField(verbose_name='Message')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Message'
+        verbose_name_plural = 'Messages'

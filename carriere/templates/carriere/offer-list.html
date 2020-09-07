@@ -36,7 +36,10 @@
                     <p>{% for profil in offer.get_profils %}
                         <span class="badge theme-orange">{{profil}}</span>
                         {% endfor %}</p>
-                    <a href="" class="btn theme-orange btn-block btn-sm">Postuler</a>
+                        {% if offer.website_url %}
+                          <p><a href="{{offer.website_url}}" class="color-orange">Cliquez pour plus d'informations</a></p>
+                        {% endif %}
+                    <a href="mailto:{{offer.contact_address}}" class="btn theme-orange btn-block btn-sm">Postuler</a>
                 </div>
             </div>
         </div>

@@ -55,6 +55,12 @@ admin.site.register(About, AboutModelAdmin)
 class FooterModelAdmin(admin.ModelAdmin):
     list_display = ('text',)
 
+
+class ContactModelAdmin(admin.ModelAdmin):
+    list_display = ('name', 'phone', 'email')
+
+admin.site.register(Contact, ContactModelAdmin)
+
 admin.site.register(Footer, FooterModelAdmin)
 
 admin.site.register(GeneralAssembly)

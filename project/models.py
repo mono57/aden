@@ -13,9 +13,11 @@ class Project(TimeStampModel):
         max_length=255,
         verbose_name='Filière'
     )
-    school_out_date = models.DateField(
+    school_out_date = models.CharField(
+        max_length=8,
         blank=True,
-        verbose_name='Date de sortie de l\'ENSAI'
+        verbose_name='Date de sortie de l\'ENSAI',
+        help_text='Exemple: 2014'
     )
     name = models.CharField(
         max_length=255,

@@ -49,5 +49,8 @@ urlpatterns = [
         'comities/<int:pk>/detail/',
         ComStrategicComityDetailView.as_view(),
         name='comities-detail'),
-    
+    path('downloads/',
+        DownloadListView.as_view(),
+        name='download'
+    )
 ]

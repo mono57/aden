@@ -12,11 +12,11 @@
 
 <div class="container py-5">
     <div class="row">
-        <div class="col-12 col-md-3 mb-2 mb-md-0 d-flex">
+        <div class="col-12 col-md-2 mb-2 mb-md-0">
             {% if portrait.photo %}
-            <img src="{{portrait.photo.url}}" class="img-fluid rounded-circle ml-auto" style="width: 100%;">
+            <img src="{{portrait.photo.url}}" class="img-fluid rounded-circle" style="width: 100%;">
             {% else %}
-            <img src="{% static 'assets/images/aden.jpg' %}" alt="" class="img-fluid ml-auto">
+            <img src="{% static 'assets/images/aden.jpg' %}" alt="" class="img-fluid">
 
             {% endif %}
         </div>
@@ -27,6 +27,15 @@
             <p>Diplome: <span class="color-orange">{{portrait.degree|default:'non renseigner !'}}</span></p>
             <p>Téléphone: <span class="color-orange">{{portrait.phone|default:'non renseigner !'}}</span></p>
             <p>Région: <span class="color-orange">{{portrait.region|default:'non renseigner !'}}</span></p>
+            <p>Poste actuel: <span class="color-orange">{{portrait.poste|default:'non renseigner !'}}</span></p>
+            <p>Entreprise: <span class="color-orange">{{portrait.entreprise|default:'non renseigner !'}}</span></p>
+            <p>Postes précédements occupés:
+                <p class="color-orange">
+                    {% for poste in portrait.get_postes %}
+                    <span class="mx-1 mb-2">{{poste}}</span><br>
+                    {% endfor %}
+                </p>
+            </p>
 
 
         </div>

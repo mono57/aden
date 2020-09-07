@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, TemplateView
+from django.contrib.messages.views import SuccessMessageMixin
 from us.models import *
-from django.views.generic import TemplateView
+from us.forms import ContactModelForm
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -74,3 +76,9 @@ class CoordTemplateView(TemplateView):
         context['coord'] = Coord.objects.last()
         context['title'] = 'Coordonnées'
         return context
+
+class ContactCreateView(SuccessMessageMixin, CreateView):
+    template_name = 'contact.html'
+    form_class = ContactModelForm
+    success_url = reverse_lazy('aden:contact')
+    success_message = 'Votre message a été envoyé avec succès !'

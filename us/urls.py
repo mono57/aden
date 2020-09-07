@@ -11,4 +11,5 @@ urlpatterns = [
         'strategic/comity/',
         StrategicComityTempateView.as_view(),
         name='comity'),
+    # path('contact/', ContactCreateView.as_view(), name='contact'),
 ]

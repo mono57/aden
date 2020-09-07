@@ -1,5 +1,5 @@
 from django import forms
-from us.models import About
+from us.models import About, Contact
 from tinymce.widgets import TinyMCE
 
 
@@ -11,3 +11,12 @@ class AboutModelForm(forms.ModelForm):
             'content': TinyMCE(attrs={'cols': 80, 'rows': 30})
         }
 
+
+
+class ContactModelForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = '__all__'
+        widgets = {
+            'message': forms.Textarea(attrs={'rows': 3})
+        }

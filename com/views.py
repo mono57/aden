@@ -140,3 +140,17 @@ class RevueInterfaceListView(ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Revue Interface'
         return context
+
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(aden_member_required, name='dispatch')
+class DownloadListView(ListView):
+    context_object_name = 'documents'
+    model = Document
+    template_name = 'com/download.html'
+    paginate_by = 12
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Téléchargements'
+        return context

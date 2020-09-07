@@ -5,10 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
-from django.views.generic import TemplateView, FormView, ListView
+from django.views.generic import TemplateView, FormView, ListView, CreateView
 from aden.forms import ContactForm
 from aden.decorators import aden_member_required
 from com.models import Event, News, Galery, Post, Faq, StrategicComity
+from carriere.models import Offer
+from us.forms import ContactModelForm
 from us.models import About, Footer, InstitutionalPresentation, Filiere
 
 
@@ -27,19 +29,11 @@ class EnsaiTemplateView(TemplateView):
         return context
 
 
-class ContactFormView(SuccessMessageMixin, FormView):
+class ContactFormView(SuccessMessageMixin, CreateView):
     template_name = 'contact.html'
-    form_class = ContactForm
+    form_class = ContactModelForm
     success_url = reverse_lazy('contact')
     success_message = 'Votre message a été bien envoyé, nous vous répondrons très bientôt !'
-
-    def form_valid(self, form):
-        data = form.cleaned_data
-        message = '''
-            
-        '''
-        subject = 'Mail de : {}'.format('name')
-        return super().form_valid(form)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -64,6 +58,7 @@ class HomeTemplateView(TemplateView):
         context['photos_count'] = sum(
             [g.images.all().count() for g in Galery.objects.all()])
         context['faqs'] = Faq.objects.all()[:3]
+        context['offers'] = Offer.objects.order_by('-created_at')[:3]
         context['footer_text'] = Footer.objects.last()
         context['com_news'] = StrategicComity.objects.all()[:3]
         return context
