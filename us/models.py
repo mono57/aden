@@ -133,9 +133,11 @@ class InternalRegulation(TimeStampModel):
 
 SOCIAL_CHOICES = (
     ('facebook', 'Facebook'),
-    ('twitter', 'Twitter'),
+    ('whatsapp', 'Whatsapp'),
     ('telegram', 'Telegram'),
     ('linkedin', 'LinkedIn'),
+    ('envelope', 'Gmail'),
+    
 )
 
 

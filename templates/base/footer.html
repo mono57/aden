@@ -2,62 +2,76 @@
 
 {% load static %}
 <footer class="theme-blue">
-        <div class="container">
-            <div class="footer-top border-bottom pt-5">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6" data-aos="fade-in" data-aos-duration="1050">
-                        <a href="{% url 'home' %}"><img src="{% static "assets/images/logo.jpg" %}" class="img-fluid mb-3" width="50" ></a>
-                        <p>{{footer_text.text}}</p>
-                        <!-- <ul class="social-icon">
+    <div class="container">
+        <div class="footer-top border-bottom pt-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-in" data-aos-duration="1050">
+                    <a href="{% url 'home' %}"><img src="{% static "assets/images/logo.jpg" %}" class="img-fluid mb-3"
+                            width="50"></a>
+                    <p>{{footer_text.text}}</p>
+                    <!-- <ul class="social-icon">
                             <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
                             <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="javascript:"><i class="fa fa-linkedin"></i></a></li>
                         </ul> -->
-                    </div>
-                    <div class="col-lg-2 col-md-6" data-aos="fade-in" data-aos-duration="550">
-                        <h5 class="font-weight-bold mb-3">{% trans "Liens rapides" %}</h5>
-                        <ul>
-                            <li><a href="{% url 'home' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Accueil" %}</a></li>
-                            <li><a href="{% url 'about' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "A propos" %}</a></li>
-                            <li><a href="{% url 'carriere:find' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Offres d'emploi" %}</a></li>
-                            <li><a href="{% url 'com:news-list' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Actualités" %}</a></li>
-                            <li><a href="{% url 'com:post-list' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Articles" %}</a></li>
-                            <li><a href="{% url 'account_signup' %}"><i class="fa fa-angle-double-right mr-2"></i>{% trans "Devenir membre" %}</a></li>
-                            <li><a href="{% url 'contact' %}"><i class="fa fa-angle-double-right mr-2"></i>Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-md-5 mb-4" data-aos="fade-in" data-aos-duration="1050">
-                        <h5 class="font-weight-bold mb-3">{% trans "Actualités récentes" %}</h5>
-                        <div class="row">
-                           {% for new in news %}
-                           <div class="col-md-4 col-sm-2 col-2 mb-2 pr-0">
-                            {% if new.image %}
-                            <img src="{{new.image.url}}" class="img-fluid" alt="{{new.title}}">
-                              
-                            {% endif %}
+                </div>
+                <div class="col-lg-2 col-md-6" data-aos="fade-in" data-aos-duration="550">
+                    <h5 class="font-weight-bold mb-3">{% trans "Liens rapides" %}</h5>
+                    <ul>
+                        <li><a href="{% url 'home' %}"><i
+                                    class="fa fa-angle-double-right mr-2"></i>{% trans "Accueil" %}</a></li>
+                        <li><a href="{% url 'about' %}"><i
+                                    class="fa fa-angle-double-right mr-2"></i>{% trans "A propos" %}</a></li>
+                        <li><a href="{% url 'carriere:find' %}"><i
+                                    class="fa fa-angle-double-right mr-2"></i>{% trans "Offres d'emploi" %}</a></li>
+                        <li><a href="{% url 'com:news-list' %}"><i
+                                    class="fa fa-angle-double-right mr-2"></i>{% trans "Actualités" %}</a></li>
+                        <li><a href="{% url 'com:post-list' %}"><i
+                                    class="fa fa-angle-double-right mr-2"></i>{% trans "Articles" %}</a></li>
+                        <li><a href="{% url 'account_signup' %}"><i
+                                    class="fa fa-angle-double-right mr-2"></i>{% trans "Devenir membre" %}</a></li>
+                        <li><a href="{% url 'contact' %}"><i class="fa fa-angle-double-right mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-md-5 mb-4" data-aos="fade-in" data-aos-duration="1050">
+                    <h5 class="font-weight-bold mb-3">{% trans "Actualités récentes" %}</h5>
+                    <div class="row">
+                        {% for new in quick_news %}
+                        <div class="col-md-4 col-sm-2 col-2 mb-2 pr-0">
+                            
+                            <a href="{{new.get_absolute_url}}">
+                                {% if new.image %}
+                                <img src="{{new.image.url}}" class="img-fluid" alt="{{new.title}}">
+                                {% else %}
+                                <img src="{% static 'assets/images/logo.jpg' %}" class="img-fluid" alt="{{new.title}}">
+                                {% endif %}
+                            </a>
+
+                            
                         </div>
-                           {% endfor %}
-                           
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 pl-lg-5  mb-md-5" data-aos="fade-in" data-aos-duration="1050">
-                        <h5 class="font-weight-bold mb-3">{% trans "Contactez - nous" %}</h5>
-                        <ul class="address-icon">
-                            <li class="mb-3"><i class="fa fa-map-marker mr-3 color-orange"></i>Douala – CMR</li>
-                            <li class="mb-3"><i class="fa fa-phone mr-3 color-orange"></i>(+237) 699 94 49 49 / 675 35 30 88</li>
-                            <li class="mb-3"><i class="fa fa-envelope color-orange mr-3"></i>secretariat.aden@gmail.com</li>
-                        </ul>
+                        {% endfor %}
+
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 pl-lg-5  mb-md-5" data-aos="fade-in" data-aos-duration="1050">
+                    <h5 class="font-weight-bold mb-3">{% trans "Contactez - nous" %}</h5>
+                    <ul class="address-icon">
+                        <li class="mb-3"><i class="fa fa-map-marker mr-3 color-orange"></i>Douala – CMR</li>
+                        <li class="mb-3"><i class="fa fa-phone mr-3 color-orange"></i>(+237) 699 94 49 49 / 675 35 30 88
+                        </li>
+                        <li class="mb-3"><i class="fa fa-envelope color-orange mr-3"></i>secretariat.aden@gmail.com</li>
+                    </ul>
+                </div>
             </div>
-            <div class="bottom-footer py-3 d-flex justify-content-between">
-                <p class="mb-0">{% trans "Tous droits réservés par l'ADEN." %}</p>
-                <!-- <ul class="list-inline mb-0">
+        </div>
+        <div class="bottom-footer py-3 d-flex justify-content-between">
+            <p class="mb-0">{% trans "Tous droits réservés par l'ADEN." %}</p>
+            <!-- <ul class="list-inline mb-0">
                     <li class="list-inline-item"><a href="javascript:">Terms of use</a></li>
                     <li class="list-inline-item"><a href="javascript:">Privacy policy</a></li>
                 </ul> -->
-            </div>
         </div>
-    </footer>
-    <!-- end footer -->
-    <a href="#" id="scroll"><span></span></a>
+    </div>
+</footer>
+<!-- end footer -->
+<a href="#" id="scroll"><span></span></a>
