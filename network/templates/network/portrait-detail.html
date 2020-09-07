@@ -3,29 +3,34 @@
 {% load static %}
 
 {% block title %}
-  {{title}}
+{{title}}
 {% endblock title %}
 
 {% block content %}
-  
-    {% include "com/includes/banner.html" with banner_text=title %}
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-12 col-md-3 mb-2 mb-md-0">
-                {% if portrait.profile.photo %}
-                <img src="{{portrait.profile.photo.url}}" class="img-fluid rounded-circle">
-                  {% else %}
-                  <img src="{% static 'images/aden.jpg' %}" alt="" class="img-fluid">
-                  
-                {% endif %}
-            </div>
-            <div class="col-8 pl-md-5">
-                <h4 class="text-uppercase">{{portrait.get_full_name}}</h4>
-                <p>{{portrait.profile.promo}}</p>
+{% include "com/includes/banner.html" with banner_text=title %}
 
-            </div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md-3 mb-2 mb-md-0 d-flex">
+            {% if portrait.photo %}
+            <img src="{{portrait.photo.url}}" class="img-fluid rounded-circle ml-auto" style="width: 100%;">
+            {% else %}
+            <img src="{% static 'assets/images/aden.jpg' %}" alt="" class="img-fluid ml-auto">
+
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-8 pl-md-5">
+            <h4 class="text-uppercase">{{portrait.user.get_full_name}}</h4>
+            <p>Filière: <span class="color-orange">{{portrait.filiere|default:'non renseigner !'}}</span></p>
+            <p>Promotion: <span class="color-orange">{{portrait.promo|default:'non renseigner !'}}</span></p>
+            <p>Diplome: <span class="color-orange">{{portrait.degree|default:'non renseigner !'}}</span></p>
+            <p>Téléphone: <span class="color-orange">{{portrait.phone|default:'non renseigner !'}}</span></p>
+            <p>Région: <span class="color-orange">{{portrait.region|default:'non renseigner !'}}</span></p>
+
+
         </div>
     </div>
+</div>
 
 {% endblock content %}

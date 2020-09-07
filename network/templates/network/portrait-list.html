@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -38,9 +38,9 @@
                         <tr>
                             <th>{{forloop.counter}}</th>
                             <td><a
-                                class="color-orange"    href="{% url 'network:portrait-detail' pk=portrait.pk %}">{{portrait.get_full_name}}</a>
+                                class="color-orange"    href="{% url 'network:portrait-detail' pk=portrait.pk %}">{{portrait.user.get_full_name}}</a>
                             </td>
-                            <td>{{portrait.profile.promo}}</td>
+                            <td>{{portrait.promo}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -61,7 +61,20 @@ admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)
 
 class ProfileModelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('full_name', 'portrait_visible')
+    actions = ('portrait_visible', 'portrait_invisible')
+
+    def portrait_invisible(self, request, queryset):
+        queryset.update(portrait_visible=False)
+        self.message_user(request, 'Le(s) portrait(s) rendu(s) invisible(s)')
+    
+    portrait_invisible.short_description = 'Désactiver la visibilité du portrait'
+
+    def portrait_visible(self, request, queryset):
+        queryset.update(portrait_visible=True)
+        self.message_user(request, 'Le(s) portrait(s) rendu(s) visible(s)')
+
+    portrait_visible.short_description = 'Rendre le portrait visible'
 
 
 admin.site.register(Profile, ProfileModelAdmin)

@@ -8,7 +8,7 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 from aden.utils import TimeStampModel
 
-from accounts.managers import UserManager
+from accounts.managers import UserManager, ProfileManager
 # Create your models here.
 
 
@@ -83,7 +83,7 @@ class Profile(TimeStampModel):
         blank=True, null=True, verbose_name=_("Date de naissance"))
     birth_location = models.CharField(
         max_length=100, blank=True, verbose_name=_('Lieu de naissance'))
-    filiere = models.CharField(max_length=50, verbose_name='Filière')
+    filiere = models.CharField(max_length=50, verbose_name='Filière', blank=True)
     promo = models.CharField(max_length=50, blank=True,
                              verbose_name='Promotion')
     gender = models.CharField(max_length=10, blank=True, choices=(
@@ -111,8 +111,16 @@ class Profile(TimeStampModel):
 
     region = models.CharField(max_length=50, blank=True, verbose_name='Région')
 
+    portrait_visible = models.BooleanField(verbose_name='Portrait visible', default=True)
+
     user = models.OneToOneField(
         User, related_name='profile', on_delete=models.CASCADE)
+
+    objects = ProfileManager()
+
+    def full_name(self):
+        return self.user.first_name + ' ' + self.user.last_name
+    
 
     def __str__(self):
         return str(self.user.email)

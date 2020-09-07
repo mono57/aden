@@ -7,7 +7,7 @@ from django.db.models import Q
 
 from aden.decorators import aden_member_required
 from network.models import *
-
+from accounts.models import Profile
 
 User = get_user_model()
 
@@ -146,13 +146,13 @@ class NewsListView(ListView):
 @method_decorator(aden_member_required, name='dispatch')
 class PortraitAlumniListView(ListView):
     template_name = 'network/portrait-list.html'
-    model = User
+    model = Profile
     context_object_name = 'portraits'
     paginate_by = 10
 
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(is_member=True)
+        return self.model.objects.get_visible_portraits()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -163,12 +163,15 @@ class PortraitAlumniListView(ListView):
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
 class PortraitAlumniDetailView(DetailView):
-    model = User
+    model = Profile
     context_object_name = 'portrait'
     template_name = 'network/portrait-detail.html'
+
+    def get_object(self):
+        return self.model.objects.get_visible_portraits().get(pk=self.kwargs.get('pk'))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Portrait - {}'.format(
-            self.get_object().get_full_name())
+            self.get_object().user.get_full_name())
         return context
