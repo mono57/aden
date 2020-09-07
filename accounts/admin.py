@@ -12,11 +12,12 @@ User = get_user_model()
 admin.site.site_title = _("Administration ADEN")
 admin.site.site_header = _("ADEN | Panel d'administration")
 
+
 class UserAdmin(BaseUserAdmin):
     form = UserAdminChangeForm
     add_form = UserAdminCreationForm
 
-    list_display = ('email', 'is_active','admin', 'is_member')
+    list_display = ('email', 'is_active', 'admin', 'is_member')
     list_filter = ('admin', 'is_staff', 'is_member')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
@@ -25,13 +26,14 @@ class UserAdmin(BaseUserAdmin):
             'last_name',
             'last_login',
         )}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'admin','is_member')}),
+        ('Permissions', {'fields': ('is_active',
+                                    'is_staff', 'admin', 'is_member')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
             'fields': ('email', 'password1', 'password2')}
-        ),
+         ),
     )
     search_fields = ('email',)
     ordering = ('email',)
@@ -45,29 +47,35 @@ class UserAdmin(BaseUserAdmin):
 
     def confirm_member(self, request, queryset):
         self.make_actions(queryset, True)
-        
-        self.message_user(request, _('Membre(s) confirmé(s)'), messages.SUCCESS)
 
-    confirm_member.short_description = _('Confirmer l\'adhésion') 
+        self.message_user(request, _(
+            'Membre(s) confirmé(s)'), messages.SUCCESS)
+
+    confirm_member.short_description = _('Confirmer l\'adhésion')
 
     def suspend_member(self, request, queryset):
-        self.make_actions(queryset, False) 
+        self.make_actions(queryset, False)
 
-        self.message_user(request, _('Suspension de(s) membre(s) réussie !')) 
+        self.message_user(request, _('Suspension de(s) membre(s) réussie !'))
 
     suspend_member.short_description = _('Suspendre')
-    
+
+
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)
+
 
 class ProfileModelAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'portrait_visible')
     actions = ('portrait_visible', 'portrait_invisible')
+    search_fields = ('user__email', 'user__fisrt_name',
+                     'user__last_name', 'promo', 'filiere')
+
 
     def portrait_invisible(self, request, queryset):
         queryset.update(portrait_visible=False)
         self.message_user(request, 'Le(s) portrait(s) rendu(s) invisible(s)')
-    
+
     portrait_invisible.short_description = 'Désactiver la visibilité du portrait'
 
     def portrait_visible(self, request, queryset):

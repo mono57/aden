@@ -64,7 +64,7 @@ class AnnuaireListView(ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(Q(is_member=True) & Q(email='admin@ensai-alumni.cm'))
+        return qs.filter(is_member=True).exclude(email='admin@ensai-alumni.cm')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -155,6 +155,7 @@ class PortraitAlumniListView(ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
+        print(qs)
         return self.model.objects.get_visible_portraits()
 
     def get_context_data(self, **kwargs):

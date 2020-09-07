@@ -19,9 +19,9 @@
                     {% if member.profile.photo %}
                     <img src="{{member.profile.photo}}" class="img-fluid rounded-circle" alt="{{member.get_full_name}}">
                     {% else %}
-                    <img src="{% static 'images/aden.jpg' %}" alt="">
+                    <img src="{% static 'assets/images/aden.jpg' %}" class="img-fluid rounded-circle" alt="">
                     {% endif %}
-                    <h4>{{member.first_name}} <br> {{member.last_name}}</h4>
+                    <p class="color-orange text-uppercase">{{member.first_name}} {{member.last_name}}</p>
                     {% with member.profile as profile %}
                     <p>{{profile.degree}} - {{profile.filiere}} - {{profile.promo}}</p>
                     <p>{{profile.poste}}</p>

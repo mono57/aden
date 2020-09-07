@@ -170,6 +170,7 @@ class About(TimeStampModel):
         choices=LANGUAGE_CHOICES,
         verbose_name='Version de langue du fichier'
     )
+    file = models.FileField(blank=True, verbose_name='Joindre un fichier')
 
     class Meta:
         verbose_name = 'A propos'

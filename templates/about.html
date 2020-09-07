@@ -12,9 +12,15 @@
 <section class="aboutus">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8">
+            <div class="col-12 col-lg-8 col-md-8">
                 {{about.content|safe}}
+
+                {% if about.file %}
+                <p class="mt-2 mt-md-4"><a href="{{about.file.url}}" class="color-orange">Télécharger le fichier joint</a></p>
+                {% endif %}
+
             </div>
+
             <!-- <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-0">
                 <div class="about-img">
                     <div class="img_1" data-aos="zoom-in" data-aos-duration="550">

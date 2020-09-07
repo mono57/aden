@@ -45,5 +45,6 @@ class UserManager(BaseUserManager):
 class ProfileManager(models.Manager):
     def get_visible_portraits(self):
         qs = self.get_queryset()
+        print(qs)
         return qs.filter(Q(user__is_member=True) &
                          Q(portrait_visible=True))
