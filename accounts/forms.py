@@ -49,9 +49,12 @@ class CustomDateInput(forms.DateInput):
 class ProfileModelForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user', )
+        exclude = ('user','portrait_visible' )
         widgets = {
-            'birthday': CustomDateInput()
+            'birthday': CustomDateInput(),
+            'postes': forms.Textarea(attrs={'rows':3}),
+            'waiting': forms.Textarea(attrs={'rows':3}),
+            'contribution': forms.Textarea(attrs={'rows':3}),
         }
 
 class UserModelForm(forms.ModelForm):
