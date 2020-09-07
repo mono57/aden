@@ -43,7 +43,7 @@
                                 {% if new.image %}
                                 <img src="{{new.image.url}}" class="img-fluid" alt="{{new.title}}">
                                 {% else %}
-                                <img src="{% static 'assets/images/logo.jpg' %}" class="img-fluid" alt="{{new.title}}">
+                                <img src="{% static 'assets/images/logo.jpg' %}" width="32" class="img-fluid" alt="{{new.title}}">
                                 {% endif %}
                             </a>
 
