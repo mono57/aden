@@ -19,12 +19,17 @@
                 <span class="fa fa-mortar-board"></span>
             </div>
         </div> -->
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <a href="{% url 'com:event-list' %}" class="color-orange mr-0 mr-md-4">Voir les événements</a>
+                    <a href="{% url 'com:comities' %}" class="color-orange">Voir les news</a>
+                </p>
+            </div>
+        </div>
 
         <div class="row">
-            <p>
-                <a href="{% url 'com:event-list' %}" class="color-orange mr-0 mr-md-4">Voir les événements</a>
-                <a href="{% url 'com:comities' %}" class="color-orange">Voir les news</a>
-            </p>
+
             {% for new in news %}
             {% include "com/includes/single-post.html" with item=new %}
             {% endfor %}
