@@ -17,9 +17,9 @@
             <div class="card">
                 <div class="card-body">
                     {% if member.profile.photo %}
-                    <img src="{{member.profile.photo}}" class="img-fluid rounded-circle" alt="{{member.get_full_name}}">
+                    <img src="{{member.profile.photo.url}}" class="img-fluid rounded-circle" width="100" alt="{{member.get_full_name}}">
                     {% else %}
-                    <img src="{% static 'assets/images/aden.jpg' %}" class="img-fluid rounded-circle" alt="">
+                    <img src="{% static 'assets/images/aden.jpg' %}" class="img-fluid rounded-circle" width="100" alt="">
                     {% endif %}
                     <p class="color-orange text-uppercase">{{member.first_name}} {{member.last_name}}</p>
                     {% with member.profile as profile %}

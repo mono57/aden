@@ -24,7 +24,22 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
         initial.update({'birthday': profile.birthday,
                         'promo': profile.promo,
                         'birth_location': profile.birth_location,
-                        'photo': profile.photo
+                        'photo': profile.photo,
+                        'filiere': profile.filiere,
+                        'promo': profile.promo,
+                        'gender': profile.gender,
+                        'degree': profile.degree,
+                        'in_ensai_year': profile.in_ensai_year,
+                        'out_ensai_year': profile.out_ensai_year,
+                        'situation': profile.situation,
+                        'entreprise': profile.entreprise,
+                        'poste': profile.poste,
+                        'postes': profile.postes,
+                        'phone': profile.phone,
+                        'waiting': profile.waiting,
+                        'contribution': profile.contribution,
+                        'region': profile.region,
+
                         })
         return initial
 
@@ -37,6 +52,20 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
         profile.birthbay = data.get('birthday')
         profile.birth_location = data.get('birth_location')
         profile.promo = data.get('promo')
+        profile.filiere = data.get('filiere')
+        profile.postes = data.get('postes')
+        profile.degree = data.get('degree')
+        profile.gender = data.get('gender')
+        profile.in_ensai_year = data.get('in_ensai_year')
+        profile.out_ensai_year = data.get('out_ensai_year')
+        profile.situation = data.get('situation')
+        profile.entreprise = data.get('entreprise')
+        profile.poste = data.get('poste')
+        profile.phone = data.get('phone')
+        profile.waiting = data.get('waiting')
+        profile.contribution = data.get('contribution')
+        profile.region = data.get('region')
+
         profile.save()
 
         return super().form_valid(form)

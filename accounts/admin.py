@@ -68,7 +68,7 @@ admin.site.unregister(Group)
 class ProfileModelAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'portrait_visible')
     actions = ('portrait_visible', 'portrait_invisible')
-    search_fields = ('user__email', 'user__fisrt_name',
+    search_fields = ('user__email', 'user__first_name',
                      'user__last_name', 'promo', 'filiere')
 
 

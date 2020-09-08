@@ -51,10 +51,10 @@ class Command(BaseCommand):
                     profile.gender = 'male' if obj.get(
                         'gender', '') == 'Masculin' else 'female'
                     profile.degree = obj.get('degree', '')
-                    profile.in_ensai_year = datetime.datetime.strptime(
-                        obj.get('in_ensai_year', '01/01/2000'), '%d/%m/%Y').date()
-                    profile.out_ensai_year = datetime.datetime.strptime(
-                        obj.get('out_ensai_year', '01/01/2000'), '%d/%m/%Y').date()
+                    profile.in_ensai_year = str(datetime.datetime.strptime(
+                        obj.get('in_ensai_year', '01/01/2000'), '%d/%m/%Y').date()).split('-')[0]
+                    profile.out_ensai_year = str(datetime.datetime.strptime(
+                        obj.get('out_ensai_year', '01/01/2000'), '%d/%m/%Y').date()).split('-')[0]
                     profile.situation = obj.get('situation', '')
                     profile.entreprise = obj.get('entreprise', '')
                     profile.poste = obj.get('poste', '')

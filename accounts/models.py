@@ -91,9 +91,13 @@ class Profile(TimeStampModel):
 
     degree = models.CharField(
         max_length=100, blank=True, verbose_name='Intitulé du Diplome')
-    in_ensai_year = models.DateField(
+    in_ensai_year = models.CharField(
+        max_length=10,
+        help_text='Exemple: 2002',
         verbose_name='Année d\'entrée à l\'ENSAI', blank=True,null=True)
-    out_ensai_year = models.DateField(
+    out_ensai_year = models.CharField(
+        max_length=10,
+        help_text='Exemple: 2005',
         verbose_name='Année de sortie', blank=True, null=True)
     situation = models.CharField(
         max_length=100, blank=True, verbose_name='Situation actuelle')

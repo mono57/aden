@@ -61,7 +61,7 @@ class IndustrialProjectListView(ListView):
 # @method_decorator(aden_member_required, name='dispatch')
 class InstitutionallProjectListView(ListView):
     template_name = 'project/institutional.html'
-    model = IndustrialProject
+    model = InstitutionalProject
     context_object_name = 'projects'
     paginate_by = 9
 

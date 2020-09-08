@@ -44,8 +44,8 @@ class Project(TimeStampModel):
         verbose_name = 'Idées de projet fédérateurs des filières ENSAI'
 
 class BaseProject(TimeStampModel):
-    content = models.TextField(verbose_name='Texte')
-    file = models.FileField(verbose_name='Fichier joint')
+    content = models.TextField(verbose_name='Petite description du projet')
+    file = models.FileField(verbose_name='Joindre un document de projet')
 
     def __str__(self):
         return self.content[:20]
