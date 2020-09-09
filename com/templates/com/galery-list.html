@@ -40,11 +40,11 @@ Albums
 
         <div class="row text-center">
             {% for galery in galeries %}
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mb-2 mb-md-3">
                 <div class="card">
                     <img src="{{galery.images.last.image.url}}" alt="{{galery.name}}" class="card-img-top">
                     <div class="card-body">
-                        <p>{{galery.name}}</p>
+                        <p class="text-uppercase color-orange">{{galery.name}}</p>
                         <p>{{galery.description}}</p>
                         <a href="{{galery.get_absolute_url}}" class="btn theme-orange">Ouvrir la galérie</a>
                     </div>
