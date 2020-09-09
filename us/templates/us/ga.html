@@ -18,6 +18,9 @@
                 <div class="card-body">
                     <p>Assemblée du : <span class="color-orange">{{ga.date}}</span></p>
                     <p>{{ga.description}}</p>
+                    {% if ga.album %}
+                      <p><a href="{{ga.album.get_absolute_url}}" class="color-orange">Ouvrir l'album photos</a></p>
+                    {% endif %}
                     <a href="{{ga.file.url}}" class="btn theme-orange">{% trans "Télécharger le document" %}</a>
                 </div>
             </div>

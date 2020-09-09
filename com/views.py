@@ -121,6 +121,11 @@ class GeleryDetailView(DetailView):
     context_object_name = 'galery'
     paginate_by = 9
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = context.get('galery').name
+        return context
+
     # def get_querset(self):
     #     pk_galery = self.kwargs.get('pk')
     #     galery = get_object_or_404(Galery, pk=pk_galery)

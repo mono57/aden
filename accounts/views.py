@@ -33,6 +33,7 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
                         'out_ensai_year': profile.out_ensai_year,
                         'situation': profile.situation,
                         'entreprise': profile.entreprise,
+                        'entreprise_link': profile.entreprise_link,
                         'poste': profile.poste,
                         'postes': profile.postes,
                         'phone': profile.phone,
@@ -60,6 +61,7 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, FormView):
         profile.out_ensai_year = data.get('out_ensai_year')
         profile.situation = data.get('situation')
         profile.entreprise = data.get('entreprise')
+        profile.entreprise_link = data.get('entreprise_link')
         profile.poste = data.get('poste')
         profile.phone = data.get('phone')
         profile.waiting = data.get('waiting')

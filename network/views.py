@@ -62,13 +62,19 @@ class AnnuaireListView(ListView):
     template_name = 'network/annuaire.html'
     paginate_by = 8
 
+    def get(self, request, *args,**kwargs):
+        query = request.GET.get('query', None)
+        self.query = query
+        return super().get(request, *args, **kwargs)
+
+
     def get_queryset(self):
-        qs = super().get_queryset()
-        return qs.filter(is_member=True).exclude(email='admin@ensai-alumni.cm')
+        return self.model.objects.get_users(self.query)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = 'Annuaire'
+        context['query'] = self.query
         return context
 
 

@@ -12,15 +12,15 @@ Accueil
     <ul class="carousel-indicators">
         <li data-target="#demo" data-slide-to="0" class="active"></li>
         <li data-target="#demo" data-slide-to="1"></li>
-        <!-- <li data-target="#demo" data-slide-to="2"></li> -->
+        <li data-target="#demo" data-slide-to="2"></li>
     </ul>
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="{% static "assets/images/slide1.jpg" %}" alt="education" class="img-fluid">
             <div class="carousel-caption animated fadeInLeft delay-0.5s">
                 <h1 class="font-weight-bold">ADEN</h1>
-                <h4 class="banner-desc">la seule plateforme vitrine de communication principale de
-                    l'association</h4>
+                <h6 class="banner-desc font-weight-bold">La seule plateforme vitrine de communication principale de
+                    l'association</h6>
                 <a href="{% url 'account_signup' %}" class="theme-orange btn mt-3 apply-now">Devenir membre</a>
             </div>
         </div>
@@ -28,9 +28,17 @@ Accueil
             <img src="{% static "assets/images/slide3.jpeg" %}" alt="education" class="img-fluid">
             <div class="carousel-caption animated fadeInUp delay-0.5s">
                 <h1 class="font-weight-bold">ADEN</h1>
-                <h6 class="banner-desc">créé le 22 Juin 2019 à Douala entre les membres réunis, diplômés de l’ENSAI de
+                <h6 class="banner-desc font-weight-bold">Créée le 22 Juin 2019 à Douala entre les membres réunis, diplômés de l’ENSAI de
                     Ngaoundéré, en
                     assemblée constitutive et ceux qui adhèreront par la suite,...</h6>
+                <a href="{% url 'about' %}" class="theme-orange btn mt-3 apply-now">En savoir plus de nous</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static "assets/images/slide2.jpg" %}" alt="education" class="img-fluid">
+            <div class="carousel-caption animated fadeInUp delay-0.5s">
+                <h1 class="font-weight-bold ">ADEN</h1>
+                <h6 class="banner-desc font-weight-bold">Faire rayonner et protéger tous les corps de métiers de l'ENSAI</h6>
                 <a href="{% url 'about' %}" class="theme-orange btn mt-3 apply-now">En savoir plus de nous</a>
             </div>
         </div>

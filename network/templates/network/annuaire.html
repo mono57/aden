@@ -11,25 +11,46 @@
 {% include "com/includes/banner.html" with banner_text=title %}
 
 <div class="container py-5">
+    <div class="row mb-2 mb-md-3">
+        <div class="col-12">
+            <label for="query">Rechercher un membre:</label>
+            <form action="{% url 'network:annuaire' %}" class="form-inline" method="get">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="query" value="{{query|default:''}}" name="query"
+                        placeholder="Motif de recherce">
+                </div>
+                <button type="submit" class="btn theme-orange ml-2">Rechercher</button>
+            </form>
+            {% if query %}
+            <p class="mt-2 mb-0">Résultats de recherche pour: <span class="color-orange">{{query}}</span></p>
+            {% endif %}
+        </div>
+    </div>
     <div class="row">
         {% for member in members %}
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 mb-2 mb-md-4">
             <div class="card">
                 <div class="card-body">
                     {% if member.profile.photo %}
-                    <img src="{{member.profile.photo.url}}" class="img-fluid rounded-circle" width="100" alt="{{member.get_full_name}}">
+                    <img src="{{member.profile.photo.url}}" class="img-fluid rounded-circle" width="100"
+                        alt="{{member.get_full_name}}">
                     {% else %}
-                    <img src="{% static 'assets/images/aden.jpg' %}" class="img-fluid rounded-circle" width="100" alt="">
+                    <img src="{% static 'assets/images/aden.jpg' %}" class="img-fluid rounded-circle" width="100"
+                        alt="">
                     {% endif %}
                     <p class="color-orange text-uppercase">{{member.first_name}} {{member.last_name}}</p>
                     {% with member.profile as profile %}
                     <p>{{profile.degree}} - {{profile.filiere}} - {{profile.promo}}</p>
-                    <p>{{profile.poste}}</p>
-                    <p>{{profile.entreprise}}</p>
-                    <br>
+                    <p>Poste:&ensp; {{profile.poste}}</p>
+                    <p>Entreprise:&ensp; {% if profile.entreprise_link %}
+                        <a href="{{profile.entreprise_link}}" class="color-orange" target="blank">{{profile.entreprise}}</a>
+                        {% else %}
+                        {{profile.entreprise}}
+                        {% endif %}</p>
                     {% if request.user.is_member %}
-                    <p>{{profile.phone}}</p>
-                    <p>{{profile.email}}</p>
+                    <p>Téléphone: &ensp;{{profile.phone}}</p>
+                    <p>Email:&ensp; {{member.email}}</p>
                     {% endif %}
                     {% endwith %}
                 </div>

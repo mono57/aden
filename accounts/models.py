@@ -83,7 +83,8 @@ class Profile(TimeStampModel):
         blank=True, null=True, verbose_name=_("Date de naissance"))
     birth_location = models.CharField(
         max_length=100, blank=True, verbose_name=_('Lieu de naissance'))
-    filiere = models.CharField(max_length=50, verbose_name='Filière', blank=True)
+    filiere = models.CharField(
+        max_length=50, verbose_name='Filière', blank=True)
     promo = models.CharField(max_length=50, blank=True,
                              verbose_name='Promotion')
     gender = models.CharField(max_length=10, blank=True, choices=(
@@ -94,7 +95,7 @@ class Profile(TimeStampModel):
     in_ensai_year = models.CharField(
         max_length=10,
         help_text='Exemple: 2002',
-        verbose_name='Année d\'entrée à l\'ENSAI', blank=True,null=True)
+        verbose_name='Année d\'entrée à l\'ENSAI', blank=True, null=True)
     out_ensai_year = models.CharField(
         max_length=10,
         help_text='Exemple: 2005',
@@ -103,10 +104,12 @@ class Profile(TimeStampModel):
         max_length=100, blank=True, verbose_name='Situation actuelle')
     entreprise = models.CharField(
         max_length=100, blank=True, verbose_name='Nom de l\'entreprise qui vous emploi')
+    entreprise_link = models.URLField(
+        verbose_name='Lien de l\'entreprise (url)', blank=True, help_text='https://www.monentreprise.com')
     poste = models.CharField(max_length=100, blank=True,
                              verbose_name='Poste occupé')
     postes = models.TextField(
-        verbose_name='Les postes precédements occupés et les entreprises respectives', 
+        verbose_name='Les postes precédements occupés et les entreprises respectives',
         help_text='Renseigner sous le format (post, entreprise) séparer par un point-virgule(;)',
         blank=True)
     phone = models.CharField(max_length=20, blank=True,
@@ -119,7 +122,8 @@ class Profile(TimeStampModel):
 
     region = models.CharField(max_length=50, blank=True, verbose_name='Région')
 
-    portrait_visible = models.BooleanField(verbose_name='Portrait visible', default=True)
+    portrait_visible = models.BooleanField(
+        verbose_name='Portrait visible', default=True)
 
     user = models.OneToOneField(
         User, related_name='profile', on_delete=models.CASCADE)
@@ -128,7 +132,7 @@ class Profile(TimeStampModel):
 
     def full_name(self):
         return self.user.first_name + ' ' + self.user.last_name
-    
+
     def get_postes(self):
         return self.postes.split(';')
 

@@ -28,6 +28,17 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    def get_users(self, query=None):
+        qs = self.get_queryset().filter(is_member=True).exclude(admin=True)
+        if not query:
+            return qs
+
+        return qs.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(email__icontains=query)
+        )
+
     def create_superuser(self, email, password):
 
         user = self.create_user(
@@ -45,6 +56,5 @@ class UserManager(BaseUserManager):
 class ProfileManager(models.Manager):
     def get_visible_portraits(self):
         qs = self.get_queryset()
-        print(qs)
         return qs.filter(Q(user__is_member=True) &
-                         Q(portrait_visible=True))
+                         Q(portrait_visible=True)).exclude(user__admin=True)

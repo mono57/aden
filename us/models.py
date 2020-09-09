@@ -4,7 +4,7 @@ from aden.utils import TimeStampModel
 from cloudinary.models import CloudinaryField
 from tinymce import models as tinymce_models
 # from cloudinary_storage.storage import RawMediaCloudinaryStorage
-
+from com.models import Galery
 
 LANGUAGE_CHOICES = (
     ('en', 'Anglaise'),
@@ -184,6 +184,9 @@ class GeneralAssembly(TimeStampModel):
                                verbose_name='Version de langue du fichier')
     file = models.FileField(
         verbose_name='Fichier joint')
+    album = models.ForeignKey(
+        Galery, on_delete=models.CASCADE, verbose_name='Joindre un album', 
+        null=True, blank=True, related_name='assemblies')
 
     class Meta:
         verbose_name = 'Assemblée Générale'
@@ -275,7 +278,8 @@ class Contact(TimeStampModel):
 
 
 class LegalMention(TimeStampModel):
-    content = tinymce_models.HTMLField(verbose_name='Texte de la mention légale')
+    content = tinymce_models.HTMLField(
+        verbose_name='Texte de la mention légale')
     file = models.FileField(verbose_name='Fichier joint', blank=True)
 
     def __str__(self):
