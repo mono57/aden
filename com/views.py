@@ -115,22 +115,21 @@ class ComStrategicComityDetailView(DetailView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
-class GeleryDetailView(DetailView):
+class GeleryDetailView(ListView):
     template_name = 'com/galery-detail.html'
-    model = Galery
-    context_object_name = 'galery'
+    model = GaleryImage
+    context_object_name = 'photos'
     paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = context.get('galery').name
+        context['galery'] = get_object_or_404(Galery, pk=self.kwargs.get('pk'))
         return context
 
-    # def get_querset(self):
-    #     pk_galery = self.kwargs.get('pk')
-    #     galery = get_object_or_404(Galery, pk=pk_galery)
-    #     qs = super().get_queryset()
-    #     return qs.filter(galery=galery)
+    def get_queryset(self):
+        pk_galery = self.kwargs.get('pk')
+        galery = get_object_or_404(Galery, pk=pk_galery)
+        return galery.images.all()
 
 
 @method_decorator(login_required, name='dispatch')
