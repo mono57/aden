@@ -11,10 +11,11 @@
 {% include "com/includes/banner.html" with banner_text=title %}
 
 <div class="container py-5">
-    <div class="row text-center">
-        <p>Photo</p>
-        <div class="d-flex align-items-center justify-content-center tab-content" id="pills-tabContent">
+    <div class="row">
+        <p>Photos album: {{galery.name}} </p>
+        <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane  fade show active" id="showall" role="tabpanel" aria-labelledby="showall-tab">
+
                 {% for photo in galery.images.all %}
                 {% include "com/includes/galery-item.html" with item=photo %}
                 {% empty %}
