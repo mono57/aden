@@ -23,7 +23,7 @@ class PostListView(ListView):
 @method_decorator(login_required, name='dispatch')
 @method_decorator(aden_member_required, name='dispatch')
 class GaleryListView(ListView):
-    model = GaleryImage
+    model = Galery
     template_name = 'com/galery-list.html'
     context_object_name = 'galeries'
     # queryset = Galery.objects.all()
@@ -117,15 +117,15 @@ class ComStrategicComityDetailView(DetailView):
 @method_decorator(aden_member_required, name='dispatch')
 class GeleryDetailView(DetailView):
     template_name = 'com/galery-detail.html'
-    model = GaleryImage
-    context_object_name = 'photos'
+    model = Galery
+    context_object_name = 'galery'
     paginate_by = 9
 
-    def get_querset(self):
-        pk_galery = self.kwargs.get('pk')
-        galery = get_object_or_404(Galery, pk=pk_galery)
-        qs = super().get_queryset()
-        return qs.filter(galery=galery)
+    # def get_querset(self):
+    #     pk_galery = self.kwargs.get('pk')
+    #     galery = get_object_or_404(Galery, pk=pk_galery)
+    #     qs = super().get_queryset()
+    #     return qs.filter(galery=galery)
 
 
 @method_decorator(login_required, name='dispatch')

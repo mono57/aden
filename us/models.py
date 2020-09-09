@@ -272,3 +272,15 @@ class Contact(TimeStampModel):
     class Meta:
         verbose_name = 'Message'
         verbose_name_plural = 'Messages'
+
+
+class LegalMention(TimeStampModel):
+    content = tinymce_models.HTMLField(verbose_name='Texte de la mention légale')
+    file = models.FileField(verbose_name='Fichier joint', blank=True)
+
+    def __str__(self):
+        return 'Mentions légale: {}'.format(self.pk)
+
+    class Meta:
+        verbose_name = 'Mention Légale'
+        verbose_name_plural = 'Mentions Légales'

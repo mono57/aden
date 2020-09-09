@@ -13,8 +13,7 @@
         <p>Photo</p>
         <div class="d-flex align-items-center justify-content-center tab-content" id="pills-tabContent">
             <div class="tab-pane  fade show active" id="showall" role="tabpanel" aria-labelledby="showall-tab">
-                {% for photo in photos %}
-
+                {% for photo in galery.images.all %}
                 {% include "com/includes/galery-item.html" with item=photo %}
                 {% empty %}
                 <h4 class="text-danger text-center">{% trans "Album vide" %}</h4>

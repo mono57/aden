@@ -22,8 +22,8 @@ admin.site.register(Galery, GaleryModelAdmin)
 
 
 class NewsModelAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_visible')
-    list_filter = ('created_at', 'is_visible')
+    list_display = ('title', )
+    list_filter = ('created_at', )
     search_fields = ('title', 'creator', 'content')
     form = NewsModelForm
     # exclude = ('creator', 'slug')  
@@ -36,8 +36,8 @@ class NewsModelAdmin(admin.ModelAdmin):
 admin.site.register(News, NewsModelAdmin)
 
 class PostModelAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_visible')
-    list_filter = ('created_at', 'is_visible')
+    list_display = ('title', )
+    list_filter = ('created_at', )
     search_fields = ('title', 'creator', 'content')  
     exclude = ('creator', 'slug')  
     form = PostModelForm
@@ -91,3 +91,5 @@ class FaqModelAdmin(admin.ModelAdmin):
     form = FaqModelForm
 
 admin.site.register(Faq, FaqModelAdmin)
+
+admin.site.register(RevueInterface)

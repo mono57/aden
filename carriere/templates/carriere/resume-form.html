@@ -14,6 +14,7 @@
     <div class="row d-flex">
         <div class="col-8 mx-auto">
             <h3>Déposer votre CV</h3>
+            <a href="{% url 'carriere:find' %}" class="ml-auto color-orange">Trouver un poste</a>
             {% if messages %}
             {% for message in messages %}
             <div class="alert alert-{{message.tags}} my-2">

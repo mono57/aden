@@ -245,7 +245,9 @@ Accueil
                                 {% if offer.website_url %}
                                   <p><a href="{{offer.website_url}}" class="color-orange">Cliquez pous plus d'informations</a></p>
                                 {% endif %}
+                                {% if request.user.is_member %}
                                 <a href="mailto:{{offer.contact_address}}" class="color-orange">Postuler ici !</a>
+                                {% endif %}
                             </div>
 
                             <button class="slick-prev slick-arrow" aria-label="Previous" type="button">

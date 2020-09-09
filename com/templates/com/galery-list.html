@@ -39,22 +39,29 @@ Albums
             </ul> -->
 
         <div class="row text-center">
-            <div class="d-flex align-items-center justify-content-center tab-content" id="pills-tabContent">
-                <div class="tab-pane  fade show active" id="showall" role="tabpanel" aria-labelledby="showall-tab">
-                    {% for galery in galeries %}
-                   
-                    {% include "com/includes/galery-item.html" with item=galery %}
-                    {% empty %}
-                    <h4 class="text-danger text-center">{% trans "Album vide" %}</h4>
-                    {% endfor %}
+            {% for galery in galeries %}
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <img src="{{galery.images.last.url}}" alt="{{galery.name}}" class="card-img-top">
+                    <div class="card-body">
+                        <p>
+                            {{galery.description}}
 
+                        </p>
+                        <a href="{{galery.get_absolute_url}}" class="btn theme-orange"></a>
 
+                    </div>
                 </div>
-
-
             </div>
+
+            {% empty %}
+            <h4 class="text-danger text-center">{% trans "Galerie photos vide" %}</h4>
+            {% endfor %}
+
+
+
         </div>
-       {% include "includes/pagination.html" %}
+        {% include "includes/pagination.html" %}
     </div>
 </section>
 {% endblock content %}

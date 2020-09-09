@@ -23,6 +23,9 @@
                 </div>
                 <div class="blog-title">
                     <h4 class="font-weight-bold mb-3">{{post.title}}</h4>
+                    {% if post.file %}
+                     <a href="{{post.file.url}}" class="color-orange" target="blank">Télécharger le fichier joint</a> 
+                    {% endif %}
                 </div>
                 <div class="blog-desc">
                     <p>{{post.content|safe}}</p>

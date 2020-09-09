@@ -11,7 +11,7 @@ from aden.decorators import aden_member_required
 from com.models import Event, News, Galery, Post, Faq, StrategicComity
 from carriere.models import Offer
 from us.forms import ContactModelForm
-from us.models import About, Footer, InstitutionalPresentation, Filiere
+from us.models import About, Footer, InstitutionalPresentation, Filiere, LegalMention
 
 
 User = get_user_model()
@@ -86,4 +86,5 @@ class LegalMentions(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Mentions légales'
+        context['mention'] = LegalMention.objects.last()
         return context

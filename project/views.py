@@ -14,7 +14,7 @@ from aden.decorators import aden_member_required
 
 # @method_decorator(login_required, name='dispatch')
 # @method_decorator(aden_member_required, name='dispatch')
-class ProjectCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class ProjectCreateView(SuccessMessageMixin, CreateView):
     template_name = 'project/project-edit.html'
     form_class = ProjectModelForm
     # success_url = reverse_lazy('project:project-update')

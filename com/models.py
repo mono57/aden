@@ -64,8 +64,9 @@ class News(TimeStampModel):
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ManyToManyField(
         PostCategory, blank=True, related_name='news')
-    is_visible = models.BooleanField(
-        default=True, verbose_name=visible_on_site)
+    # is_visible = models.BooleanField(
+    #     default=True, verbose_name=visible_on_site)
+    file = models.FileField(verbose_name='Joindre un fichier', blank=True)
 
     def __str__(self):
         return self.title
@@ -91,8 +92,9 @@ class Post(TimeStampModel):
         PostCategory, related_name='posts', blank=True, verbose_name=_('Categories d\'article'))
     image = CloudinaryField(resource_type='image',
                             verbose_name=cover_image, blank=True)
-    is_visible = models.BooleanField(
-        default=True, verbose_name=visible_on_site)
+    file = models.FileField(verbose_name='Joindre un fichier', blank=True)
+    # is_visible = models.BooleanField(
+    #     default=True, verbose_name=visible_on_site)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
