@@ -149,7 +149,7 @@ class Event(TimeStampModel):
         resource_type='image', blank=True, null=True, verbose_name=cover_image)
     published = models.BooleanField(default=True, verbose_name=_('Publier'))
     galery = models.ForeignKey(
-        Galery, verbose_name='Joindre un album photos', blank=True, on_delete=models.CASCADE)
+        Galery, verbose_name='Joindre un album photos', blank=True, null=True, on_delete=models.CASCADE)
     # organizer = models.ManyToManyField(User)
     registration = models.ManyToManyField(
         User, blank=True, related_name='register_events', verbose_name=_('Inscris'))

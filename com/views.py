@@ -12,16 +12,16 @@ from com.models import (Post, News, Event, Document, Galery, GaleryImage, RevueI
 from aden.decorators import aden_member_required
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class PostListView(ListView):
     template_name = 'com/post-list.html'
     model = Post
     context_object_name = 'posts'
     paginate_by = 6
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class GaleryListView(ListView):
     model = Galery
     template_name = 'com/galery-list.html'
@@ -30,8 +30,8 @@ class GaleryListView(ListView):
     paginate_by = 9
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class PostDetailView(DetailView):
     template_name = 'com/post-detail.html'
     model = Post
@@ -44,8 +44,8 @@ class PostDetailView(DetailView):
         return ctx
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class NewsListView(ListView):
     template_name = 'com/news-list.html'
     model = News
@@ -59,8 +59,8 @@ class NewsListView(ListView):
         return context
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class NewsDetailView(DetailView):
     model = News
     template_name = 'com/post-detail.html'
@@ -73,8 +73,8 @@ class NewsDetailView(DetailView):
         return ctx
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class EventListView(ListView):
     template_name = 'com/event-list.html'
     model = Event
@@ -83,8 +83,8 @@ class EventListView(ListView):
 
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class EventDetailView(DetailView):
     template_name = 'com/event-detail.html'
     context_object_name = 'event'
@@ -97,24 +97,24 @@ class EventDetailView(DetailView):
 
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class ComStrategicComityListView(ListView):
     template_name = 'com/strategic_comity-list.html'
     model = ComStrategicComity
     context_object_name = 'comities'
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class ComStrategicComityDetailView(DetailView):
     template_name = 'com/strategic_comity-detail.html'
     model = ComStrategicComity
     context_object_name = 'comity'
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class GeleryDetailView(ListView):
     template_name = 'com/galery-detail.html'
     model = GaleryImage
@@ -132,8 +132,8 @@ class GeleryDetailView(ListView):
         return galery.images.all()
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class RevueInterfaceListView(ListView):
     template_name = 'com/interface.html'
     model = RevueInterface
@@ -146,8 +146,8 @@ class RevueInterfaceListView(ListView):
         return context
 
 
-@method_decorator(login_required, name='dispatch')
-@method_decorator(aden_member_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
+# @method_decorator(aden_member_required, name='dispatch')
 class DownloadListView(ListView):
     context_object_name = 'documents'
     model = Document

@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
+{% load static %}
 {% load i18n %}
 
 {% block title %}
 {{title}}
 {% endblock title %}
+
+{% block css %}
+<link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+{% endblock css %}
 
 {% block content %}
 
@@ -13,6 +20,27 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-8">
+            <video
+            id="my-video"
+            class="video-js mb-2"
+            controls
+            preload="auto"
+            width="640"
+            height="264"
+            poster="MY_VIDEO_POSTER.jpg"
+            data-setup="{}"
+        
+          >
+            <source src="{% static 'assets/aden.mp4' %}" type="video/mp4" />
+            <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+              <a href="https://videojs.com/html5-video-support/" target="_blank"
+                >supports HTML5 video</a
+              >
+            </p>
+          </video>
             <p>
                 {% blocktrans %}
                 Un grand nombre d'alumni sont présents à des postes clés
@@ -38,7 +66,7 @@
                         <tr>
                             <th>{{forloop.counter}}</th>
                             <td><a
-                                class="color-orange"    href="{% url 'network:portrait-detail' pk=portrait.pk %}">{{portrait.user.get_full_name}}</a>
+                                class="color-orange"    href="#">{{portrait.user.get_full_name}}</a>
                             </td>
                             <td>{{portrait.filiere}} - {{portrait.promo}}</td>
                         </tr>
@@ -54,3 +82,7 @@
 </div>
 
 {% endblock content %}
+
+{% block javascript %}
+<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+{% endblock javascript %}
