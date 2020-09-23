@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-from accounts.admin import send_html_email
 import requests
 import os
 import json
@@ -39,7 +38,7 @@ class Command(BaseCommand):
                     )
                     user.first_name = obj.get('first_name', '')
                     user.last_name = obj.get('last_name', '')
-                    user.is_member = True   
+                    # user.is_member = True   
                     user.save()
                     profile = user.profile
                     # self.print(str('User :'.format(str(user))))
@@ -65,15 +64,8 @@ class Command(BaseCommand):
                     profile.contribution = obj.get('contribution', '')
                     profile.region = obj.get('region', '')
                     profile.save()
-                    context = {
-                        'full_name': user.get_full_name(),
-                        'email': user.email,
-                        'password': 'ensaialumni'
-                    }
-                    subject = 'Confirmation'
-                    template_path = 'account/email_member.html'
-                    send_html_email([user.email], subject, template_path, context)
-                    self.print_success('User {} created, mail sended !'.format(user.email))
+                    
+                    self.print_success('User {} created !'.format(user.email))
 
                 except:
                     self.print_error(
