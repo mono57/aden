@@ -39,6 +39,7 @@ class Command(BaseCommand):
                     )
                     user.first_name = obj.get('first_name', '')
                     user.last_name = obj.get('last_name', '')
+                    user.is_member = True   
                     user.save()
                     profile = user.profile
                     # self.print(str('User :'.format(str(user))))
