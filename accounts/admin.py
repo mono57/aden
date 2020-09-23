@@ -19,7 +19,7 @@ admin.site.site_header = _("ADEN | Panel d'administration")
 def send_html_email(recipients, subject, template_name, context):
     template_html = render_to_string(template_name, context)
     msg = EmailMessage(subject=subject, body=template_html,
-                       from_email=settings.DEFAULT_FROM_EMAIL, bcc=[recipients])
+                       from_email=settings.DEFAULT_FROM_EMAIL, bcc=recipients)
 
     msg.content_subtype = 'html'
 
@@ -58,26 +58,7 @@ class UserAdmin(BaseUserAdmin):
             q.save()
 
     def confirm_member(self, request, queryset):
-        # self.make_actions(queryset, True)
-        subject = 'Confirmation'
-        template_path = 'account/email_member.html'
-
-        for q in queryset:
-            context = {
-                'full_name': q.get_full_name,
-                'email': q.email,
-                'password': 'ensaialumni'
-            }
-
-            q.is_member = True
-            q.save()
-
-            send_html_email(
-                q.email,
-                subject,
-                template_path,
-                context
-            )
+        self.make_actions(queryset, True)
             
         self.message_user(request, _(
             'Membre(s) confirmé(s)'), messages.SUCCESS)
