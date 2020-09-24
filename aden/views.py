@@ -59,6 +59,7 @@ class HomeTemplateView(TemplateView):
             [g.images.all().count() for g in Galery.objects.all()])
         context['faqs'] = Faq.objects.all()[:3]
         context['offers'] = Offer.objects.order_by('-created_at')[:3]
+        context['offers_count'] = Offer.objects.all().count()
         context['footer_text'] = Footer.objects.last()
         context['com_news'] = StrategicComity.objects.all()[:3]
         return context
